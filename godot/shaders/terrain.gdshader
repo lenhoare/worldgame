@@ -27,9 +27,12 @@ uniform float shade_strength = 2.2;
 uniform float hex_size = 250.0;
 uniform bool show_hex = true;
 uniform vec2 hover_hex = vec2(100000.0);
-uniform vec2 home_hex = vec2(100000.0);
-uniform int claimed_count = 0;
-uniform vec2 claimed[64];
+// Per-hex state for this player: 0 unknown, 1 frontier (scoutable), 2 scouted,
+// 3 claimed, 4 home. Texel (q, r) - hex_origin.
+uniform sampler2D hex_state_tex : filter_nearest, repeat_disable;
+uniform ivec2 hex_origin;
+uniform ivec2 hex_dims;
+uniform bool fog_of_war = true;
 uniform vec3 home_colour : source_color = vec3(1.0, 0.78, 0.25);
 uniform vec3 claim_colour : source_color = vec3(0.35, 0.85, 1.0);
 
@@ -121,18 +124,20 @@ void fragment() {
 	float to_edge = hex_size * 0.8660254 - max(d.x, 0.5 * d.x + 0.8660254 * d.y);
 	float line_w = cell_size * 0.8;
 
-	bool claim = false;
-	for (int i = 0; i < 64; i++) {
-		if (i >= claimed_count) {
-			break;
-		}
-		if (all(equal(ax, claimed[i]))) {
-			claim = true;
-		}
+	ivec2 t = ivec2(ax) - hex_origin;
+	int state = 0;
+	if (t.x >= 0 && t.y >= 0 && t.x < hex_dims.x && t.y < hex_dims.y) {
+		state = int(texelFetch(hex_state_tex, t, 0).r * 255.0 + 0.5);
 	}
-	if (all(equal(ax, home_hex))) {
+	if (fog_of_war && state < 2) {
+		// Unscouted: the land is visible, but faded and cold.
+		float luma = dot(col, vec3(0.3, 0.55, 0.15));
+		vec3 fogged = mix(vec3(luma), vec3(0.42, 0.5, 0.56), 0.35);
+		col = state == 1 ? mix(col, fogged, 0.5) * 0.9 : mix(col, fogged, 0.75) * 0.7;
+	}
+	if (state == 4) {
 		col = mix(col, home_colour, to_edge < line_w * 2.0 ? 0.9 : 0.16);
-	} else if (claim) {
+	} else if (state == 3) {
 		col = mix(col, claim_colour, to_edge < line_w * 2.0 ? 0.85 : 0.14);
 	} else if (show_hex && to_edge < line_w) {
 		col *= (cls == SEA) ? 0.92 : 0.8;

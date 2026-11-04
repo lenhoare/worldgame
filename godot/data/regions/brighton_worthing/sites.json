@@ -1,0 +1,12446 @@
+[
+{
+"kind": "airfield",
+"x": 14066.2,
+"z": 1550.6,
+"name": "Folly Farm Airstrip"
+},
+{
+"kind": "airfield",
+"x": 12418.1,
+"z": 2425.9,
+"name": "Truleigh Manor Farm Airstrip"
+},
+{
+"kind": "airfield",
+"x": 9471.1,
+"z": 9427.9,
+"name": "Brighton City Airport"
+},
+{
+"kind": "car_park",
+"x": 17999.8,
+"z": 8.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 15327.9,
+"z": 63.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 14597.7,
+"z": 97.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22706.9,
+"z": 190.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 3829.5,
+"z": 226.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 1826.3,
+"z": 313.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 11599.4,
+"z": 382.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19419.8,
+"z": 411.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 11727.9,
+"z": 490.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 1001.9,
+"z": 516.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 3946.3,
+"z": 587.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 15143.6,
+"z": 723.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22527.9,
+"z": 743.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19346.3,
+"z": 765.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 12335.6,
+"z": 826.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 11367.9,
+"z": 1028.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 948.4,
+"z": 1034.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19520.5,
+"z": 1036.4,
+"name": "Clayton Green"
+},
+{
+"kind": "car_park",
+"x": 15510.0,
+"z": 1157.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22083.8,
+"z": 1330.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 1716.2,
+"z": 1437.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23868.0,
+"z": 1559.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19791.1,
+"z": 1629.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 15878.3,
+"z": 1926.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 6677.4,
+"z": 1953.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 6651.8,
+"z": 2005.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 10902.4,
+"z": 2107.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22814.7,
+"z": 2132.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 18952.4,
+"z": 2173.3,
+"name": "Pycombe Golf Club"
+},
+{
+"kind": "car_park",
+"x": 4090.0,
+"z": 2182.7,
+"name": "Chanctonbury Ring Carparking"
+},
+{
+"kind": "car_park",
+"x": 5093.0,
+"z": 2300.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 1529.3,
+"z": 2608.3,
+"name": "Washington SDW Trail Car Park"
+},
+{
+"kind": "car_park",
+"x": 18682.9,
+"z": 2628.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 18744.7,
+"z": 2690.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 7571.9,
+"z": 2728.6,
+"name": "Gatewick Farm Storage"
+},
+{
+"kind": "car_park",
+"x": 6911.9,
+"z": 2838.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 15729.4,
+"z": 2903.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 6901.7,
+"z": 2946.5,
+"name": "Coach Park"
+},
+{
+"kind": "car_park",
+"x": 7086.4,
+"z": 2971.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 6894.2,
+"z": 2982.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 14520.5,
+"z": 3062.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 11125.9,
+"z": 3229.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 1266.9,
+"z": 3233.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 7086.0,
+"z": 3307.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 7042.7,
+"z": 3346.4,
+"name": "Newman's Gardens"
+},
+{
+"kind": "car_park",
+"x": 7321.3,
+"z": 3392.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 7105.3,
+"z": 3404.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 7327.3,
+"z": 3413.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 7002.7,
+"z": 3470.1,
+"name": "High Street"
+},
+{
+"kind": "car_park",
+"x": 7357.8,
+"z": 3505.5,
+"name": "Fletcher's Croft"
+},
+{
+"kind": "car_park",
+"x": 16567.4,
+"z": 3534.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 14182.7,
+"z": 3536.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 14140.5,
+"z": 3580.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 6974.5,
+"z": 3583.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 7107.9,
+"z": 3595.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 18676.8,
+"z": 3715.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 7411.4,
+"z": 3828.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 15324.1,
+"z": 3839.9,
+"name": "Devil's Dyke"
+},
+{
+"kind": "car_park",
+"x": 16408.3,
+"z": 3841.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 15289.5,
+"z": 3955.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 10180.1,
+"z": 3991.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 8288.5,
+"z": 4112.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 10431.6,
+"z": 4133.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 10515.2,
+"z": 4134.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 10472.3,
+"z": 4143.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 8020.1,
+"z": 4168.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 8303.6,
+"z": 4172.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 10544.7,
+"z": 4203.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 8738.6,
+"z": 4222.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 8953.9,
+"z": 4223.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 15572.6,
+"z": 4290.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 15625.3,
+"z": 4296.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 11513.1,
+"z": 4298.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 15621.9,
+"z": 4308.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 15523.2,
+"z": 4315.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 15813.8,
+"z": 4706.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 8946.0,
+"z": 4752.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 702.2,
+"z": 4832.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 17039.3,
+"z": 4947.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 684.5,
+"z": 4964.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 9156.7,
+"z": 5031.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 9157.4,
+"z": 5031.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 10216.3,
+"z": 5132.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 10215.6,
+"z": 5135.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23999.1,
+"z": 5187.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21823.3,
+"z": 5221.4,
+"name": "Upper Lodge Car Park"
+},
+{
+"kind": "car_park",
+"x": 23975.0,
+"z": 5228.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 24020.6,
+"z": 5255.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23967.1,
+"z": 5264.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23931.3,
+"z": 5314.9,
+"name": "Northfield"
+},
+{
+"kind": "car_park",
+"x": 23980.3,
+"z": 5467.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22866.7,
+"z": 5485.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23106.9,
+"z": 5487.2,
+"name": "Church Car Park"
+},
+{
+"kind": "car_park",
+"x": 23935.0,
+"z": 5488.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22858.4,
+"z": 5533.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 8745.4,
+"z": 5559.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22868.3,
+"z": 5576.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 1195.6,
+"z": 5602.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21643.5,
+"z": 5605.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21665.4,
+"z": 5610.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21666.5,
+"z": 5622.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21628.0,
+"z": 5622.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21641.2,
+"z": 5623.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23004.0,
+"z": 5626.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21594.5,
+"z": 5630.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22218.4,
+"z": 5666.2,
+"name": "Chalk Hill Car Park"
+},
+{
+"kind": "car_park",
+"x": 16792.8,
+"z": 5668.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 24220.8,
+"z": 5672.3,
+"name": "Ridge car park (P6)"
+},
+{
+"kind": "car_park",
+"x": 16810.9,
+"z": 5691.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23088.0,
+"z": 5712.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 16326.9,
+"z": 5731.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 24050.0,
+"z": 5738.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21386.0,
+"z": 5798.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23834.4,
+"z": 5820.0,
+"name": "Upper Arts (P7a)"
+},
+{
+"kind": "car_park",
+"x": 21315.5,
+"z": 5831.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 5940.8,
+"z": 5841.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21465.6,
+"z": 5867.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 17286.2,
+"z": 5922.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23835.9,
+"z": 5933.5,
+"name": "Jubilee (P7)"
+},
+{
+"kind": "car_park",
+"x": 21192.7,
+"z": 5959.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 24112.6,
+"z": 5992.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23857.0,
+"z": 6001.7,
+"name": "IDS parking"
+},
+{
+"kind": "car_park",
+"x": 8793.3,
+"z": 6015.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 24136.0,
+"z": 6017.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23927.5,
+"z": 6027.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 17605.9,
+"z": 6042.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20992.9,
+"z": 6042.1,
+"name": "Patcham Fawcett playing fields"
+},
+{
+"kind": "car_park",
+"x": 21175.7,
+"z": 6044.7,
+"name": "Brighton Retail Park"
+},
+{
+"kind": "car_park",
+"x": 17621.3,
+"z": 6052.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19522.3,
+"z": 6055.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21286.9,
+"z": 6096.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 17650.7,
+"z": 6099.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 2302.8,
+"z": 6104.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 24155.6,
+"z": 6111.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 17687.7,
+"z": 6124.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 3334.1,
+"z": 6128.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23922.6,
+"z": 6158.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 8730.0,
+"z": 6171.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20072.7,
+"z": 6203.4,
+"name": "Patcham Methodist Church"
+},
+{
+"kind": "car_park",
+"x": 18364.7,
+"z": 6212.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 24122.0,
+"z": 6246.4,
+"name": "Sussex House (P4)"
+},
+{
+"kind": "car_park",
+"x": 24215.9,
+"z": 6249.0,
+"name": "Biology Road (P3)"
+},
+{
+"kind": "car_park",
+"x": 17231.9,
+"z": 6255.0,
+"name": "Dyke Approach"
+},
+{
+"kind": "car_park",
+"x": 18123.8,
+"z": 6295.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20078.4,
+"z": 6297.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22481.5,
+"z": 6303.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23952.0,
+"z": 6334.2,
+"name": "Sports Centre (P5)"
+},
+{
+"kind": "car_park",
+"x": 22253.1,
+"z": 6391.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 24195.9,
+"z": 6391.5,
+"name": "Amex Stadium VIP Parking"
+},
+{
+"kind": "car_park",
+"x": 23751.5,
+"z": 6424.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23612.0,
+"z": 6501.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 1559.4,
+"z": 6509.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 17655.6,
+"z": 6644.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21702.3,
+"z": 6688.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20247.6,
+"z": 6717.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20277.0,
+"z": 6717.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 5581.6,
+"z": 6722.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20004.1,
+"z": 6723.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23973.1,
+"z": 6762.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 24027.4,
+"z": 6765.8,
+"name": "Car Park 6"
+},
+{
+"kind": "car_park",
+"x": 24072.6,
+"z": 6819.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23955.4,
+"z": 6879.7,
+"name": "Car Park 5"
+},
+{
+"kind": "car_park",
+"x": 23402.0,
+"z": 6881.2,
+"name": "The Keep car park"
+},
+{
+"kind": "car_park",
+"x": 23724.3,
+"z": 6888.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 24166.5,
+"z": 6897.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 24180.8,
+"z": 6915.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23379.4,
+"z": 6927.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23586.4,
+"z": 6930.6,
+"name": "The Bridge Car Park"
+},
+{
+"kind": "car_park",
+"x": 24193.3,
+"z": 6938.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 24023.3,
+"z": 6939.6,
+"name": "Car Park 4"
+},
+{
+"kind": "car_park",
+"x": 24208.3,
+"z": 6950.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23350.8,
+"z": 6952.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 2307.7,
+"z": 6952.8,
+"name": "Storrington Rise CP"
+},
+{
+"kind": "car_park",
+"x": 17999.8,
+"z": 6963.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23469.1,
+"z": 6967.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23454.8,
+"z": 6971.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 15687.1,
+"z": 6974.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19315.4,
+"z": 7012.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19304.1,
+"z": 7055.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23122.3,
+"z": 7064.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23128.4,
+"z": 7071.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23076.0,
+"z": 7079.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23059.0,
+"z": 7080.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22881.4,
+"z": 7165.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22856.6,
+"z": 7179.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23287.4,
+"z": 7303.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21127.8,
+"z": 7328.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22652.6,
+"z": 7333.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22674.5,
+"z": 7353.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 10541.3,
+"z": 7356.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 1737.7,
+"z": 7393.5,
+"name": "Bost Hill Car Park"
+},
+{
+"kind": "car_park",
+"x": 22851.3,
+"z": 7407.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 18934.7,
+"z": 7415.7,
+"name": "Withdean Sports Complex"
+},
+{
+"kind": "car_park",
+"x": 22885.6,
+"z": 7448.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19093.7,
+"z": 7451.1,
+"name": "WIthdean Park & Ride"
+},
+{
+"kind": "car_park",
+"x": 22902.2,
+"z": 7456.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 16322.7,
+"z": 7461.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22882.6,
+"z": 7479.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22922.5,
+"z": 7520.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20867.7,
+"z": 7528.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22740.1,
+"z": 7546.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20086.3,
+"z": 7555.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22670.3,
+"z": 7569.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22772.9,
+"z": 7608.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22784.9,
+"z": 7610.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22537.3,
+"z": 7637.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20174.1,
+"z": 7643.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20074.6,
+"z": 7647.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20113.0,
+"z": 7651.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20142.8,
+"z": 7652.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 14488.4,
+"z": 7653.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 1538.3,
+"z": 7658.1,
+"name": "West Hill Car Park"
+},
+{
+"kind": "car_park",
+"x": 20080.6,
+"z": 7658.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20063.3,
+"z": 7669.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22662.4,
+"z": 7674.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 14323.3,
+"z": 7707.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 1262.0,
+"z": 7740.6,
+"name": "Honeysuckle Lane Car Park"
+},
+{
+"kind": "car_park",
+"x": 1263.1,
+"z": 7742.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22626.6,
+"z": 7789.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20688.7,
+"z": 7799.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21100.7,
+"z": 7825.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20226.1,
+"z": 7831.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20908.8,
+"z": 7841.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21106.7,
+"z": 7845.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22118.1,
+"z": 7859.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21033.6,
+"z": 7869.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20349.0,
+"z": 7890.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 9479.7,
+"z": 7903.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 15670.9,
+"z": 7936.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 2005.4,
+"z": 7941.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22010.7,
+"z": 7956.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21810.9,
+"z": 7972.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22863.0,
+"z": 7975.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19468.1,
+"z": 7989.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20166.6,
+"z": 7994.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21968.1,
+"z": 7997.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 16092.0,
+"z": 7998.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21406.4,
+"z": 7999.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21956.8,
+"z": 7999.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22893.1,
+"z": 8010.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21970.3,
+"z": 8012.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20193.0,
+"z": 8012.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 2735.2,
+"z": 8019.6,
+"name": "Coome Rise"
+},
+{
+"kind": "car_park",
+"x": 22195.4,
+"z": 8037.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22190.5,
+"z": 8041.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22186.0,
+"z": 8044.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22556.5,
+"z": 8046.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22170.1,
+"z": 8047.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22165.2,
+"z": 8051.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 10582.3,
+"z": 8053.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22174.6,
+"z": 8053.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22160.7,
+"z": 8055.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22169.7,
+"z": 8057.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22084.5,
+"z": 8061.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22165.2,
+"z": 8061.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20725.6,
+"z": 8062.2,
+"name": "Hollingbury Park Bowls Club"
+},
+{
+"kind": "car_park",
+"x": 22277.9,
+"z": 8063.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22160.3,
+"z": 8064.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 17380.8,
+"z": 8067.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22155.8,
+"z": 8068.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22037.8,
+"z": 8071.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22142.2,
+"z": 8078.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22137.7,
+"z": 8082.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22059.3,
+"z": 8084.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22132.8,
+"z": 8085.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 9016.5,
+"z": 8086.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22024.2,
+"z": 8086.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22119.6,
+"z": 8089.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22127.9,
+"z": 8089.7,
+"name": "Enterprise car share scheme"
+},
+{
+"kind": "car_park",
+"x": 22032.9,
+"z": 8090.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22071.7,
+"z": 8094.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22124.1,
+"z": 8094.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22016.7,
+"z": 8095.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22002.4,
+"z": 8110.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22118.9,
+"z": 8111.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21485.9,
+"z": 8119.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 2419.6,
+"z": 8127.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21972.6,
+"z": 8134.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22082.3,
+"z": 8146.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 15782.9,
+"z": 8147.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22401.2,
+"z": 8157.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21961.3,
+"z": 8162.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21935.3,
+"z": 8166.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 8751.1,
+"z": 8172.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22001.2,
+"z": 8173.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 8800.5,
+"z": 8176.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 17481.5,
+"z": 8200.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 8755.6,
+"z": 8221.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 8922.6,
+"z": 8224.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21922.5,
+"z": 8225.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19583.4,
+"z": 8259.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 8776.0,
+"z": 8282.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22228.2,
+"z": 8291.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23315.3,
+"z": 8304.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21964.7,
+"z": 8317.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23242.9,
+"z": 8317.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23359.8,
+"z": 8326.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22012.9,
+"z": 8338.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23356.4,
+"z": 8349.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 12857.7,
+"z": 8373.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23532.8,
+"z": 8380.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 16564.0,
+"z": 8383.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23357.2,
+"z": 8385.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23539.6,
+"z": 8387.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23548.7,
+"z": 8390.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23635.0,
+"z": 8390.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 16009.8,
+"z": 8394.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19989.8,
+"z": 8402.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21959.8,
+"z": 8409.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23637.6,
+"z": 8415.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19543.1,
+"z": 8461.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21775.1,
+"z": 8464.4,
+"name": "Moulsecoomb Multi Storey Car Park"
+},
+{
+"kind": "car_park",
+"x": 16007.2,
+"z": 8466.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 12816.6,
+"z": 8467.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 7637.2,
+"z": 8485.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23697.2,
+"z": 8491.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 7637.5,
+"z": 8493.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 24009.7,
+"z": 8496.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 24005.9,
+"z": 8502.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 14915.1,
+"z": 8519.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19750.0,
+"z": 8524.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23955.8,
+"z": 8525.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 6907.4,
+"z": 8527.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 6907.7,
+"z": 8527.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 16447.9,
+"z": 8530.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 17875.4,
+"z": 8536.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23227.1,
+"z": 8549.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19532.5,
+"z": 8561.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22800.4,
+"z": 8566.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 3000.2,
+"z": 8567.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 14680.7,
+"z": 8570.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23512.1,
+"z": 8590.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 16876.5,
+"z": 8606.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 17753.3,
+"z": 8609.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19358.7,
+"z": 8626.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 16905.5,
+"z": 8627.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23219.2,
+"z": 8627.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 16825.9,
+"z": 8635.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 10940.5,
+"z": 8640.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 14529.1,
+"z": 8642.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 12812.1,
+"z": 8643.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 16865.9,
+"z": 8643.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 16954.5,
+"z": 8648.7,
+"name": "Hove Polyclinic"
+},
+{
+"kind": "car_park",
+"x": 23205.3,
+"z": 8648.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21372.8,
+"z": 8656.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 1334.4,
+"z": 8665.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 14803.6,
+"z": 8666.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23651.2,
+"z": 8675.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23187.9,
+"z": 8683.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19486.9,
+"z": 8683.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20026.3,
+"z": 8695.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23664.0,
+"z": 8697.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 18754.5,
+"z": 8697.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22495.4,
+"z": 8699.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 14793.4,
+"z": 8704.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22649.2,
+"z": 8709.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 12242.5,
+"z": 8714.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 16953.0,
+"z": 8714.3,
+"name": "Marletts Hospice"
+},
+{
+"kind": "car_park",
+"x": 23166.8,
+"z": 8714.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 12178.0,
+"z": 8723.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 824.3,
+"z": 8725.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23198.1,
+"z": 8727.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 16712.5,
+"z": 8729.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 9621.1,
+"z": 8733.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 12234.6,
+"z": 8734.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 9344.8,
+"z": 8736.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 9283.3,
+"z": 8737.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 14844.3,
+"z": 8738.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 1245.4,
+"z": 8739.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 1354.7,
+"z": 8744.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 805.1,
+"z": 8752.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19813.7,
+"z": 8755.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19552.5,
+"z": 8756.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21656.3,
+"z": 8758.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19133.7,
+"z": 8758.4,
+"name": "Church of the Good Shepherd"
+},
+{
+"kind": "car_park",
+"x": 21547.4,
+"z": 8761.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 17740.8,
+"z": 8764.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 17781.5,
+"z": 8767.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 12166.3,
+"z": 8772.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 14327.1,
+"z": 8776.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 12252.7,
+"z": 8780.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 15819.8,
+"z": 8793.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21513.1,
+"z": 8796.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21628.4,
+"z": 8816.1,
+"name": "Pavillion Retail Park Parking"
+},
+{
+"kind": "car_park",
+"x": 22066.8,
+"z": 8833.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 7172.0,
+"z": 8850.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 12245.9,
+"z": 8871.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 9699.5,
+"z": 8875.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21515.3,
+"z": 8891.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 14016.5,
+"z": 8902.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21833.1,
+"z": 8902.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 15087.8,
+"z": 8905.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 12218.0,
+"z": 8908.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20939.3,
+"z": 8916.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21494.2,
+"z": 8919.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 15790.4,
+"z": 8928.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 8074.4,
+"z": 8934.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21483.7,
+"z": 8952.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20876.0,
+"z": 8956.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20911.4,
+"z": 8965.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22079.3,
+"z": 8975.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 11660.1,
+"z": 8979.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22939.5,
+"z": 8979.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22092.8,
+"z": 8979.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23197.3,
+"z": 8981.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21988.4,
+"z": 8998.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22466.4,
+"z": 8998.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20893.7,
+"z": 9001.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22810.2,
+"z": 9014.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22795.5,
+"z": 9017.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 7954.6,
+"z": 9022.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22559.5,
+"z": 9026.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22544.8,
+"z": 9027.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22570.1,
+"z": 9027.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22530.9,
+"z": 9027.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22519.2,
+"z": 9028.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 18253.5,
+"z": 9032.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 3455.2,
+"z": 9033.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 14466.5,
+"z": 9034.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22750.3,
+"z": 9034.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21064.5,
+"z": 9039.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 17471.7,
+"z": 9051.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 17785.7,
+"z": 9060.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22662.4,
+"z": 9061.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 14658.4,
+"z": 9065.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 17697.5,
+"z": 9067.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21105.2,
+"z": 9067.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21279.4,
+"z": 9074.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21299.3,
+"z": 9078.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19293.2,
+"z": 9080.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 17992.6,
+"z": 9081.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23253.9,
+"z": 9100.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 17573.8,
+"z": 9101.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21822.6,
+"z": 9104.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21566.6,
+"z": 9116.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 14942.7,
+"z": 9119.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 7696.7,
+"z": 9127.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 15363.0,
+"z": 9127.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 16990.7,
+"z": 9128.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19900.1,
+"z": 9128.2,
+"name": "Travelodge Brighton hotel"
+},
+{
+"kind": "car_park",
+"x": 19463.2,
+"z": 9132.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21138.0,
+"z": 9132.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 15407.1,
+"z": 9134.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 14638.1,
+"z": 9135.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23155.5,
+"z": 9135.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 7760.8,
+"z": 9136.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 8128.3,
+"z": 9145.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19460.1,
+"z": 9148.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21165.9,
+"z": 9149.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21089.0,
+"z": 9159.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 15787.0,
+"z": 9166.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21233.7,
+"z": 9166.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20351.3,
+"z": 9169.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 3574.6,
+"z": 9175.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23200.4,
+"z": 9179.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 7198.7,
+"z": 9185.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21380.0,
+"z": 9188.6,
+"name": "Sainsbury's Customer Car Park"
+},
+{
+"kind": "car_park",
+"x": 23265.9,
+"z": 9191.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21593.4,
+"z": 9192.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21591.5,
+"z": 9197.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21445.6,
+"z": 9203.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 15361.1,
+"z": 9205.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 13555.1,
+"z": 9211.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 17434.4,
+"z": 9221.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 15071.9,
+"z": 9223.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 16358.5,
+"z": 9223.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 15470.4,
+"z": 9246.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20976.3,
+"z": 9250.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19476.4,
+"z": 9250.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23166.8,
+"z": 9253.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 8878.9,
+"z": 9257.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 15278.1,
+"z": 9261.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 15753.9,
+"z": 9270.0,
+"name": "Aldi"
+},
+{
+"kind": "car_park",
+"x": 19048.9,
+"z": 9278.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 15035.0,
+"z": 9287.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 8095.2,
+"z": 9297.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19065.5,
+"z": 9301.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20637.8,
+"z": 9302.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 8103.1,
+"z": 9308.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 8088.8,
+"z": 9309.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 15329.4,
+"z": 9309.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 12952.3,
+"z": 9319.0,
+"name": "Shoreham Academy"
+},
+{
+"kind": "car_park",
+"x": 21628.0,
+"z": 9330.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20000.7,
+"z": 9332.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21440.7,
+"z": 9335.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21459.5,
+"z": 9338.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 15361.8,
+"z": 9354.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 15432.3,
+"z": 9360.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22418.5,
+"z": 9361.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 15795.0,
+"z": 9365.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 15481.0,
+"z": 9369.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 8187.1,
+"z": 9370.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 15599.7,
+"z": 9371.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22509.0,
+"z": 9372.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21659.7,
+"z": 9374.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 8232.0,
+"z": 9374.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21452.0,
+"z": 9375.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 4455.2,
+"z": 9378.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21450.5,
+"z": 9378.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 13680.6,
+"z": 9379.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21449.0,
+"z": 9381.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19721.4,
+"z": 9382.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21447.5,
+"z": 9385.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 17796.2,
+"z": 9386.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21588.1,
+"z": 9387.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19724.8,
+"z": 9388.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21446.4,
+"z": 9389.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 8150.9,
+"z": 9389.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 15399.9,
+"z": 9389.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 10499.8,
+"z": 9392.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 15638.1,
+"z": 9397.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 15970.2,
+"z": 9397.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20887.3,
+"z": 9398.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20874.5,
+"z": 9399.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21314.0,
+"z": 9401.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21322.7,
+"z": 9402.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20880.2,
+"z": 9405.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 1311.0,
+"z": 9406.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 15785.5,
+"z": 9406.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21684.6,
+"z": 9410.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19100.9,
+"z": 9411.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 15418.4,
+"z": 9412.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21571.1,
+"z": 9412.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 12192.0,
+"z": 9414.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 13759.0,
+"z": 9414.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20851.9,
+"z": 9417.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 8185.6,
+"z": 9418.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21628.8,
+"z": 9419.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22501.1,
+"z": 9423.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21624.7,
+"z": 9426.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21291.0,
+"z": 9430.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 8118.5,
+"z": 9432.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 15342.2,
+"z": 9436.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21398.9,
+"z": 9438.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 18127.6,
+"z": 9439.2,
+"name": "Hove Station"
+},
+{
+"kind": "car_park",
+"x": 21207.0,
+"z": 9441.1,
+"name": "Car Club"
+},
+{
+"kind": "car_park",
+"x": 21211.5,
+"z": 9444.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 14349.3,
+"z": 9446.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 1737.3,
+"z": 9447.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21216.8,
+"z": 9447.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 13691.1,
+"z": 9448.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 4634.7,
+"z": 9449.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19850.7,
+"z": 9455.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21486.3,
+"z": 9457.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19863.9,
+"z": 9457.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 1736.2,
+"z": 9458.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21442.2,
+"z": 9459.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21669.1,
+"z": 9460.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19854.1,
+"z": 9461.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21439.9,
+"z": 9464.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21244.3,
+"z": 9465.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 17883.3,
+"z": 9469.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21238.6,
+"z": 9469.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21400.7,
+"z": 9474.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20319.6,
+"z": 9475.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21356.3,
+"z": 9478.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 4375.7,
+"z": 9481.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 1739.6,
+"z": 9482.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21361.5,
+"z": 9486.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 13685.1,
+"z": 9486.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21373.2,
+"z": 9486.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 11147.4,
+"z": 9487.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20332.8,
+"z": 9489.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21441.1,
+"z": 9490.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 4555.1,
+"z": 9493.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 4428.1,
+"z": 9498.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 18045.8,
+"z": 9498.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 14270.2,
+"z": 9499.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21285.4,
+"z": 9500.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20346.8,
+"z": 9503.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 15202.0,
+"z": 9503.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21388.7,
+"z": 9509.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 17922.9,
+"z": 9511.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21416.6,
+"z": 9512.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 11182.8,
+"z": 9514.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20362.2,
+"z": 9518.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 17803.4,
+"z": 9519.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 17829.4,
+"z": 9525.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 17993.8,
+"z": 9526.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20380.7,
+"z": 9537.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19472.6,
+"z": 9539.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20586.5,
+"z": 9539.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 18072.2,
+"z": 9544.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 18097.1,
+"z": 9548.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 18089.9,
+"z": 9552.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 10523.5,
+"z": 9555.7,
+"name": "Ropetackle Car Park"
+},
+{
+"kind": "car_park",
+"x": 20591.8,
+"z": 9556.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 11164.0,
+"z": 9556.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20400.7,
+"z": 9558.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 18011.5,
+"z": 9564.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21314.4,
+"z": 9565.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21087.9,
+"z": 9566.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 15626.1,
+"z": 9568.1,
+"name": "Tesco"
+},
+{
+"kind": "car_park",
+"x": 21327.2,
+"z": 9570.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20596.7,
+"z": 9571.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 10823.6,
+"z": 9572.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21088.2,
+"z": 9573.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 13529.0,
+"z": 9573.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 3478.9,
+"z": 9575.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20421.0,
+"z": 9578.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20496.0,
+"z": 9578.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 18079.0,
+"z": 9578.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 14839.7,
+"z": 9579.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20870.4,
+"z": 9580.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 18105.0,
+"z": 9584.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19625.6,
+"z": 9585.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20528.8,
+"z": 9586.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19615.8,
+"z": 9587.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20556.7,
+"z": 9588.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 13688.1,
+"z": 9589.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21336.7,
+"z": 9593.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 15141.3,
+"z": 9595.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 10048.6,
+"z": 9596.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19612.1,
+"z": 9598.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20517.5,
+"z": 9602.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 9949.8,
+"z": 9604.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20599.3,
+"z": 9605.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 15596.7,
+"z": 9607.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 10027.5,
+"z": 9607.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21301.2,
+"z": 9608.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 11393.9,
+"z": 9609.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 15711.7,
+"z": 9609.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20637.0,
+"z": 9609.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 10015.0,
+"z": 9611.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 10054.2,
+"z": 9611.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21303.1,
+"z": 9614.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 3734.9,
+"z": 9615.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20665.3,
+"z": 9617.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 10024.1,
+"z": 9620.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 15197.5,
+"z": 9625.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 11479.9,
+"z": 9625.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 9922.3,
+"z": 9626.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 9826.2,
+"z": 9628.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23808.4,
+"z": 9628.5,
+"name": "Warren Road Car Park"
+},
+{
+"kind": "car_park",
+"x": 15707.9,
+"z": 9631.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 18887.2,
+"z": 9631.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 15363.3,
+"z": 9632.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 9958.5,
+"z": 9633.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 9807.3,
+"z": 9639.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 11184.7,
+"z": 9639.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 18942.2,
+"z": 9644.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20829.6,
+"z": 9646.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 11620.1,
+"z": 9648.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 14501.2,
+"z": 9648.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 9921.5,
+"z": 9648.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20856.8,
+"z": 9648.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 9848.0,
+"z": 9653.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20769.7,
+"z": 9653.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 9904.2,
+"z": 9653.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22835.5,
+"z": 9655.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 9967.5,
+"z": 9656.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20881.7,
+"z": 9656.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 9800.9,
+"z": 9659.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 14570.6,
+"z": 9660.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21141.4,
+"z": 9666.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 11761.5,
+"z": 9671.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22831.3,
+"z": 9672.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21148.9,
+"z": 9673.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21433.5,
+"z": 9675.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20399.9,
+"z": 9680.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21157.6,
+"z": 9680.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20528.5,
+"z": 9680.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22895.8,
+"z": 9681.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20766.3,
+"z": 9683.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21431.3,
+"z": 9683.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20839.1,
+"z": 9685.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 11098.4,
+"z": 9687.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 9846.5,
+"z": 9688.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20570.7,
+"z": 9692.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 8354.1,
+"z": 9694.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20523.9,
+"z": 9700.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 10266.5,
+"z": 9701.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20677.7,
+"z": 9703.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 9799.0,
+"z": 9703.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20609.9,
+"z": 9703.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20531.8,
+"z": 9711.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20026.0,
+"z": 9711.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22797.8,
+"z": 9711.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 15223.5,
+"z": 9714.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 13045.8,
+"z": 9715.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20654.0,
+"z": 9715.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 12902.2,
+"z": 9717.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21715.1,
+"z": 9718.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 9741.7,
+"z": 9719.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20539.8,
+"z": 9722.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21419.6,
+"z": 9723.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 9604.9,
+"z": 9724.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19027.0,
+"z": 9726.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 74.2,
+"z": 9730.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20611.0,
+"z": 9732.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 42.1,
+"z": 9732.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 8313.8,
+"z": 9735.1,
+"name": "Car Park 2"
+},
+{
+"kind": "car_park",
+"x": 9675.4,
+"z": 9737.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20451.6,
+"z": 9738.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 8393.3,
+"z": 9740.0,
+"name": "Car Park 3"
+},
+{
+"kind": "car_park",
+"x": 22899.2,
+"z": 9740.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20747.5,
+"z": 9741.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19981.5,
+"z": 9741.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 12094.7,
+"z": 9741.9,
+"name": "Lidl"
+},
+{
+"kind": "car_park",
+"x": 22865.6,
+"z": 9745.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22919.1,
+"z": 9748.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22878.1,
+"z": 9751.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20610.6,
+"z": 9751.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 9621.5,
+"z": 9752.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22297.9,
+"z": 9752.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 7503.7,
+"z": 9754.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 9592.8,
+"z": 9759.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22294.5,
+"z": 9760.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22265.1,
+"z": 9761.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21459.9,
+"z": 9762.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22247.8,
+"z": 9764.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 11376.6,
+"z": 9766.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 9563.0,
+"z": 9767.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22228.2,
+"z": 9768.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 8262.9,
+"z": 9768.7,
+"name": "Car Park 1"
+},
+{
+"kind": "car_park",
+"x": 21427.9,
+"z": 9772.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22181.8,
+"z": 9773.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 9437.5,
+"z": 9775.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 9529.1,
+"z": 9778.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19154.4,
+"z": 9778.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22138.1,
+"z": 9778.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 81.4,
+"z": 9786.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 14432.2,
+"z": 9786.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20593.7,
+"z": 9796.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 14408.9,
+"z": 9798.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 87.8,
+"z": 9801.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19059.1,
+"z": 9801.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19287.5,
+"z": 9804.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 48.2,
+"z": 9806.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 13566.0,
+"z": 9808.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19238.1,
+"z": 9808.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20762.5,
+"z": 9808.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 472.3,
+"z": 9809.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20752.4,
+"z": 9810.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20740.7,
+"z": 9813.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22447.6,
+"z": 9813.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 45.2,
+"z": 9817.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20720.7,
+"z": 9817.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21138.4,
+"z": 9817.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20300.0,
+"z": 9818.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22739.7,
+"z": 9822.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 7596.1,
+"z": 9828.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20687.2,
+"z": 9829.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20514.1,
+"z": 9832.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20671.7,
+"z": 9833.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19237.7,
+"z": 9834.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20658.5,
+"z": 9836.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20496.8,
+"z": 9836.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19411.9,
+"z": 9839.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20644.6,
+"z": 9839.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22230.1,
+"z": 9843.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20518.3,
+"z": 9845.6,
+"name": "London Road carpark"
+},
+{
+"kind": "car_park",
+"x": 13491.0,
+"z": 9847.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22060.0,
+"z": 9850.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 15235.9,
+"z": 9854.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 10431.6,
+"z": 9859.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22260.6,
+"z": 9859.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 13730.7,
+"z": 9862.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22722.7,
+"z": 9866.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 7590.4,
+"z": 9866.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20307.9,
+"z": 9867.5,
+"name": "Brighton Station"
+},
+{
+"kind": "car_park",
+"x": 7660.1,
+"z": 9867.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 10374.3,
+"z": 9870.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21086.7,
+"z": 9876.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 7792.5,
+"z": 9885.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 18992.0,
+"z": 9887.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 13654.6,
+"z": 9889.7,
+"name": "Lady Bee Car Park"
+},
+{
+"kind": "car_park",
+"x": 18990.5,
+"z": 9894.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21453.9,
+"z": 9896.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 15627.6,
+"z": 9900.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19012.3,
+"z": 9900.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 18119.7,
+"z": 9901.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21517.6,
+"z": 9902.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 18141.2,
+"z": 9905.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 13545.6,
+"z": 9907.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20497.9,
+"z": 9907.8,
+"name": "Sainsbury's Brighton Customer"
+},
+{
+"kind": "car_park",
+"x": 21131.2,
+"z": 9908.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21035.1,
+"z": 9913.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22705.8,
+"z": 9913.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 13489.1,
+"z": 9922.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21827.8,
+"z": 9923.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23276.1,
+"z": 9924.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21074.7,
+"z": 9926.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21500.3,
+"z": 9926.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22089.8,
+"z": 9928.1,
+"name": "Main Car Park"
+},
+{
+"kind": "car_park",
+"x": 15620.4,
+"z": 9930.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20313.2,
+"z": 9931.9,
+"name": "Brighton Station Blue Badge"
+},
+{
+"kind": "car_park",
+"x": 21805.2,
+"z": 9932.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21437.7,
+"z": 9936.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 2701.2,
+"z": 9940.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 17931.2,
+"z": 9943.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 11473.1,
+"z": 9944.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 15170.7,
+"z": 9947.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21083.7,
+"z": 9955.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21477.3,
+"z": 9956.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 1220.5,
+"z": 9963.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22887.1,
+"z": 9963.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 12705.0,
+"z": 9965.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21454.6,
+"z": 9968.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21779.2,
+"z": 9970.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21453.5,
+"z": 9970.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22442.3,
+"z": 9970.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21452.4,
+"z": 9972.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22083.8,
+"z": 9974.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21451.3,
+"z": 9975.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21752.8,
+"z": 9982.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22905.6,
+"z": 9984.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 17991.1,
+"z": 9989.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21411.3,
+"z": 9991.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22661.3,
+"z": 10002.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 18242.9,
+"z": 10011.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 12372.5,
+"z": 10021.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21711.7,
+"z": 10022.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22650.4,
+"z": 10026.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 12467.2,
+"z": 10032.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19.5,
+"z": 10035.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 15534.1,
+"z": 10036.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 17904.1,
+"z": 10037.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 18710.0,
+"z": 10037.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22849.0,
+"z": 10040.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22639.1,
+"z": 10048.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22862.6,
+"z": 10052.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21374.7,
+"z": 10060.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21685.0,
+"z": 10060.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21669.9,
+"z": 10062.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22632.3,
+"z": 10062.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 14077.5,
+"z": 10065.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 7694.8,
+"z": 10065.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 7697.1,
+"z": 10066.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 11058.1,
+"z": 10067.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 3856.2,
+"z": 10075.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 11039.6,
+"z": 10078.9,
+"name": "Riverside Car Park"
+},
+{
+"kind": "car_park",
+"x": 15828.9,
+"z": 10086.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22782.3,
+"z": 10088.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 14090.3,
+"z": 10094.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 17905.6,
+"z": 10094.4,
+"name": "Tesco"
+},
+{
+"kind": "car_park",
+"x": 7423.0,
+"z": 10098.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 11504.4,
+"z": 10098.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21631.1,
+"z": 10099.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21004.9,
+"z": 10103.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21006.8,
+"z": 10114.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 3466.1,
+"z": 10115.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21481.8,
+"z": 10126.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21471.6,
+"z": 10127.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21715.5,
+"z": 10127.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 7475.4,
+"z": 10131.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21406.4,
+"z": 10133.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 13771.1,
+"z": 10136.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21588.8,
+"z": 10140.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 18410.3,
+"z": 10140.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21378.1,
+"z": 10141.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21521.4,
+"z": 10145.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 18408.8,
+"z": 10147.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 18408.1,
+"z": 10152.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 15899.8,
+"z": 10153.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 14289.0,
+"z": 10154.7,
+"name": "Basin Road South (Gate 7)"
+},
+{
+"kind": "car_park",
+"x": 7530.8,
+"z": 10155.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19712.7,
+"z": 10155.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20501.3,
+"z": 10159.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21505.2,
+"z": 10161.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22617.2,
+"z": 10163.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20944.6,
+"z": 10167.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20730.1,
+"z": 10168.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 9115.6,
+"z": 10169.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 7642.8,
+"z": 10169.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 7642.1,
+"z": 10172.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 18826.1,
+"z": 10172.8,
+"name": "Hove Court House Car Park"
+},
+{
+"kind": "car_park",
+"x": 21481.4,
+"z": 10175.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 3933.5,
+"z": 10178.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 7482.2,
+"z": 10180.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 7475.1,
+"z": 10181.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 10019.5,
+"z": 10183.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21555.3,
+"z": 10184.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 10502.1,
+"z": 10184.5,
+"name": "Beach Green"
+},
+{
+"kind": "car_park",
+"x": 18177.4,
+"z": 10189.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 1331.4,
+"z": 10189.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 18442.7,
+"z": 10191.6,
+"name": "Courtlands Hotel Car Park"
+},
+{
+"kind": "car_park",
+"x": 21470.5,
+"z": 10195.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 15910.7,
+"z": 10201.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20890.7,
+"z": 10210.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19502.7,
+"z": 10211.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 18183.8,
+"z": 10214.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 3823.8,
+"z": 10218.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21507.0,
+"z": 10218.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20995.9,
+"z": 10219.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22948.2,
+"z": 10227.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 4238.5,
+"z": 10230.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20317.7,
+"z": 10230.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 10033.5,
+"z": 10230.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19060.6,
+"z": 10238.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21498.0,
+"z": 10239.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20966.5,
+"z": 10241.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 9994.7,
+"z": 10248.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 14971.3,
+"z": 10252.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21318.6,
+"z": 10252.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 12611.5,
+"z": 10253.5,
+"name": "Old Fort Car Park"
+},
+{
+"kind": "car_park",
+"x": 1428.6,
+"z": 10256.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 4181.6,
+"z": 10258.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21044.1,
+"z": 10258.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21090.1,
+"z": 10258.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21149.7,
+"z": 10259.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20825.5,
+"z": 10261.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21096.5,
+"z": 10262.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20230.7,
+"z": 10264.8,
+"name": "Loading Bay"
+},
+{
+"kind": "car_park",
+"x": 12568.6,
+"z": 10265.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22583.3,
+"z": 10270.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 1066.0,
+"z": 10272.7,
+"name": "Centenary House Staff"
+},
+{
+"kind": "car_park",
+"x": 2865.6,
+"z": 10273.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 9220.0,
+"z": 10278.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19731.9,
+"z": 10279.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19760.2,
+"z": 10280.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21629.9,
+"z": 10281.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22586.3,
+"z": 10288.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 18183.4,
+"z": 10290.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 18186.4,
+"z": 10290.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21650.7,
+"z": 10291.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20919.4,
+"z": 10291.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22939.9,
+"z": 10293.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21479.9,
+"z": 10297.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19753.0,
+"z": 10299.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 1498.0,
+"z": 10302.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20228.8,
+"z": 10302.1,
+"name": "Loading Bay"
+},
+{
+"kind": "car_park",
+"x": 19797.9,
+"z": 10305.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21687.2,
+"z": 10307.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 18264.8,
+"z": 10308.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 18267.4,
+"z": 10309.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 7507.1,
+"z": 10311.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20856.0,
+"z": 10316.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21204.0,
+"z": 10319.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 992.5,
+"z": 10322.8,
+"name": "Custody Centre Visitors"
+},
+{
+"kind": "car_park",
+"x": 21732.1,
+"z": 10327.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20804.4,
+"z": 10334.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20952.9,
+"z": 10339.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20886.6,
+"z": 10340.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20988.7,
+"z": 10345.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22789.5,
+"z": 10347.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19738.0,
+"z": 10347.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 9716.1,
+"z": 10348.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 7557.6,
+"z": 10354.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21775.4,
+"z": 10354.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 15885.8,
+"z": 10354.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21765.3,
+"z": 10355.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 18497.0,
+"z": 10357.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 18500.0,
+"z": 10357.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20818.7,
+"z": 10357.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 8104.2,
+"z": 10358.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 18254.3,
+"z": 10360.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 18256.9,
+"z": 10361.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21217.9,
+"z": 10361.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21582.4,
+"z": 10361.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21775.4,
+"z": 10363.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20836.1,
+"z": 10363.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19777.5,
+"z": 10365.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 7429.8,
+"z": 10365.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21780.3,
+"z": 10367.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20854.5,
+"z": 10369.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21795.8,
+"z": 10371.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 18579.2,
+"z": 10373.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 18581.8,
+"z": 10373.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21020.0,
+"z": 10375.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21790.5,
+"z": 10375.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22163.7,
+"z": 10377.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20841.7,
+"z": 10379.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 8277.6,
+"z": 10379.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 18330.4,
+"z": 10380.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 1386.8,
+"z": 10381.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 7500.3,
+"z": 10381.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22147.9,
+"z": 10383.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21498.0,
+"z": 10388.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22155.4,
+"z": 10389.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 4025.5,
+"z": 10396.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19583.0,
+"z": 10397.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21512.7,
+"z": 10401.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22146.4,
+"z": 10402.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22128.3,
+"z": 10402.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 18322.9,
+"z": 10405.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 16124.4,
+"z": 10412.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22138.1,
+"z": 10415.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21495.7,
+"z": 10417.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21508.6,
+"z": 10419.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22192.4,
+"z": 10424.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22883.0,
+"z": 10425.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22132.8,
+"z": 10429.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22121.9,
+"z": 10433.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 7332.2,
+"z": 10434.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22130.2,
+"z": 10443.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22609.3,
+"z": 10444.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 18151.3,
+"z": 10445.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 18154.0,
+"z": 10445.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22192.4,
+"z": 10447.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 18331.9,
+"z": 10449.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21587.7,
+"z": 10449.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20294.0,
+"z": 10455.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22129.4,
+"z": 10457.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22115.8,
+"z": 10461.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 18836.7,
+"z": 10463.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20248.0,
+"z": 10463.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 18300.6,
+"z": 10465.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 7520.7,
+"z": 10468.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22129.4,
+"z": 10469.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 133.0,
+"z": 10471.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 18321.0,
+"z": 10476.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22762.3,
+"z": 10476.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22189.0,
+"z": 10477.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20930.3,
+"z": 10478.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20265.3,
+"z": 10479.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22129.4,
+"z": 10480.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 17762.3,
+"z": 10484.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22841.5,
+"z": 10486.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 18469.9,
+"z": 10487.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 18472.5,
+"z": 10489.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22178.4,
+"z": 10489.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20933.3,
+"z": 10489.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 18318.3,
+"z": 10489.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 18342.5,
+"z": 10489.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 18345.5,
+"z": 10489.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 7547.4,
+"z": 10492.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 18226.7,
+"z": 10492.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 18229.4,
+"z": 10493.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22850.5,
+"z": 10493.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22127.9,
+"z": 10497.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 9762.5,
+"z": 10499.2,
+"name": "Widewater Lagoon Car Park"
+},
+{
+"kind": "car_park",
+"x": 17061.2,
+"z": 10504.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22184.1,
+"z": 10504.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 7509.4,
+"z": 10505.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 18551.3,
+"z": 10506.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 18553.9,
+"z": 10507.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 18318.0,
+"z": 10509.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19569.1,
+"z": 10510.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22124.9,
+"z": 10510.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22629.6,
+"z": 10511.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22175.0,
+"z": 10511.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 18824.6,
+"z": 10514.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21003.4,
+"z": 10518.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 17697.1,
+"z": 10520.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22121.9,
+"z": 10522.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22106.8,
+"z": 10526.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22899.9,
+"z": 10530.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22644.7,
+"z": 10532.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22179.5,
+"z": 10532.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 3529.0,
+"z": 10533.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 17684.7,
+"z": 10535.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 17705.8,
+"z": 10539.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19574.0,
+"z": 10540.3,
+"name": "Waitrose"
+},
+{
+"kind": "car_park",
+"x": 21144.0,
+"z": 10540.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22990.8,
+"z": 10543.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 7561.0,
+"z": 10549.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22662.8,
+"z": 10551.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 3530.2,
+"z": 10552.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 17536.5,
+"z": 10557.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 7488.6,
+"z": 10570.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 7132.4,
+"z": 10575.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 3486.4,
+"z": 10579.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21119.2,
+"z": 10580.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 3530.2,
+"z": 10591.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 9480.1,
+"z": 10593.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19797.2,
+"z": 10594.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 18299.9,
+"z": 10594.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21678.9,
+"z": 10596.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19801.7,
+"z": 10597.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21669.9,
+"z": 10597.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21570.4,
+"z": 10600.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 7128.6,
+"z": 10601.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 7222.5,
+"z": 10604.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 3782.4,
+"z": 10605.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21693.6,
+"z": 10606.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21568.9,
+"z": 10607.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 106.2,
+"z": 10608.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 17581.4,
+"z": 10612.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19954.3,
+"z": 10616.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 18442.0,
+"z": 10621.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22834.7,
+"z": 10621.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 18445.0,
+"z": 10621.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 4138.2,
+"z": 10622.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21600.2,
+"z": 10623.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20003.0,
+"z": 10626.7,
+"name": "Lees House Offices"
+},
+{
+"kind": "car_park",
+"x": 21594.1,
+"z": 10627.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21727.6,
+"z": 10630.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21114.6,
+"z": 10633.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20425.5,
+"z": 10635.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 18524.5,
+"z": 10636.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 18527.2,
+"z": 10636.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21724.9,
+"z": 10636.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19784.3,
+"z": 10637.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19934.4,
+"z": 10637.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19790.0,
+"z": 10638.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20492.6,
+"z": 10646.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22838.8,
+"z": 10646.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 18112.1,
+"z": 10647.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19519.7,
+"z": 10647.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19932.1,
+"z": 10650.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21630.7,
+"z": 10653.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22842.2,
+"z": 10655.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 7672.6,
+"z": 10656.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20901.3,
+"z": 10661.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22468.7,
+"z": 10661.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19514.8,
+"z": 10663.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20549.6,
+"z": 10664.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22875.0,
+"z": 10665.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23195.5,
+"z": 10666.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 7822.2,
+"z": 10670.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22464.9,
+"z": 10670.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21673.7,
+"z": 10673.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19492.6,
+"z": 10675.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 3952.0,
+"z": 10676.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 8463.5,
+"z": 10676.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20986.1,
+"z": 10677.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20308.7,
+"z": 10679.8,
+"name": "Theatre Car Park"
+},
+{
+"kind": "car_park",
+"x": 164.7,
+"z": 10681.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21672.2,
+"z": 10682.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23239.9,
+"z": 10686.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21470.5,
+"z": 10688.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 7838.8,
+"z": 10690.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19570.6,
+"z": 10702.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21066.0,
+"z": 10705.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22449.1,
+"z": 10707.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 7434.0,
+"z": 10708.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23266.3,
+"z": 10708.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21082.6,
+"z": 10712.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21731.0,
+"z": 10713.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22736.3,
+"z": 10714.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21720.8,
+"z": 10716.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21124.8,
+"z": 10718.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20964.2,
+"z": 10719.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 579.7,
+"z": 10720.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20979.3,
+"z": 10722.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21449.4,
+"z": 10725.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22507.1,
+"z": 10728.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 449.3,
+"z": 10730.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21056.6,
+"z": 10730.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23284.4,
+"z": 10732.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23253.5,
+"z": 10733.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23158.5,
+"z": 10734.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 2709.9,
+"z": 10736.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 7604.4,
+"z": 10737.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19138.6,
+"z": 10737.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21432.8,
+"z": 10737.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 7626.2,
+"z": 10738.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 7152.0,
+"z": 10739.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 7172.4,
+"z": 10739.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22434.7,
+"z": 10739.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 7556.1,
+"z": 10740.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19499.0,
+"z": 10740.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21436.6,
+"z": 10741.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21089.4,
+"z": 10742.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21083.3,
+"z": 10743.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21375.1,
+"z": 10744.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 7639.8,
+"z": 10745.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21669.1,
+"z": 10745.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 2689.2,
+"z": 10750.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 7183.3,
+"z": 10752.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21767.9,
+"z": 10754.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 108.1,
+"z": 10757.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21723.4,
+"z": 10757.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21664.6,
+"z": 10758.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22426.5,
+"z": 10759.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 142.8,
+"z": 10760.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21797.7,
+"z": 10766.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 113.4,
+"z": 10767.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21763.0,
+"z": 10768.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 7781.5,
+"z": 10768.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 2694.8,
+"z": 10777.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19965.3,
+"z": 10777.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19647.5,
+"z": 10778.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22417.4,
+"z": 10779.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21084.8,
+"z": 10780.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21253.7,
+"z": 10780.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21050.2,
+"z": 10781.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 3659.1,
+"z": 10785.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21040.4,
+"z": 10789.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 7860.3,
+"z": 10795.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21007.6,
+"z": 10798.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22408.7,
+"z": 10799.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21066.4,
+"z": 10801.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 3517.0,
+"z": 10803.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22710.7,
+"z": 10804.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21043.4,
+"z": 10804.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 7798.9,
+"z": 10805.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 7809.4,
+"z": 10807.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21044.1,
+"z": 10811.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21779.2,
+"z": 10811.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22400.8,
+"z": 10818.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22086.8,
+"z": 10822.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20989.1,
+"z": 10824.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21534.9,
+"z": 10824.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19251.3,
+"z": 10826.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22397.0,
+"z": 10826.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19265.6,
+"z": 10828.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 7858.1,
+"z": 10829.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19684.8,
+"z": 10832.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21076.6,
+"z": 10832.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19291.6,
+"z": 10837.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22745.0,
+"z": 10838.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21223.6,
+"z": 10841.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19312.4,
+"z": 10841.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 7452.8,
+"z": 10842.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21054.3,
+"z": 10844.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21573.0,
+"z": 10846.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22733.7,
+"z": 10846.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19932.9,
+"z": 10847.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22735.6,
+"z": 10849.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21052.8,
+"z": 10850.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21226.6,
+"z": 10851.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20131.5,
+"z": 10852.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 7404.6,
+"z": 10852.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21011.7,
+"z": 10854.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 7783.4,
+"z": 10856.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 7890.5,
+"z": 10856.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20983.4,
+"z": 10857.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19365.5,
+"z": 10858.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21148.2,
+"z": 10859.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 7844.1,
+"z": 10860.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21047.2,
+"z": 10861.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 8520.4,
+"z": 10861.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19644.5,
+"z": 10862.3,
+"name": "Regency Square Car Park"
+},
+{
+"kind": "car_park",
+"x": 21006.4,
+"z": 10864.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22379.3,
+"z": 10867.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19675.4,
+"z": 10868.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21007.2,
+"z": 10870.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22376.3,
+"z": 10874.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19468.8,
+"z": 10876.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 7822.6,
+"z": 10877.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 7386.1,
+"z": 10879.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22748.4,
+"z": 10879.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22372.5,
+"z": 10883.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19605.7,
+"z": 10886.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19663.3,
+"z": 10888.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 7833.5,
+"z": 10891.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22367.3,
+"z": 10895.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21581.3,
+"z": 10895.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21377.0,
+"z": 10898.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22365.0,
+"z": 10901.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21193.8,
+"z": 10903.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20219.0,
+"z": 10907.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22361.2,
+"z": 10909.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21284.3,
+"z": 10909.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21552.3,
+"z": 10916.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 19868.0,
+"z": 10920.7,
+"name": "Russell Road Car Park"
+},
+{
+"kind": "car_park",
+"x": 21284.3,
+"z": 10921.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21343.4,
+"z": 10926.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 7768.7,
+"z": 10926.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 7720.8,
+"z": 10933.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20233.7,
+"z": 10935.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21558.7,
+"z": 10938.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22331.1,
+"z": 10944.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 7974.5,
+"z": 10946.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22316.0,
+"z": 10952.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22165.6,
+"z": 10952.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 7365.7,
+"z": 10953.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 7421.5,
+"z": 10956.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22298.3,
+"z": 10962.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20932.2,
+"z": 10964.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21544.7,
+"z": 10969.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21182.9,
+"z": 10971.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 7813.9,
+"z": 10972.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22783.4,
+"z": 10972.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20956.3,
+"z": 10973.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20725.6,
+"z": 10973.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 7933.4,
+"z": 10976.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22278.3,
+"z": 10976.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22073.2,
+"z": 10977.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22918.8,
+"z": 10985.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23524.5,
+"z": 10987.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20124.7,
+"z": 10991.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22049.1,
+"z": 10994.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20948.4,
+"z": 11000.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22236.8,
+"z": 11001.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 7545.9,
+"z": 11015.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21513.8,
+"z": 11015.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21230.0,
+"z": 11016.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20204.6,
+"z": 11018.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21240.9,
+"z": 11019.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22912.7,
+"z": 11021.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22172.0,
+"z": 11024.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21731.0,
+"z": 11025.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21988.8,
+"z": 11026.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22154.7,
+"z": 11028.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21273.7,
+"z": 11029.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22062.3,
+"z": 11031.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22130.5,
+"z": 11032.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20909.6,
+"z": 11033.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22095.5,
+"z": 11034.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21980.5,
+"z": 11037.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 6358.1,
+"z": 11041.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21977.1,
+"z": 11042.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 6495.7,
+"z": 11045.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21968.8,
+"z": 11046.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21193.0,
+"z": 11053.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20320.0,
+"z": 11055.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22285.8,
+"z": 11058.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22294.1,
+"z": 11059.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 1491.2,
+"z": 11059.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21008.3,
+"z": 11060.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22291.1,
+"z": 11061.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21231.1,
+"z": 11062.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22516.9,
+"z": 11063.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21723.0,
+"z": 11066.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20487.0,
+"z": 11068.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21776.9,
+"z": 11068.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22697.5,
+"z": 11070.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22512.8,
+"z": 11071.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22675.6,
+"z": 11077.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22265.9,
+"z": 11082.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21450.9,
+"z": 11083.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21966.2,
+"z": 11096.3,
+"name": "North Car Park"
+},
+{
+"kind": "car_park",
+"x": 20701.1,
+"z": 11096.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22689.9,
+"z": 11096.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20821.0,
+"z": 11102.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 3258.0,
+"z": 11112.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21235.6,
+"z": 11116.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22838.5,
+"z": 11122.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 7196.9,
+"z": 11123.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21424.1,
+"z": 11123.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21494.2,
+"z": 11126.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 1560.9,
+"z": 11127.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 7207.4,
+"z": 11134.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22679.4,
+"z": 11136.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21476.1,
+"z": 11148.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21441.5,
+"z": 11156.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22584.8,
+"z": 11161.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22449.1,
+"z": 11165.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21400.0,
+"z": 11168.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23247.8,
+"z": 11171.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22574.2,
+"z": 11180.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 3599.1,
+"z": 11191.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21460.7,
+"z": 11195.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21741.9,
+"z": 11198.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20650.2,
+"z": 11198.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22564.4,
+"z": 11199.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22625.5,
+"z": 11205.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 3201.5,
+"z": 11205.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22562.5,
+"z": 11206.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20978.9,
+"z": 11206.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 20764.1,
+"z": 11207.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 4237.0,
+"z": 11209.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 3602.2,
+"z": 11210.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22561.4,
+"z": 11210.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22659.4,
+"z": 11217.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22699.0,
+"z": 11218.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22653.0,
+"z": 11222.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22560.3,
+"z": 11223.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 3308.5,
+"z": 11227.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22688.1,
+"z": 11227.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21754.7,
+"z": 11230.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22040.8,
+"z": 11237.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23341.3,
+"z": 11238.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21752.8,
+"z": 11242.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 3766.1,
+"z": 11243.0,
+"name": "Worthing Station Car Park"
+},
+{
+"kind": "car_park",
+"x": 22602.5,
+"z": 11246.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22348.0,
+"z": 11252.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23236.5,
+"z": 11257.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22605.9,
+"z": 11258.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 1399.6,
+"z": 11261.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22111.3,
+"z": 11262.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 1397.7,
+"z": 11269.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21712.1,
+"z": 11277.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 6888.5,
+"z": 11279.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22675.2,
+"z": 11281.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 4188.0,
+"z": 11283.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22067.2,
+"z": 11284.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22535.8,
+"z": 11284.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22065.7,
+"z": 11287.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21817.3,
+"z": 11306.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 3438.6,
+"z": 11307.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22658.7,
+"z": 11308.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 3325.5,
+"z": 11309.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21737.4,
+"z": 11315.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22510.5,
+"z": 11315.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22577.6,
+"z": 11317.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21845.6,
+"z": 11318.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21837.6,
+"z": 11321.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22802.3,
+"z": 11327.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22580.6,
+"z": 11331.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22800.8,
+"z": 11333.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 1374.3,
+"z": 11341.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22697.9,
+"z": 11342.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 3988.5,
+"z": 11346.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22378.2,
+"z": 11348.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22565.2,
+"z": 11353.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21883.3,
+"z": 11354.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22649.2,
+"z": 11356.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21729.5,
+"z": 11377.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21738.5,
+"z": 11379.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 1992.2,
+"z": 11391.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21976.4,
+"z": 11396.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22658.7,
+"z": 11404.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22027.3,
+"z": 11465.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22745.4,
+"z": 11473.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22013.3,
+"z": 11480.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22409.5,
+"z": 11488.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22672.2,
+"z": 11496.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22394.8,
+"z": 11503.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22399.3,
+"z": 11517.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 6382.3,
+"z": 11518.9,
+"name": "Brooklands Brighton Road West Car Park"
+},
+{
+"kind": "car_park",
+"x": 6461.0,
+"z": 11525.3,
+"name": "Brooklands Brighton Road East Car Park"
+},
+{
+"kind": "car_park",
+"x": 23210.2,
+"z": 11530.2,
+"name": "East Brighton Golf Club"
+},
+{
+"kind": "car_park",
+"x": 23209.8,
+"z": 11532.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 21909.6,
+"z": 11542.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22921.4,
+"z": 11542.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 1478.7,
+"z": 11554.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 4704.8,
+"z": 11583.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22225.2,
+"z": 11587.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22193.1,
+"z": 11591.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22568.6,
+"z": 11597.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22572.3,
+"z": 11604.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22572.3,
+"z": 11606.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 4615.4,
+"z": 11609.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22394.8,
+"z": 11663.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 4673.1,
+"z": 11663.7,
+"name": "Lyndhurst Road Car Park"
+},
+{
+"kind": "car_park",
+"x": 22632.6,
+"z": 11670.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22913.5,
+"z": 11678.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22633.8,
+"z": 11690.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23469.5,
+"z": 11691.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22700.5,
+"z": 11692.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 4623.0,
+"z": 11698.7,
+"name": "Lyndhurst Road Car Park"
+},
+{
+"kind": "car_park",
+"x": 22555.4,
+"z": 11698.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22938.7,
+"z": 11702.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22690.3,
+"z": 11707.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22618.7,
+"z": 11708.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22692.6,
+"z": 11717.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 4277.7,
+"z": 11718.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22685.4,
+"z": 11722.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22601.7,
+"z": 11723.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23557.0,
+"z": 11727.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 726.7,
+"z": 11728.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 736.9,
+"z": 11729.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23561.9,
+"z": 11729.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23567.1,
+"z": 11731.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23572.0,
+"z": 11733.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23576.9,
+"z": 11735.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 720.3,
+"z": 11736.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23582.2,
+"z": 11737.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23587.1,
+"z": 11739.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 738.8,
+"z": 11741.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23592.0,
+"z": 11742.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 728.2,
+"z": 11742.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23596.9,
+"z": 11744.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23601.8,
+"z": 11746.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23606.7,
+"z": 11748.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23611.2,
+"z": 11751.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23616.1,
+"z": 11753.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23621.0,
+"z": 11756.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 3985.9,
+"z": 11759.0,
+"name": "Civic Quarter Multi-Story Car Park"
+},
+{
+"kind": "car_park",
+"x": 23625.6,
+"z": 11759.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23630.5,
+"z": 11761.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 4437.1,
+"z": 11763.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23635.4,
+"z": 11764.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23639.9,
+"z": 11767.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23644.8,
+"z": 11770.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23649.3,
+"z": 11772.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23653.8,
+"z": 11775.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23658.4,
+"z": 11778.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23663.3,
+"z": 11781.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23667.8,
+"z": 11784.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22487.9,
+"z": 11785.4,
+"name": "Black Rock Car Park"
+},
+{
+"kind": "car_park",
+"x": 23672.3,
+"z": 11786.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23677.2,
+"z": 11790.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23681.7,
+"z": 11793.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 726.7,
+"z": 11796.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23686.3,
+"z": 11796.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23690.8,
+"z": 11798.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23694.9,
+"z": 11801.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23698.7,
+"z": 11803.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22788.3,
+"z": 11836.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23034.5,
+"z": 11842.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 4341.0,
+"z": 11865.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 4406.6,
+"z": 11896.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 24162.0,
+"z": 11914.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 24162.7,
+"z": 11918.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22996.4,
+"z": 11920.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23665.5,
+"z": 11924.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22784.9,
+"z": 11930.2,
+"name": "Brighton Marina Multi Storey Car Park"
+},
+{
+"kind": "car_park",
+"x": 23086.1,
+"z": 11948.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23122.3,
+"z": 11948.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23105.0,
+"z": 11954.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 4330.5,
+"z": 11956.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 4847.3,
+"z": 11958.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 5051.6,
+"z": 11988.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 4796.0,
+"z": 11995.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 4883.8,
+"z": 11998.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 23972.4,
+"z": 12008.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 4564.5,
+"z": 12009.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 4756.4,
+"z": 12009.3,
+"name": "Beach House East Car Park"
+},
+{
+"kind": "car_park",
+"x": 494.1,
+"z": 12012.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 4099.0,
+"z": 12012.7,
+"name": "Montague Centre Car Park"
+},
+{
+"kind": "car_park",
+"x": 4728.1,
+"z": 12013.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 4564.5,
+"z": 12019.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 4522.7,
+"z": 12025.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 22852.8,
+"z": 12031.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 4668.6,
+"z": 12063.3,
+"name": "Beach House West Car Park"
+},
+{
+"kind": "car_park",
+"x": 22858.8,
+"z": 12067.0,
+"name": "Brighton Marina Coach Park"
+},
+{
+"kind": "car_park",
+"x": 23581.5,
+"z": 12110.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 3697.2,
+"z": 12143.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 3720.5,
+"z": 12174.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 3686.2,
+"z": 12175.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 3863.0,
+"z": 12182.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 4558.5,
+"z": 12211.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 3956.1,
+"z": 12253.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 3943.3,
+"z": 12262.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 4114.5,
+"z": 12307.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 874.1,
+"z": 12416.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 1246.5,
+"z": 12693.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 555.9,
+"z": 12751.6,
+"name": ""
+},
+{
+"kind": "charging_station",
+"x": 8802.7,
+"z": 3896.4,
+"name": "Priory Field"
+},
+{
+"kind": "charging_station",
+"x": 8275.0,
+"z": 4104.9,
+"name": "The Street Bramber"
+},
+{
+"kind": "charging_station",
+"x": 23854.4,
+"z": 5931.6,
+"name": "University of Sussex"
+},
+{
+"kind": "charging_station",
+"x": 21066.4,
+"z": 6385.1,
+"name": "Blink"
+},
+{
+"kind": "charging_station",
+"x": 24057.9,
+"z": 6974.3,
+"name": "Pod Point Ralf-Fawn"
+},
+{
+"kind": "charging_station",
+"x": 18983.7,
+"z": 7472.2,
+"name": ""
+},
+{
+"kind": "charging_station",
+"x": 22455.5,
+"z": 8361.9,
+"name": "13629 : 24 Widdicombe Way, BN2 4TG"
+},
+{
+"kind": "charging_station",
+"x": 19294.7,
+"z": 8452.3,
+"name": ""
+},
+{
+"kind": "charging_station",
+"x": 23212.8,
+"z": 8481.7,
+"name": "13920 : 10 Norwich Drive, BN2 4LA"
+},
+{
+"kind": "charging_station",
+"x": 23687.0,
+"z": 8485.9,
+"name": "13735 : 114 Norwich Drive, BN2 4LH"
+},
+{
+"kind": "charging_station",
+"x": 20664.9,
+"z": 8521.0,
+"name": ""
+},
+{
+"kind": "charging_station",
+"x": 23736.0,
+"z": 8530.0,
+"name": "13576 : 124 Norwich Drive, BN2 4LJ"
+},
+{
+"kind": "charging_station",
+"x": 20464.0,
+"z": 8560.2,
+"name": "Electric Blue"
+},
+{
+"kind": "charging_station",
+"x": 23789.9,
+"z": 8579.8,
+"name": "13652 : Norwich Drive LC07, BN2 4LL"
+},
+{
+"kind": "charging_station",
+"x": 20404.4,
+"z": 8614.8,
+"name": "ChargePoint"
+},
+{
+"kind": "charging_station",
+"x": 20338.1,
+"z": 8650.3,
+"name": "Brighton & Hove County Council"
+},
+{
+"kind": "charging_station",
+"x": 22996.0,
+"z": 8656.3,
+"name": "13433 - 28 Heath Hill Avenue, BN2 4FH"
+},
+{
+"kind": "charging_station",
+"x": 23634.2,
+"z": 8666.1,
+"name": "13421 - Durham Close, BN2 4LY"
+},
+{
+"kind": "charging_station",
+"x": 20226.5,
+"z": 8720.0,
+"name": "Electric Blue"
+},
+{
+"kind": "charging_station",
+"x": 20518.3,
+"z": 8735.4,
+"name": ""
+},
+{
+"kind": "charging_station",
+"x": 23421.6,
+"z": 8744.1,
+"name": "13295 - Hornby Place, BN2 4JT"
+},
+{
+"kind": "charging_station",
+"x": 23844.6,
+"z": 8763.0,
+"name": "13398 - 19 Bodium Road, BN2 4LZ"
+},
+{
+"kind": "charging_station",
+"x": 23260.7,
+"z": 8871.9,
+"name": "13271 - Hornby Road, BN2 4JL"
+},
+{
+"kind": "charging_station",
+"x": 21564.7,
+"z": 8897.5,
+"name": "BP Pulse 80854"
+},
+{
+"kind": "charging_station",
+"x": 21568.9,
+"z": 8899.4,
+"name": "BP Pulse 80858"
+},
+{
+"kind": "charging_station",
+"x": 21573.0,
+"z": 8901.7,
+"name": "BP Pulse 80855"
+},
+{
+"kind": "charging_station",
+"x": 23835.2,
+"z": 8902.1,
+"name": "13758 - Walmer Crescent, BN2 4LR"
+},
+{
+"kind": "charging_station",
+"x": 21577.2,
+"z": 8903.9,
+"name": "BP Pulse 80856"
+},
+{
+"kind": "charging_station",
+"x": 21583.2,
+"z": 8904.7,
+"name": "BP Pulse 80857"
+},
+{
+"kind": "charging_station",
+"x": 22753.3,
+"z": 8942.0,
+"name": "13314 - Fitch Drive, BN2 4HX"
+},
+{
+"kind": "charging_station",
+"x": 20134.2,
+"z": 8998.6,
+"name": "Electric Blue"
+},
+{
+"kind": "charging_station",
+"x": 20137.5,
+"z": 9013.3,
+"name": "Electric Blue"
+},
+{
+"kind": "charging_station",
+"x": 20286.4,
+"z": 9015.9,
+"name": "Electric Blue"
+},
+{
+"kind": "charging_station",
+"x": 20139.8,
+"z": 9025.7,
+"name": "Electric Blue"
+},
+{
+"kind": "charging_station",
+"x": 21443.3,
+"z": 9200.6,
+"name": "BP"
+},
+{
+"kind": "charging_station",
+"x": 24211.7,
+"z": 9408.3,
+"name": "char.gy"
+},
+{
+"kind": "charging_station",
+"x": 20433.1,
+"z": 9485.2,
+"name": "Char.gy"
+},
+{
+"kind": "charging_station",
+"x": 23802.4,
+"z": 9487.5,
+"name": "Blink"
+},
+{
+"kind": "charging_station",
+"x": 4393.0,
+"z": 9519.5,
+"name": "Polar"
+},
+{
+"kind": "charging_station",
+"x": 21385.7,
+"z": 9592.7,
+"name": "blink GB-BLK-E1218-01"
+},
+{
+"kind": "charging_station",
+"x": 21136.5,
+"z": 9813.9,
+"name": ""
+},
+{
+"kind": "charging_station",
+"x": 22218.7,
+"z": 9834.7,
+"name": "GB-BLK-E2376-01"
+},
+{
+"kind": "charging_station",
+"x": 22202.5,
+"z": 9837.7,
+"name": "GB-BLK-E2376-02"
+},
+{
+"kind": "charging_station",
+"x": 21251.1,
+"z": 10108.7,
+"name": ""
+},
+{
+"kind": "charging_station",
+"x": 10037.3,
+"z": 10182.2,
+"name": "Shell Shoreham Airport"
+},
+{
+"kind": "charging_station",
+"x": 9940.0,
+"z": 10250.4,
+"name": "Longshore Pub and Resturant"
+},
+{
+"kind": "charging_station",
+"x": 17453.2,
+"z": 10300.6,
+"name": "NexT"
+},
+{
+"kind": "charging_station",
+"x": 17455.8,
+"z": 10301.7,
+"name": "EVlink"
+},
+{
+"kind": "charging_station",
+"x": 18699.1,
+"z": 10575.4,
+"name": "Blink"
+},
+{
+"kind": "charging_station",
+"x": 21651.8,
+"z": 10596.9,
+"name": ""
+},
+{
+"kind": "charging_station",
+"x": 21178.3,
+"z": 10636.1,
+"name": "char.gy 13329"
+},
+{
+"kind": "charging_station",
+"x": 18691.9,
+"z": 10700.5,
+"name": "Believ"
+},
+{
+"kind": "charging_station",
+"x": 21079.6,
+"z": 10942.9,
+"name": "Brighton and Hove City Council"
+},
+{
+"kind": "charging_station",
+"x": 21103.3,
+"z": 11018.3,
+"name": "Electric Blue"
+},
+{
+"kind": "charging_station",
+"x": 20752.7,
+"z": 11086.2,
+"name": "Brighton and Hove City Council"
+},
+{
+"kind": "charging_station",
+"x": 21363.8,
+"z": 11096.0,
+"name": "Electric Blue EV Charging Station"
+},
+{
+"kind": "charging_station",
+"x": 20718.4,
+"z": 11211.3,
+"name": "Brighton and Hove City Council"
+},
+{
+"kind": "charging_station",
+"x": 22688.4,
+"z": 11226.0,
+"name": ""
+},
+{
+"kind": "charging_station",
+"x": 21581.7,
+"z": 11275.8,
+"name": "Brighton and Hove City Council"
+},
+{
+"kind": "charging_station",
+"x": 21678.6,
+"z": 11319.9,
+"name": "Brighton and Hove City Council"
+},
+{
+"kind": "charging_station",
+"x": 21952.2,
+"z": 11347.0,
+"name": "Brighton and Hove City Council"
+},
+{
+"kind": "charging_station",
+"x": 22738.2,
+"z": 11348.5,
+"name": "Blink"
+},
+{
+"kind": "charging_station",
+"x": 22117.3,
+"z": 11352.7,
+"name": "Brighton and Hove City Council"
+},
+{
+"kind": "charging_station",
+"x": 22165.2,
+"z": 11406.2,
+"name": "Brighton and Hove City Council"
+},
+{
+"kind": "charging_station",
+"x": 21730.2,
+"z": 11419.4,
+"name": "Blink"
+},
+{
+"kind": "charging_station",
+"x": 22496.6,
+"z": 11623.7,
+"name": "Lewes Crescent"
+},
+{
+"kind": "charging_station",
+"x": 22722.0,
+"z": 11623.7,
+"name": "Arundel Street"
+},
+{
+"kind": "charging_station",
+"x": 5103.6,
+"z": 11733.4,
+"name": "Roadside charging station"
+},
+{
+"kind": "charging_station",
+"x": 3520.0,
+"z": 11847.3,
+"name": "Osprey 20000;20001"
+},
+{
+"kind": "college",
+"x": 24051.9,
+"z": 5855.8,
+"name": "University of Sussex"
+},
+{
+"kind": "college",
+"x": 24096.8,
+"z": 5867.9,
+"name": "Fulton LT-A Lecture Theatre"
+},
+{
+"kind": "college",
+"x": 24077.9,
+"z": 5871.7,
+"name": "Fulton LT-B Lecture Theatre"
+},
+{
+"kind": "college",
+"x": 23902.6,
+"z": 5874.3,
+"name": "Jubilee 144 Lecture Theatre"
+},
+{
+"kind": "college",
+"x": 23974.3,
+"z": 5910.1,
+"name": "Arts C133 Lecture Theatre"
+},
+{
+"kind": "college",
+"x": 23911.7,
+"z": 5932.4,
+"name": "Silverstone SB121 Lecture Theatre"
+},
+{
+"kind": "college",
+"x": 23900.4,
+"z": 5933.5,
+"name": "Silverstone SB309 Lecture Theatre"
+},
+{
+"kind": "college",
+"x": 24139.0,
+"z": 5980.6,
+"name": "Richmond AS03 Lecture Theatre"
+},
+{
+"kind": "college",
+"x": 24078.7,
+"z": 5993.4,
+"name": "Shawcross AS1 and AS2 Lecture Theatres"
+},
+{
+"kind": "college",
+"x": 23976.1,
+"z": 6007.0,
+"name": "Arts A05 Lecture Theatre"
+},
+{
+"kind": "college",
+"x": 24102.4,
+"z": 6092.2,
+"name": "Pevensey I 1A6 Lecture Theatre"
+},
+{
+"kind": "college",
+"x": 24087.3,
+"z": 6095.6,
+"name": "Pevensey I 1A7 Lecture Theatre"
+},
+{
+"kind": "college",
+"x": 22650.7,
+"z": 6281.1,
+"name": "Varley Park"
+},
+{
+"kind": "college",
+"x": 19586.1,
+"z": 6463.5,
+"name": "Downs View Life Skills College Ltd"
+},
+{
+"kind": "college",
+"x": 24055.3,
+"z": 6819.0,
+"name": "University of Brighton - Falmer campus"
+},
+{
+"kind": "college",
+"x": 20122.1,
+"z": 7557.4,
+"name": "The Hutchins Wing"
+},
+{
+"kind": "college",
+"x": 20095.3,
+"z": 7574.4,
+"name": ""
+},
+{
+"kind": "college",
+"x": 20125.9,
+"z": 7647.9,
+"name": "Varndean College"
+},
+{
+"kind": "college",
+"x": 20266.5,
+"z": 7741.4,
+"name": "Downs View Link College"
+},
+{
+"kind": "college",
+"x": 21833.5,
+"z": 8369.4,
+"name": "University of Brighton Moulesecoomb Campus"
+},
+{
+"kind": "college",
+"x": 14542.3,
+"z": 8666.5,
+"name": ""
+},
+{
+"kind": "college",
+"x": 21795.4,
+"z": 8679.7,
+"name": "University of Brighton Moulesecoomb Campus"
+},
+{
+"kind": "college",
+"x": 3341.3,
+"z": 9474.7,
+"name": "Worthing College"
+},
+{
+"kind": "college",
+"x": 19525.7,
+"z": 9498.8,
+"name": "Brighton Hove and Sussex Sixth Form College"
+},
+{
+"kind": "college",
+"x": 20413.1,
+"z": 9593.0,
+"name": "Team Domenica"
+},
+{
+"kind": "college",
+"x": 20564.6,
+"z": 9734.8,
+"name": "Screen and Film School"
+},
+{
+"kind": "college",
+"x": 20973.6,
+"z": 10066.5,
+"name": "University of Brighton Phoenix Halls"
+},
+{
+"kind": "college",
+"x": 20570.7,
+"z": 10163.7,
+"name": "Greater Brighton Metropolitan College"
+},
+{
+"kind": "college",
+"x": 17792.9,
+"z": 10370.3,
+"name": "International Language School"
+},
+{
+"kind": "college",
+"x": 3861.9,
+"z": 10494.7,
+"name": "Northbrook College"
+},
+{
+"kind": "college",
+"x": 20209.9,
+"z": 10524.1,
+"name": "Waterbear College Brighton"
+},
+{
+"kind": "college",
+"x": 20556.4,
+"z": 10707.7,
+"name": "St Giles International"
+},
+{
+"kind": "college",
+"x": 21955.3,
+"z": 11021.0,
+"name": "St. John's College (Brighton)"
+},
+{
+"kind": "college",
+"x": 21012.8,
+"z": 11121.2,
+"name": "BIMM University"
+},
+{
+"kind": "fuel_station",
+"x": 17518.4,
+"z": 2039.1,
+"name": "Texaco"
+},
+{
+"kind": "fuel_station",
+"x": 18755.6,
+"z": 2708.6,
+"name": "Pycombe (South) Services"
+},
+{
+"kind": "fuel_station",
+"x": 9106.2,
+"z": 4369.9,
+"name": "BP"
+},
+{
+"kind": "fuel_station",
+"x": 19198.9,
+"z": 5815.5,
+"name": "BP"
+},
+{
+"kind": "fuel_station",
+"x": 21314.4,
+"z": 5837.0,
+"name": "Asda"
+},
+{
+"kind": "fuel_station",
+"x": 19564.2,
+"z": 6311.2,
+"name": "Patcham Service Station"
+},
+{
+"kind": "fuel_station",
+"x": 2179.9,
+"z": 7779.5,
+"name": "BP"
+},
+{
+"kind": "fuel_station",
+"x": 16691.4,
+"z": 8386.4,
+"name": "Esso"
+},
+{
+"kind": "fuel_station",
+"x": 12715.2,
+"z": 8571.8,
+"name": "Tesco"
+},
+{
+"kind": "fuel_station",
+"x": 19566.5,
+"z": 8670.2,
+"name": "Shell Preston Park"
+},
+{
+"kind": "fuel_station",
+"x": 2580.6,
+"z": 8796.9,
+"name": "JET"
+},
+{
+"kind": "fuel_station",
+"x": 1122.1,
+"z": 8819.1,
+"name": "Esso"
+},
+{
+"kind": "fuel_station",
+"x": 15772.7,
+"z": 8865.1,
+"name": "Sainsbury's Petrol"
+},
+{
+"kind": "fuel_station",
+"x": 17876.2,
+"z": 9050.2,
+"name": "Shell"
+},
+{
+"kind": "fuel_station",
+"x": 14674.6,
+"z": 9051.0,
+"name": "Valero"
+},
+{
+"kind": "fuel_station",
+"x": 19307.5,
+"z": 9095.8,
+"name": "Esso / Tesco Express"
+},
+{
+"kind": "fuel_station",
+"x": 7131.6,
+"z": 9174.6,
+"name": "BP"
+},
+{
+"kind": "fuel_station",
+"x": 21437.7,
+"z": 9213.1,
+"name": "BP"
+},
+{
+"kind": "fuel_station",
+"x": 20850.8,
+"z": 9221.0,
+"name": "Malthurst Downsway"
+},
+{
+"kind": "fuel_station",
+"x": 4504.2,
+"z": 9420.0,
+"name": "Sainsbury"
+},
+{
+"kind": "fuel_station",
+"x": 18287.4,
+"z": 9483.0,
+"name": "Esso"
+},
+{
+"kind": "fuel_station",
+"x": 18300.6,
+"z": 9487.1,
+"name": "Esso"
+},
+{
+"kind": "fuel_station",
+"x": 540.1,
+"z": 9735.1,
+"name": "Tesco Extra Petrol Station"
+},
+{
+"kind": "fuel_station",
+"x": 10963.1,
+"z": 9806.0,
+"name": "Texaco"
+},
+{
+"kind": "fuel_station",
+"x": 15837.2,
+"z": 10114.4,
+"name": "BP"
+},
+{
+"kind": "fuel_station",
+"x": 15834.9,
+"z": 10116.6,
+"name": ""
+},
+{
+"kind": "fuel_station",
+"x": 1682.3,
+"z": 10123.8,
+"name": "Esso"
+},
+{
+"kind": "fuel_station",
+"x": 10040.3,
+"z": 10202.2,
+"name": "Shell"
+},
+{
+"kind": "fuel_station",
+"x": 4331.2,
+"z": 10313.8,
+"name": "Shell"
+},
+{
+"kind": "fuel_station",
+"x": 1332.5,
+"z": 11014.5,
+"name": "Co-op"
+},
+{
+"kind": "fuel_station",
+"x": 22322.0,
+"z": 11430.3,
+"name": "Esso"
+},
+{
+"kind": "fuel_station",
+"x": 22320.9,
+"z": 11431.8,
+"name": "Esso"
+},
+{
+"kind": "fuel_station",
+"x": 6331.4,
+"z": 11577.0,
+"name": "BP"
+},
+{
+"kind": "fuel_station",
+"x": 22967.4,
+"z": 11964.1,
+"name": "Asda"
+},
+{
+"kind": "fuel_station",
+"x": 22969.3,
+"z": 11965.6,
+"name": "Asda"
+},
+{
+"kind": "fuel_station",
+"x": 3176.6,
+"z": 12356.9,
+"name": "Esso"
+},
+{
+"kind": "garage",
+"x": 17476.2,
+"z": 2021.0,
+"name": "Kia"
+},
+{
+"kind": "garage",
+"x": 17469.4,
+"z": 2022.9,
+"name": "Tates"
+},
+{
+"kind": "garage",
+"x": 11110.5,
+"z": 2301.1,
+"name": ""
+},
+{
+"kind": "garage",
+"x": 15825.9,
+"z": 2955.5,
+"name": "The Forge Garage"
+},
+{
+"kind": "garage",
+"x": 12540.3,
+"z": 3018.8,
+"name": "Coles Automotive"
+},
+{
+"kind": "garage",
+"x": 12549.3,
+"z": 3045.2,
+"name": "Chandler & Reene"
+},
+{
+"kind": "garage",
+"x": 6994.8,
+"z": 3265.0,
+"name": "Simms Garage"
+},
+{
+"kind": "garage",
+"x": 18807.6,
+"z": 3281.2,
+"name": "Wheels 'R' Us"
+},
+{
+"kind": "garage",
+"x": 21286.5,
+"z": 5863.0,
+"name": "Tates Renault"
+},
+{
+"kind": "garage",
+"x": 21338.5,
+"z": 5935.8,
+"name": "Harwoods Jaguar Land Rover"
+},
+{
+"kind": "garage",
+"x": 20055.4,
+"z": 6212.1,
+"name": ""
+},
+{
+"kind": "garage",
+"x": 19608.3,
+"z": 6316.9,
+"name": "Patcham Garage"
+},
+{
+"kind": "garage",
+"x": 19644.9,
+"z": 6366.6,
+"name": "Triad Classic Motorbikes"
+},
+{
+"kind": "garage",
+"x": 20867.0,
+"z": 7167.3,
+"name": ""
+},
+{
+"kind": "garage",
+"x": 22864.5,
+"z": 7360.7,
+"name": "T Reeve & Son / Motor body repair specialists"
+},
+{
+"kind": "garage",
+"x": 2334.4,
+"z": 8034.3,
+"name": "Worthing Suzuki"
+},
+{
+"kind": "garage",
+"x": 20592.5,
+"z": 8180.6,
+"name": ""
+},
+{
+"kind": "garage",
+"x": 12899.1,
+"z": 8680.4,
+"name": "M D Motors"
+},
+{
+"kind": "garage",
+"x": 21023.8,
+"z": 8735.1,
+"name": "Providence Auto Repairs"
+},
+{
+"kind": "garage",
+"x": 12786.8,
+"z": 8792.4,
+"name": "Frosts"
+},
+{
+"kind": "garage",
+"x": 21584.3,
+"z": 8808.6,
+"name": "Halfords"
+},
+{
+"kind": "garage",
+"x": 2608.1,
+"z": 8811.6,
+"name": "Keen & Betts Ltd"
+},
+{
+"kind": "garage",
+"x": 1112.7,
+"z": 8842.1,
+"name": "Stedmans Garage"
+},
+{
+"kind": "garage",
+"x": 13760.9,
+"z": 8842.5,
+"name": ""
+},
+{
+"kind": "garage",
+"x": 17734.8,
+"z": 8998.9,
+"name": "Kwik Fit"
+},
+{
+"kind": "garage",
+"x": 19336.9,
+"z": 9015.1,
+"name": "Elite Garages"
+},
+{
+"kind": "garage",
+"x": 14460.1,
+"z": 9035.9,
+"name": "Tates Hyundai"
+},
+{
+"kind": "garage",
+"x": 16913.4,
+"z": 9042.7,
+"name": "KAP"
+},
+{
+"kind": "garage",
+"x": 22150.1,
+"z": 9068.3,
+"name": "Milner Garage"
+},
+{
+"kind": "garage",
+"x": 19409.6,
+"z": 9085.6,
+"name": ""
+},
+{
+"kind": "garage",
+"x": 19404.0,
+"z": 9095.8,
+"name": "Brighton Audi"
+},
+{
+"kind": "garage",
+"x": 8406.5,
+"z": 9101.1,
+"name": "Manor Car Sales"
+},
+{
+"kind": "garage",
+"x": 17886.7,
+"z": 9112.8,
+"name": "SB Motors"
+},
+{
+"kind": "garage",
+"x": 14908.3,
+"z": 9122.2,
+"name": "Tates Citroen"
+},
+{
+"kind": "garage",
+"x": 17398.6,
+"z": 9148.6,
+"name": "Autolec Motor Factors (Sales Counter)"
+},
+{
+"kind": "garage",
+"x": 15325.6,
+"z": 9202.5,
+"name": "Volkswagen"
+},
+{
+"kind": "garage",
+"x": 15810.0,
+"z": 9208.2,
+"name": "L&C Group"
+},
+{
+"kind": "garage",
+"x": 17529.4,
+"z": 9212.7,
+"name": "Motest"
+},
+{
+"kind": "garage",
+"x": 23238.4,
+"z": 9219.1,
+"name": ""
+},
+{
+"kind": "garage",
+"x": 17527.1,
+"z": 9226.6,
+"name": "National Windscreens"
+},
+{
+"kind": "garage",
+"x": 15375.8,
+"z": 9232.3,
+"name": "Volvo / Ford"
+},
+{
+"kind": "garage",
+"x": 21470.1,
+"z": 9249.6,
+"name": "Kwik Fit"
+},
+{
+"kind": "garage",
+"x": 15510.0,
+"z": 9263.2,
+"name": "BMW"
+},
+{
+"kind": "garage",
+"x": 15397.6,
+"z": 9264.3,
+"name": "Fort Garage"
+},
+{
+"kind": "garage",
+"x": 15444.8,
+"z": 9274.5,
+"name": "Mini"
+},
+{
+"kind": "garage",
+"x": 19705.2,
+"z": 9282.0,
+"name": "Horizon Autocare"
+},
+{
+"kind": "garage",
+"x": 15484.3,
+"z": 9338.2,
+"name": "Group 1 Brighton"
+},
+{
+"kind": "garage",
+"x": 15500.9,
+"z": 9350.3,
+"name": "Rivervale Cars (MG / Skoda)"
+},
+{
+"kind": "garage",
+"x": 15638.1,
+"z": 9372.1,
+"name": "Mercedes Lookers Prestige"
+},
+{
+"kind": "garage",
+"x": 15535.2,
+"z": 9372.9,
+"name": "Mercedes"
+},
+{
+"kind": "garage",
+"x": 15020.3,
+"z": 9384.6,
+"name": "Prime Cars"
+},
+{
+"kind": "garage",
+"x": 15033.9,
+"z": 9395.5,
+"name": "P.L. Terry"
+},
+{
+"kind": "garage",
+"x": 20354.7,
+"z": 9398.5,
+"name": "Auto Body Care"
+},
+{
+"kind": "garage",
+"x": 20249.9,
+"z": 9434.0,
+"name": "CRS Car Detailing"
+},
+{
+"kind": "garage",
+"x": 19900.1,
+"z": 9435.5,
+"name": "Stanford Garage"
+},
+{
+"kind": "garage",
+"x": 20237.4,
+"z": 9462.6,
+"name": ""
+},
+{
+"kind": "garage",
+"x": 19777.2,
+"z": 9473.2,
+"name": "Open Garage"
+},
+{
+"kind": "garage",
+"x": 24140.1,
+"z": 9489.0,
+"name": "A. Harris & Son"
+},
+{
+"kind": "garage",
+"x": 20276.6,
+"z": 9501.1,
+"name": "Campbell Motors"
+},
+{
+"kind": "garage",
+"x": 11098.0,
+"z": 9564.0,
+"name": "Perkins & Robins Garage"
+},
+{
+"kind": "garage",
+"x": 10989.1,
+"z": 9595.3,
+"name": "Western Road Garage"
+},
+{
+"kind": "garage",
+"x": 18155.9,
+"z": 9597.2,
+"name": "Street Sounds"
+},
+{
+"kind": "garage",
+"x": 18620.7,
+"z": 9603.2,
+"name": "Robin's Garage"
+},
+{
+"kind": "garage",
+"x": 11687.6,
+"z": 9662.4,
+"name": "Halfords"
+},
+{
+"kind": "garage",
+"x": 17234.9,
+"z": 9673.3,
+"name": "We Buy Cars Sussex"
+},
+{
+"kind": "garage",
+"x": 11285.0,
+"z": 9734.8,
+"name": "Montgomery Motors"
+},
+{
+"kind": "garage",
+"x": 7411.7,
+"z": 9769.8,
+"name": "Crabtree Lane Garage"
+},
+{
+"kind": "garage",
+"x": 10850.0,
+"z": 9770.6,
+"name": ""
+},
+{
+"kind": "garage",
+"x": 13269.7,
+"z": 9773.6,
+"name": "Amber Garage"
+},
+{
+"kind": "garage",
+"x": 15172.2,
+"z": 9785.3,
+"name": "ATS"
+},
+{
+"kind": "garage",
+"x": 21620.5,
+"z": 9835.0,
+"name": "Bonchurch Garage"
+},
+{
+"kind": "garage",
+"x": 15390.9,
+"z": 9836.2,
+"name": "JCB Van Centre"
+},
+{
+"kind": "garage",
+"x": 13118.9,
+"z": 9861.4,
+"name": "Montgomery Motors"
+},
+{
+"kind": "garage",
+"x": 15553.3,
+"z": 9874.6,
+"name": "Kwik Fit"
+},
+{
+"kind": "garage",
+"x": 16981.6,
+"z": 9881.4,
+"name": "Auto Top Service"
+},
+{
+"kind": "garage",
+"x": 4627.5,
+"z": 9963.2,
+"name": "Young Automotive Direct"
+},
+{
+"kind": "garage",
+"x": 4567.2,
+"z": 9964.7,
+"name": "GSF Car Parts"
+},
+{
+"kind": "garage",
+"x": 15520.5,
+"z": 9967.4,
+"name": "Brighton Motor Services"
+},
+{
+"kind": "garage",
+"x": 2607.0,
+"z": 10011.1,
+"name": "Cedar Garage"
+},
+{
+"kind": "garage",
+"x": 4726.3,
+"z": 10021.3,
+"name": "Andy Levin's Service"
+},
+{
+"kind": "garage",
+"x": 11175.3,
+"z": 10022.0,
+"name": "Harbourside Coachworks"
+},
+{
+"kind": "garage",
+"x": 3789.9,
+"z": 10138.5,
+"name": "Halfords Autocentre"
+},
+{
+"kind": "garage",
+"x": 7551.2,
+"z": 10146.4,
+"name": "Culver Cars"
+},
+{
+"kind": "garage",
+"x": 4218.5,
+"z": 10307.4,
+"name": "A & J Motors"
+},
+{
+"kind": "garage",
+"x": 19580.0,
+"z": 10419.7,
+"name": "G M Autocare Ltd"
+},
+{
+"kind": "garage",
+"x": 3499.6,
+"z": 10512.4,
+"name": "PR Car Sales"
+},
+{
+"kind": "garage",
+"x": 7521.0,
+"z": 10548.2,
+"name": "Circle Garage"
+},
+{
+"kind": "garage",
+"x": 6839.5,
+"z": 10572.0,
+"name": "Lancing Commercial Ltd"
+},
+{
+"kind": "garage",
+"x": 6800.7,
+"z": 10602.2,
+"name": "Paul's Motors"
+},
+{
+"kind": "garage",
+"x": 3486.8,
+"z": 10607.1,
+"name": "Rectory Garage"
+},
+{
+"kind": "garage",
+"x": 344.5,
+"z": 10627.0,
+"name": "Yeomans Toyota Worthing"
+},
+{
+"kind": "garage",
+"x": 6790.1,
+"z": 10646.6,
+"name": "DMH Motors"
+},
+{
+"kind": "garage",
+"x": 7727.6,
+"z": 10661.3,
+"name": "Steve's Autos"
+},
+{
+"kind": "garage",
+"x": 3961.4,
+"z": 10708.5,
+"name": "Euro \u0160koda"
+},
+{
+"kind": "garage",
+"x": 7084.2,
+"z": 10714.5,
+"name": "Towbex LTD"
+},
+{
+"kind": "garage",
+"x": 6328.7,
+"z": 10717.5,
+"name": "R & G Autocare"
+},
+{
+"kind": "garage",
+"x": 4878.6,
+"z": 10729.9,
+"name": "Gleam Clean"
+},
+{
+"kind": "garage",
+"x": 7681.6,
+"z": 10739.4,
+"name": "Empire Autos"
+},
+{
+"kind": "garage",
+"x": 5235.5,
+"z": 10755.6,
+"name": "ATS Euromaster"
+},
+{
+"kind": "garage",
+"x": 448.9,
+"z": 10819.3,
+"name": "Caffyns Worthing - Volvo Cars"
+},
+{
+"kind": "garage",
+"x": 4047.0,
+"z": 11013.8,
+"name": "Worthing Motors - Citroen"
+},
+{
+"kind": "garage",
+"x": 2673.0,
+"z": 11073.7,
+"name": "Clarion Cars"
+},
+{
+"kind": "garage",
+"x": 2678.6,
+"z": 11099.7,
+"name": "Clarion Cars"
+},
+{
+"kind": "garage",
+"x": 6919.8,
+"z": 11129.5,
+"name": "Alverstone Autos"
+},
+{
+"kind": "garage",
+"x": 21508.9,
+"z": 11168.7,
+"name": "1st Class Garage"
+},
+{
+"kind": "garage",
+"x": 21017.0,
+"z": 11174.4,
+"name": "Actions Car Sales"
+},
+{
+"kind": "garage",
+"x": 3989.7,
+"z": 11251.7,
+"name": "BK Autos"
+},
+{
+"kind": "garage",
+"x": 4335.7,
+"z": 11289.7,
+"name": "Swift Motor Services"
+},
+{
+"kind": "garage",
+"x": 4273.5,
+"z": 11296.5,
+"name": "Leewards"
+},
+{
+"kind": "garage",
+"x": 4250.5,
+"z": 11310.8,
+"name": "Sussex Ford & Vauxhall Centre"
+},
+{
+"kind": "garage",
+"x": 3768.0,
+"z": 11347.4,
+"name": "Ace Garage Services"
+},
+{
+"kind": "garage",
+"x": 3671.5,
+"z": 11354.2,
+"name": "Alpha Automotive"
+},
+{
+"kind": "garage",
+"x": 2621.3,
+"z": 11368.1,
+"name": "Cartech Autocentres"
+},
+{
+"kind": "garage",
+"x": 2427.6,
+"z": 11402.4,
+"name": "Cedar Garage"
+},
+{
+"kind": "garage",
+"x": 4364.8,
+"z": 11406.2,
+"name": "Worthing Auto Electrics"
+},
+{
+"kind": "garage",
+"x": 3546.0,
+"z": 11406.6,
+"name": "C.J. Car Body Refinishers"
+},
+{
+"kind": "garage",
+"x": 3867.9,
+"z": 11414.1,
+"name": "Kwik Fit"
+},
+{
+"kind": "garage",
+"x": 5622.7,
+"z": 11414.5,
+"name": "Yeomans Nissan"
+},
+{
+"kind": "garage",
+"x": 5700.7,
+"z": 11428.5,
+"name": "Dinnages Ford"
+},
+{
+"kind": "garage",
+"x": 22292.6,
+"z": 11449.6,
+"name": "Sussex Square Garage"
+},
+{
+"kind": "garage",
+"x": 22314.9,
+"z": 11456.7,
+"name": "Sussex Square Garage"
+},
+{
+"kind": "garage",
+"x": 22315.6,
+"z": 11472.2,
+"name": ""
+},
+{
+"kind": "garage",
+"x": 22720.1,
+"z": 11483.1,
+"name": "MOTEST"
+},
+{
+"kind": "garage",
+"x": 554.1,
+"z": 11489.5,
+"name": "SP Auto Services"
+},
+{
+"kind": "garage",
+"x": 468.9,
+"z": 11570.2,
+"name": "John Haynes Mercedes"
+},
+{
+"kind": "garage",
+"x": 4954.7,
+"z": 11577.4,
+"name": "Frenches Autos"
+},
+{
+"kind": "garage",
+"x": 3640.2,
+"z": 11762.8,
+"name": "Park Crescent Garage"
+},
+{
+"kind": "garage",
+"x": 5037.6,
+"z": 11871.4,
+"name": "Parkway Motors"
+},
+{
+"kind": "garage",
+"x": 1567.3,
+"z": 11955.1,
+"name": "Sea Place Garage"
+},
+{
+"kind": "garage",
+"x": 5056.5,
+"z": 11968.3,
+"name": "Brighton Road Motors"
+},
+{
+"kind": "garage",
+"x": 3823.8,
+"z": 12313.6,
+"name": "National Tyres and Autocare"
+},
+{
+"kind": "garage",
+"x": 3301.0,
+"z": 12364.8,
+"name": "Autotec Car Care Centre"
+},
+{
+"kind": "garage",
+"x": 3568.6,
+"z": 12373.9,
+"name": "MK's Garage"
+},
+{
+"kind": "hospital",
+"x": 23975.8,
+"z": 5633.1,
+"name": "University of Sussex Health Centre"
+},
+{
+"kind": "hospital",
+"x": 16820.3,
+"z": 8593.3,
+"name": "Mill View Hospital"
+},
+{
+"kind": "hospital",
+"x": 1395.4,
+"z": 8626.1,
+"name": "Salvington Lodge"
+},
+{
+"kind": "hospital",
+"x": 16899.5,
+"z": 8678.9,
+"name": "Hove Polyclinic"
+},
+{
+"kind": "hospital",
+"x": 1309.1,
+"z": 8714.0,
+"name": "Swandean"
+},
+{
+"kind": "hospital",
+"x": 16723.0,
+"z": 8776.2,
+"name": "Nevill Hospital"
+},
+{
+"kind": "hospital",
+"x": 12202.9,
+"z": 8816.9,
+"name": "Southlands Hospital"
+},
+{
+"kind": "hospital",
+"x": 15424.0,
+"z": 9284.3,
+"name": "Recovery Drive"
+},
+{
+"kind": "hospital",
+"x": 13716.8,
+"z": 9459.2,
+"name": "The Manor Practice"
+},
+{
+"kind": "hospital",
+"x": 10942.7,
+"z": 9597.2,
+"name": "Shoreham Health Centre"
+},
+{
+"kind": "hospital",
+"x": 15229.1,
+"z": 9625.1,
+"name": "Portslade Health Centre"
+},
+{
+"kind": "hospital",
+"x": 19286.0,
+"z": 9849.0,
+"name": "Montefiore Hospital, Hove"
+},
+{
+"kind": "hospital",
+"x": 18140.8,
+"z": 9888.6,
+"name": "Holy Trinity Church, Hove"
+},
+{
+"kind": "hospital",
+"x": 15595.5,
+"z": 9917.6,
+"name": "Sussex Sperm Bank"
+},
+{
+"kind": "hospital",
+"x": 20684.1,
+"z": 9922.5,
+"name": "Equilibrium Therapy Clinic"
+},
+{
+"kind": "hospital",
+"x": 22158.1,
+"z": 9939.8,
+"name": "Brighton General Hospital"
+},
+{
+"kind": "hospital",
+"x": 2659.8,
+"z": 9941.0,
+"name": "Offington Osteopath Clinic"
+},
+{
+"kind": "hospital",
+"x": 20724.9,
+"z": 9946.2,
+"name": "St Peter's Medical Centre"
+},
+{
+"kind": "hospital",
+"x": 17270.4,
+"z": 10001.7,
+"name": "Aldrington House"
+},
+{
+"kind": "hospital",
+"x": 17541.0,
+"z": 10152.1,
+"name": "Brighton & Hove Clinic"
+},
+{
+"kind": "hospital",
+"x": 17761.2,
+"z": 10169.4,
+"name": "Optimax"
+},
+{
+"kind": "hospital",
+"x": 20282.7,
+"z": 10252.3,
+"name": "Brighton Station Health Centre"
+},
+{
+"kind": "hospital",
+"x": 3859.3,
+"z": 10253.1,
+"name": "NHS"
+},
+{
+"kind": "hospital",
+"x": 21436.6,
+"z": 10258.0,
+"name": "Stanford Medical Centre"
+},
+{
+"kind": "hospital",
+"x": 7532.7,
+"z": 10270.4,
+"name": "Your Choice Medical"
+},
+{
+"kind": "hospital",
+"x": 22676.0,
+"z": 10510.6,
+"name": "Wellsbourne Health Centre"
+},
+{
+"kind": "hospital",
+"x": 20473.4,
+"z": 10546.0,
+"name": "Sk:n"
+},
+{
+"kind": "hospital",
+"x": 2653.4,
+"z": 10878.8,
+"name": "Worthing Osteopathic & Wellbeing Clinic"
+},
+{
+"kind": "hospital",
+"x": 21963.5,
+"z": 11142.7,
+"name": "Royal Alexandra Children's Hospital"
+},
+{
+"kind": "hospital",
+"x": 22002.4,
+"z": 11185.7,
+"name": "Royal Sussex County Hospital"
+},
+{
+"kind": "hospital",
+"x": 4708.5,
+"z": 11186.8,
+"name": "Laser & Skin Clinic"
+},
+{
+"kind": "hospital",
+"x": 22108.7,
+"z": 11191.3,
+"name": "Urgent Care Centre"
+},
+{
+"kind": "hospital",
+"x": 21862.1,
+"z": 11218.9,
+"name": "Royal Sussex County Hospital"
+},
+{
+"kind": "hospital",
+"x": 21113.1,
+"z": 11240.7,
+"name": "Brighton Laser Clinic"
+},
+{
+"kind": "hospital",
+"x": 21950.0,
+"z": 11272.4,
+"name": "Eye Hospital"
+},
+{
+"kind": "hospital",
+"x": 1361.9,
+"z": 11273.5,
+"name": "Strand Medical Centre"
+},
+{
+"kind": "hospital",
+"x": 2948.1,
+"z": 11306.3,
+"name": "The Primrose Clinic"
+},
+{
+"kind": "hospital",
+"x": 4640.7,
+"z": 11518.2,
+"name": "Worthing Hospital"
+},
+{
+"kind": "hospital",
+"x": 4383.2,
+"z": 11940.0,
+"name": "Bella Derma Aesthetics"
+},
+{
+"kind": "hospital",
+"x": 534.5,
+"z": 11967.1,
+"name": "Casafia"
+},
+{
+"kind": "hospital",
+"x": 4095.2,
+"z": 11978.1,
+"name": "Health Central Surgery"
+},
+{
+"kind": "hospital",
+"x": 4242.2,
+"z": 12012.7,
+"name": "Brighton Implant Clinic"
+},
+{
+"kind": "hospital",
+"x": 4326.7,
+"z": 12019.5,
+"name": "Blue Bird Aesthetics"
+},
+{
+"kind": "recycling",
+"x": 18668.9,
+"z": 2622.3,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 19061.3,
+"z": 5319.4,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 23984.4,
+"z": 5531.3,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 21343.4,
+"z": 5876.2,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 21330.3,
+"z": 5877.0,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 20730.5,
+"z": 5906.4,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 21295.9,
+"z": 6094.1,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 21476.5,
+"z": 6203.4,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 20035.4,
+"z": 6266.0,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 21031.3,
+"z": 6381.7,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 20685.6,
+"z": 6444.7,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 23646.3,
+"z": 6456.0,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 23646.7,
+"z": 6456.7,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 23647.1,
+"z": 6457.1,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 23647.4,
+"z": 6457.5,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 23647.8,
+"z": 6457.8,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 20279.3,
+"z": 6678.4,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 22963.2,
+"z": 6902.3,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 18003.9,
+"z": 6961.1,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 20383.7,
+"z": 7098.3,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 20390.5,
+"z": 7098.3,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 22676.8,
+"z": 7115.3,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 22676.0,
+"z": 7117.2,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 22665.4,
+"z": 7127.7,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 20885.1,
+"z": 7233.6,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 19159.7,
+"z": 7476.0,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 16335.1,
+"z": 7490.0,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 14417.2,
+"z": 7629.8,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 22677.9,
+"z": 7646.4,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 22674.9,
+"z": 7648.7,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 20895.2,
+"z": 7853.0,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 20894.9,
+"z": 7853.7,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 20894.5,
+"z": 7854.5,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 20896.4,
+"z": 7854.9,
+"name": "Golf Drive Recycling Point"
+},
+{
+"kind": "recycling",
+"x": 20894.9,
+"z": 7855.6,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 20895.2,
+"z": 7856.0,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 20896.0,
+"z": 7856.4,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 20897.1,
+"z": 7857.1,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 18084.2,
+"z": 7873.7,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 15145.1,
+"z": 8050.5,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 22152.8,
+"z": 8062.2,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 22150.9,
+"z": 8063.7,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 22149.0,
+"z": 8076.5,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 22094.3,
+"z": 8101.4,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 14587.6,
+"z": 8123.3,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 22423.4,
+"z": 8172.3,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 22134.7,
+"z": 8257.1,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 22135.4,
+"z": 8258.2,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 22135.8,
+"z": 8259.3,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 22136.6,
+"z": 8260.5,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 22137.3,
+"z": 8261.6,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 22137.7,
+"z": 8263.1,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 22138.5,
+"z": 8265.0,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 18976.9,
+"z": 8337.7,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 16578.3,
+"z": 8351.3,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 17604.0,
+"z": 8375.8,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 21918.7,
+"z": 8382.6,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 19584.5,
+"z": 8438.0,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 17865.2,
+"z": 8488.5,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 17864.5,
+"z": 8490.4,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 19974.7,
+"z": 8491.2,
+"name": "Preston Park, Preston Drove entrance"
+},
+{
+"kind": "recycling",
+"x": 20743.3,
+"z": 8501.4,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 20744.5,
+"z": 8501.4,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 20743.3,
+"z": 8502.1,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 20744.5,
+"z": 8502.5,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 20743.3,
+"z": 8503.2,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 20744.1,
+"z": 8503.2,
+"name": "Fiveways Recycling Point"
+},
+{
+"kind": "recycling",
+"x": 20744.8,
+"z": 8504.0,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 20743.3,
+"z": 8504.4,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 20744.8,
+"z": 8505.1,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 20743.7,
+"z": 8505.5,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 12741.2,
+"z": 8582.4,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 23445.0,
+"z": 8609.9,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 23443.9,
+"z": 8610.3,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 23438.2,
+"z": 8611.4,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 23436.7,
+"z": 8612.6,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 23439.0,
+"z": 8612.6,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 23437.5,
+"z": 8613.3,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 23433.7,
+"z": 8616.3,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 23667.0,
+"z": 8699.3,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 22654.5,
+"z": 8718.1,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 22656.0,
+"z": 8720.7,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 21688.7,
+"z": 8721.9,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 14797.5,
+"z": 8736.2,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 16905.5,
+"z": 8812.7,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 14814.5,
+"z": 8868.5,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 15823.6,
+"z": 8896.4,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 21029.4,
+"z": 8903.6,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 20992.9,
+"z": 8979.0,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 19578.1,
+"z": 9058.1,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 21461.8,
+"z": 9084.1,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 16078.1,
+"z": 9135.8,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 17393.6,
+"z": 9208.2,
+"name": "Hove Recycling Centre"
+},
+{
+"kind": "recycling",
+"x": 20170.0,
+"z": 9256.0,
+"name": "Preston Park South"
+},
+{
+"kind": "recycling",
+"x": 20172.6,
+"z": 9257.5,
+"name": "Preston Park South"
+},
+{
+"kind": "recycling",
+"x": 20172.6,
+"z": 9258.7,
+"name": "Preston Park South"
+},
+{
+"kind": "recycling",
+"x": 15321.5,
+"z": 9289.2,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 21355.9,
+"z": 9303.5,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 19578.5,
+"z": 9306.5,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 16527.0,
+"z": 9355.9,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 16649.9,
+"z": 9366.1,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 19894.0,
+"z": 9473.5,
+"name": "Communal Recycling Bin"
+},
+{
+"kind": "recycling",
+"x": 16491.2,
+"z": 9479.6,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 17865.2,
+"z": 9479.9,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 21318.2,
+"z": 9493.5,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 18264.4,
+"z": 9498.4,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 18141.5,
+"z": 9502.6,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 10840.6,
+"z": 9589.3,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 16913.8,
+"z": 9590.8,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 17034.8,
+"z": 9614.5,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 15359.2,
+"z": 9618.7,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 20346.8,
+"z": 9648.4,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 19854.1,
+"z": 9651.8,
+"name": "Communal Recycling Bin"
+},
+{
+"kind": "recycling",
+"x": 11971.1,
+"z": 9722.3,
+"name": "Shoreham Recycling Centre"
+},
+{
+"kind": "recycling",
+"x": 20012.8,
+"z": 9766.8,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 19334.6,
+"z": 9775.9,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 20395.0,
+"z": 9811.7,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 21103.3,
+"z": 9815.4,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 20827.0,
+"z": 9824.5,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 21378.1,
+"z": 9828.3,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 20482.8,
+"z": 9829.4,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 20651.3,
+"z": 9847.1,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 21013.2,
+"z": 9847.5,
+"name": "The Level"
+},
+{
+"kind": "recycling",
+"x": 20669.4,
+"z": 9862.9,
+"name": "Planet Brighton"
+},
+{
+"kind": "recycling",
+"x": 19799.4,
+"z": 10009.2,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 20815.7,
+"z": 10080.1,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 20814.9,
+"z": 10080.4,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 20816.1,
+"z": 10080.8,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 11076.5,
+"z": 10081.2,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 20814.2,
+"z": 10081.2,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 20816.8,
+"z": 10081.2,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 20813.8,
+"z": 10081.9,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 20817.6,
+"z": 10081.9,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 20812.7,
+"z": 10082.7,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 20813.8,
+"z": 10083.5,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 20814.6,
+"z": 10084.2,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 20815.3,
+"z": 10084.6,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 3589.0,
+"z": 10096.6,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 19885.4,
+"z": 10106.1,
+"name": "Communal Recycling Container"
+},
+{
+"kind": "recycling",
+"x": 20110.0,
+"z": 10110.2,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 3856.2,
+"z": 10145.7,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 20536.0,
+"z": 10149.4,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 10549.2,
+"z": 10171.3,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 20467.0,
+"z": 10183.7,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 21143.7,
+"z": 10188.3,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 10561.6,
+"z": 10200.3,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 23172.8,
+"z": 10244.4,
+"name": "Brighton Recycling Centre"
+},
+{
+"kind": "recycling",
+"x": 12615.3,
+"z": 10276.1,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 12180.7,
+"z": 10304.0,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 21454.3,
+"z": 10304.7,
+"name": "Pepperpot"
+},
+{
+"kind": "recycling",
+"x": 19200.8,
+"z": 10319.8,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 19202.7,
+"z": 10320.6,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 19710.5,
+"z": 10334.5,
+"name": "Communal Recycling Container"
+},
+{
+"kind": "recycling",
+"x": 20804.8,
+"z": 10346.6,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 21963.9,
+"z": 10371.1,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 19250.9,
+"z": 10383.1,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 18654.6,
+"z": 10386.5,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 18848.7,
+"z": 10445.3,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 17747.2,
+"z": 10519.2,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 19219.3,
+"z": 10529.0,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 19236.2,
+"z": 10535.4,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 19238.9,
+"z": 10535.8,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 19278.1,
+"z": 10545.2,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 20451.2,
+"z": 10545.6,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 18690.8,
+"z": 10565.2,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 18700.6,
+"z": 10566.7,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 19362.5,
+"z": 10586.7,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 17538.8,
+"z": 10589.7,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 17540.7,
+"z": 10590.1,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 19507.6,
+"z": 10590.8,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 17542.5,
+"z": 10592.4,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 17542.2,
+"z": 10593.9,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 17546.3,
+"z": 10596.1,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 17547.4,
+"z": 10596.5,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 17548.6,
+"z": 10596.9,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 17550.1,
+"z": 10596.9,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 17551.2,
+"z": 10596.9,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 17552.4,
+"z": 10597.3,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 17553.5,
+"z": 10597.6,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 19630.9,
+"z": 10616.9,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 19339.9,
+"z": 10627.0,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 18344.7,
+"z": 10629.3,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 18756.4,
+"z": 10721.3,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 19876.3,
+"z": 10737.1,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 19877.8,
+"z": 10737.5,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 5466.6,
+"z": 10769.9,
+"name": "Worthing Recycling Centre"
+},
+{
+"kind": "recycling",
+"x": 19336.1,
+"z": 10850.9,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 21452.0,
+"z": 10949.3,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 19573.2,
+"z": 10960.6,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 4020.2,
+"z": 11007.0,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 21829.3,
+"z": 11031.5,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 20393.1,
+"z": 11069.2,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 21230.7,
+"z": 11105.4,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 21807.1,
+"z": 11106.9,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 20092.7,
+"z": 11107.3,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 20094.2,
+"z": 11107.7,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 7562.9,
+"z": 11123.9,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 7457.7,
+"z": 11130.7,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 7516.9,
+"z": 11132.2,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 21721.2,
+"z": 11145.7,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 20361.5,
+"z": 11199.3,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 20398.0,
+"z": 11211.3,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 21819.9,
+"z": 11227.9,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 21561.7,
+"z": 11230.2,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 21614.5,
+"z": 11250.9,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 22061.2,
+"z": 11293.1,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 22061.6,
+"z": 11294.3,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 21700.8,
+"z": 11299.9,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 22781.2,
+"z": 11329.7,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 22153.5,
+"z": 11348.9,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 22756.3,
+"z": 11350.0,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 22182.2,
+"z": 11367.8,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 21548.5,
+"z": 11375.7,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 21999.0,
+"z": 11401.7,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 22058.5,
+"z": 11418.3,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 21710.2,
+"z": 11428.5,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 22145.2,
+"z": 11445.4,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 22273.0,
+"z": 11472.6,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 22478.1,
+"z": 11472.9,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 22565.2,
+"z": 11476.3,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 22171.2,
+"z": 11482.4,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 22548.6,
+"z": 11499.7,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 22353.7,
+"z": 11501.6,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 22633.8,
+"z": 11508.7,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 22622.5,
+"z": 11517.0,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 22389.9,
+"z": 11753.0,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 22413.3,
+"z": 11761.3,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 22854.7,
+"z": 11779.0,
+"name": "Asda Marina"
+},
+{
+"kind": "recycling",
+"x": 22834.3,
+"z": 11787.7,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 607.2,
+"z": 11952.4,
+"name": "Sussex Textile Recycling"
+},
+{
+"kind": "recycling",
+"x": 23737.5,
+"z": 12022.5,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 4412.6,
+"z": 12249.5,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 1176.8,
+"z": 12703.0,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 504.7,
+"z": 12800.6,
+"name": ""
+},
+{
+"kind": "station",
+"x": 24082.4,
+"z": 6467.6,
+"name": "Falmer railway station"
+},
+{
+"kind": "station",
+"x": 21849.7,
+"z": 8182.1,
+"name": "Moulsecoomb railway station"
+},
+{
+"kind": "station",
+"x": 19300.3,
+"z": 8241.2,
+"name": "Preston Park railway station"
+},
+{
+"kind": "station",
+"x": 20641.2,
+"z": 9264.7,
+"name": "London Road railway station"
+},
+{
+"kind": "station",
+"x": 17445.3,
+"z": 9315.2,
+"name": "Aldrington railway station"
+},
+{
+"kind": "station",
+"x": 15790.1,
+"z": 9383.1,
+"name": "Portslade railway station"
+},
+{
+"kind": "station",
+"x": 18257.6,
+"z": 9443.4,
+"name": "Hove railway station"
+},
+{
+"kind": "station",
+"x": 11141.8,
+"z": 9535.7,
+"name": "Shoreham-by-Sea railway station"
+},
+{
+"kind": "station",
+"x": 14786.6,
+"z": 9546.3,
+"name": "Fishersgate railway station"
+},
+{
+"kind": "station",
+"x": 13552.4,
+"z": 9747.6,
+"name": "Southwick railway station"
+},
+{
+"kind": "station",
+"x": 20326.4,
+"z": 10149.4,
+"name": "Brighton railway station"
+},
+{
+"kind": "station",
+"x": 7504.5,
+"z": 10354.5,
+"name": "Lancing railway station"
+},
+{
+"kind": "station",
+"x": 5262.7,
+"z": 10958.0,
+"name": "East Worthing railway station"
+},
+{
+"kind": "station",
+"x": 20879.0,
+"z": 11252.8,
+"name": "Aquarium"
+},
+{
+"kind": "station",
+"x": 3782.4,
+"z": 11286.0,
+"name": "Worthing railway station"
+},
+{
+"kind": "station",
+"x": 2575.3,
+"z": 11315.7,
+"name": "West Worthing railway station"
+},
+{
+"kind": "station",
+"x": 1301.6,
+"z": 11419.4,
+"name": "Durrington-on-Sea railway station"
+},
+{
+"kind": "station",
+"x": 21707.6,
+"z": 11518.9,
+"name": "Halfway Station"
+},
+{
+"kind": "station",
+"x": 22405.3,
+"z": 11742.1,
+"name": "Black Rock"
+}
+]

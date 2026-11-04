@@ -7,7 +7,9 @@ extends RefCounted
 ## of its north edge, y = up. Cell (col, row) covers
 ## [col * cell_size, (col + 1) * cell_size) on x, and likewise rows on z.
 
-const RESOURCE_KEYS := ["biomass", "water", "metal", "energy"]
+const HIGH_GROUND := 45.0  ## metres; natural ground above this is chalk downland
+const LOW_GROUND := 6.0  ## metres; natural ground below this is floodplain / clay
+const NATURAL := ["grass", "farmland", "scrub", "wood", "bare", "golf", "park", "wetland"]
 
 var path: String
 var meta: Dictionary
@@ -15,6 +17,8 @@ var width: int
 var height: int
 var cell_size: float
 var classes: Array = []
+var class_ids := {}  ## name -> id
+var sites: Array = []  ## real points of interest: {kind, x, z, name}
 var heights: PackedFloat32Array  ## metres, row-major, row 0 = north
 var cover: PackedByteArray  ## class id per cell
 var buildings: PackedByteArray  ## (height_m, roof_variant) per cell
@@ -34,6 +38,12 @@ static func load_region(dir: String) -> RegionData:
 	r.height = int(r.meta.height)
 	r.cell_size = float(r.meta.cell_size)
 	r.classes = r.meta.classes
+	for c in r.classes:
+		r.class_ids[String(c.name)] = int(c.id)
+	if r.meta.layers.has("sites"):
+		var sf := FileAccess.open(dir.path_join(r.meta.layers.sites.file), FileAccess.READ)
+		if sf:
+			r.sites = JSON.parse_string(sf.get_as_text())
 	var n := r.width * r.height
 
 	var layers: Dictionary = r.meta.layers
@@ -95,6 +105,11 @@ func height_at(x: float, z: float) -> float:
 	return lerpf(lerpf(a, b, tx), lerpf(c, d, tx), tz)
 
 
+func cell_index_at(x: float, z: float) -> int:
+	var c := cell_at(x, z)
+	return c.y * width + c.x
+
+
 func class_at(cell: Vector2i) -> int:
 	return cover[cell.y * width + cell.x]
 
@@ -118,40 +133,60 @@ func world_to_lonlat(x: float, z: float) -> Vector2:
 	return Vector2(lon, lat)
 
 
-## Count land-cover cells and resources inside one hex.
+## Land cover, buildings and terrain inside one hex. Public information:
+## anyone can see the landscape; resources need scouting (DepositGenerator).
 func survey_hex(axial: Vector2i, hex_size: float) -> Dictionary:
 	var centre := Hex.axial_to_world(axial, hex_size)
 	var c0 := maxi(0, int(floor((centre.x - hex_size) / cell_size)))
 	var c1 := mini(width - 1, int(ceil((centre.x + hex_size) / cell_size)))
 	var r0 := maxi(0, int(floor((centre.y - hex_size) / cell_size)))
 	var r1 := mini(height - 1, int(ceil((centre.y + hex_size) / cell_size)))
-	var counts := PackedInt32Array()
-	counts.resize(classes.size())
+	var natural := {}
+	for n in NATURAL:
+		natural[class_ids[n]] = true
+	var cells_by_id := []
+	for i in classes.size():
+		cells_by_id.append(PackedInt32Array())
 	var total := 0
+	var building_cells := 0
+	var building_volume := 0.0
+	var high_natural := 0
+	var low_natural := 0
 	for row in range(r0, r1 + 1):
 		var z := (row + 0.5) * cell_size
 		for col in range(c0, c1 + 1):
-			var x := (col + 0.5) * cell_size
-			if Hex.world_to_axial(x, z, hex_size) != axial:
+			if Hex.world_to_axial((col + 0.5) * cell_size, z, hex_size) != axial:
 				continue
-			counts[cover[row * width + col]] += 1
+			var i := row * width + col
+			var cls := cover[i]
+			cells_by_id[cls].append(i)
 			total += 1
-	var res := {}
-	for key in RESOURCE_KEYS:
-		res[key] = 0.0
-	for id in classes.size():
-		if counts[id] == 0:
-			continue
-		var r: Dictionary = classes[id].resources
-		for key in RESOURCE_KEYS:
-			res[key] += float(r[key]) * counts[id]
-	# Scale so a hex full of a "3" resource reads as roughly 100.
-	var scale := 100.0 / (3.0 * maxf(1.0, total))
-	for key in RESOURCE_KEYS:
-		res[key] = int(round(res[key] * scale))
+			var bh := buildings[i * 2]
+			if bh > 0:
+				building_cells += 1
+				building_volume += bh
+			if natural.has(cls):
+				if heights[i] > HIGH_GROUND:
+					high_natural += 1
+				elif heights[i] < LOW_GROUND:
+					low_natural += 1
+	var counts := {}
+	var cells := {}
 	var top := []
-	for id in classes.size():
-		if counts[id] > 0:
-			top.append([counts[id], id])
+	for c in classes:
+		var pool: PackedInt32Array = cells_by_id[int(c.id)]
+		counts[String(c.name)] = pool.size()
+		cells[String(c.name)] = pool
+		if pool.size() > 0:
+			top.append([pool.size(), int(c.id)])
 	top.sort_custom(func(a, b): return a[0] > b[0])
-	return {"cells": total, "resources": res, "top": top.slice(0, 3)}
+	return {
+		"cells": total,
+		"counts_by_name": counts,
+		"cells_by_name": cells,
+		"building_cells": building_cells,
+		"building_volume": building_volume,
+		"high_natural": high_natural,
+		"low_natural": low_natural,
+		"top": top.slice(0, 3),
+	}

@@ -52,34 +52,33 @@ POSTCODE_URL = "https://api.postcodes.io/postcodes/{}"
 
 # ---------------------------------------------------------------------------
 # Land-cover classes. Index = value stored in cover.bin. Colours are the
-# "Day" pixel palette; resources are (biomass, water, metal, energy) per cell
-# and are a first sketch of the game economy.
+# "Day" pixel palette. Resource deposits are placed by the game
+# (godot/scripts/deposit_generator.gd) from these classes plus real sites.
 # ---------------------------------------------------------------------------
 CLASSES = [
-    # name,        colour,    biomass, water, metal, energy
-    ("sea",        "#3f7f9e", 0, 1, 0, 1),
-    ("beach",      "#d9c99a", 0, 0, 1, 0),
-    ("water",      "#4f93ab", 0, 3, 0, 0),
-    ("urban",      "#b9b2a2", 0, 0, 1, 1),
-    ("commercial", "#c4a99a", 0, 0, 1, 2),
-    ("industrial", "#a39da3", 0, 0, 3, 1),
-    ("park",       "#7fb267", 2, 0, 0, 0),
-    ("grass",      "#9cbd6e", 1, 0, 0, 0),
-    ("farmland",   "#c9c27a", 3, 0, 0, 0),
-    ("wood",       "#4f8a4e", 4, 0, 0, 0),
-    ("scrub",      "#8a9f5c", 1, 0, 0, 0),
-    ("wetland",    "#7fa58f", 1, 2, 0, 0),
-    ("bare",       "#c7bfae", 0, 0, 2, 0),
-    ("golf",       "#8fc46f", 1, 0, 0, 0),
-    ("path",       "#d3c4a0", 0, 0, 0, 0),
-    ("rail",       "#7c6f68", 0, 0, 2, 1),
-    ("road",       "#e6e0d0", 0, 0, 0, 0),
-    ("road_major", "#f0d48a", 0, 0, 0, 0),
-    ("runway",     "#8c8c8c", 0, 0, 1, 1),
-    ("pier",       "#9c7a5a", 0, 0, 1, 0),
-    ("building",   "#a8a097", 0, 0, 2, 2),
+    ("sea", "#3f7f9e"),
+    ("beach", "#d9c99a"),
+    ("water", "#4f93ab"),
+    ("urban", "#b9b2a2"),
+    ("commercial", "#c4a99a"),
+    ("industrial", "#a39da3"),
+    ("park", "#7fb267"),
+    ("grass", "#9cbd6e"),
+    ("farmland", "#c9c27a"),
+    ("wood", "#4f8a4e"),
+    ("scrub", "#8a9f5c"),
+    ("wetland", "#7fa58f"),
+    ("bare", "#c7bfae"),
+    ("golf", "#8fc46f"),
+    ("path", "#d3c4a0"),
+    ("rail", "#7c6f68"),
+    ("road", "#e6e0d0"),
+    ("road_major", "#f0d48a"),
+    ("runway", "#8c8c8c"),
+    ("pier", "#9c7a5a"),
+    ("building", "#a8a097"),
 ]
-C = {name: i for i, (name, *_rest) in enumerate(CLASSES)}
+C = {name: i for i, (name, _colour) in enumerate(CLASSES)}
 
 ROOF_COLOURS = [
     "#b5654a",  # terracotta tiles
@@ -129,6 +128,19 @@ ROAD_STYLE = {
 ROAD_ORDER = ["path", "track", "service", "minor", "rail", "transit",
               "tertiary", "secondary", "primary", "trunk", "motorway", "pier"]
 WATERWAY_WIDTH = {"river": 2, "canal": 2, "stream": 1}
+
+# Points of interest that become special deposits in the game: (class, subclass) -> site kind.
+# subclass None matches any subclass.
+POI_SITES = {
+    ("fuel", "fuel"): "fuel_station",
+    ("fuel", "charging_station"): "charging_station",
+    ("parking", None): "car_park",
+    ("car", None): "garage",
+    ("recycling", None): "recycling",
+    ("hospital", None): "hospital",
+    ("college", None): "college",
+    ("railway", "station"): "station",
+}
 
 
 # ---------------------------------------------------------------------------
@@ -241,6 +253,18 @@ class Rasterizer:
         self.bheight = np.zeros((grid.height, grid.width), np.uint8)
         self.broof = np.zeros((grid.height, grid.width), np.uint8)
         self.clip = (0, 0, grid.width, grid.height)
+        self.sites = []
+
+    def site(self, kind, x, y, name):
+        """Record a point site. Points in a tile's buffer belong to the neighbour, so
+        keeping only points whose cell lies in this tile's rect removes duplicates."""
+        (cx, cy), = self._to_cells([(x, y)])
+        cx += 0.5
+        cy += 0.5
+        c0, r0, c1, r1 = self.clip
+        if c0 <= cx < c1 and r0 <= cy < r1:
+            g = self.grid.cell
+            self.sites.append({"kind": kind, "x": round(cx * g, 1), "z": round(cy * g, 1), "name": name or ""})
 
     def set_tile(self, tx, ty, extent):
         self.clip = self.grid.tile_rect(tx, ty)
@@ -348,7 +372,8 @@ def fetch_vector_tiles(grid, url_template):
 
 def rasterize(grid, tiles):
     r = Rasterizer(grid)
-    wanted = {"landuse", "landcover", "water", "waterway", "transportation", "building", "aeroway"}
+    wanted = {"landuse", "landcover", "water", "waterway", "transportation", "building", "aeroway",
+              "poi", "aerodrome_label"}
     for i, (tx, ty, data) in enumerate(tiles):
         layers = mvt.decode(data, wanted)
         any_layer = next(iter(layers.values()), None)
@@ -396,6 +421,14 @@ def rasterize(grid, tiles):
         for f in lines:
             cls, w = ROAD_STYLE[f.tags["class"]]
             r.line(f, C[cls], w)
+        for f in feats("poi", mvt.POINT):
+            key = (f.tags.get("class"), f.tags.get("subclass"))
+            kind = POI_SITES.get(key) or POI_SITES.get((key[0], None))
+            if kind and f.parts:
+                r.site(kind, *f.parts[0][0], f.tags.get("name:en") or f.tags.get("name"))
+        for f in feats("aerodrome_label", mvt.POINT):
+            if f.parts:
+                r.site("airfield", *f.parts[0][0], f.tags.get("name"))
         blds = []
         for f in feats("building", mvt.POLYGON):
             if f.tags.get("hide_3d"):
@@ -466,12 +499,16 @@ def write_layers(out_dir, grid, r, height, name, postcode_info):
     os.makedirs(out_dir, exist_ok=True)
 
     def wgz(fname, arr):
-        with gzip.open(os.path.join(out_dir, fname), "wb", compresslevel=9) as f:
+        # mtime=0 keeps output byte-identical for identical data (clean git diffs).
+        with open(os.path.join(out_dir, fname), "wb") as raw, \
+                gzip.GzipFile(fileobj=raw, mode="wb", compresslevel=9, mtime=0) as f:
             f.write(np.ascontiguousarray(arr).tobytes())
 
     wgz("height.bin.gz", height.astype("<f2"))
     wgz("cover.bin.gz", r.cover)
     wgz("buildings.bin.gz", np.stack([r.bheight, r.broof], axis=-1))
+    with open(os.path.join(out_dir, "sites.json"), "w") as f:
+        json.dump(sorted(r.sites, key=lambda s: (s["kind"], s["z"], s["x"])), f, indent=0)
 
     home = None
     if postcode_info:
@@ -501,12 +538,12 @@ def write_layers(out_dir, grid, r, height, name, postcode_info):
             "cover": {"file": "cover.bin.gz", "type": "uint8"},
             "buildings": {"file": "buildings.bin.gz", "type": "uint8x2",
                           "channels": ["height_m", "roof_variant"]},
+            "sites": {"file": "sites.json", "type": "json",
+                      "kinds": sorted(set(POI_SITES.values()) | {"airfield"})},
         },
         "classes": [
-            {"id": i, "name": n, "colour": col,
-             "resources": {"biomass": b, "water": w, "metal": m, "energy": e},
-             "cells": int(counts[i])}
-            for i, (n, col, b, w, m, e) in enumerate(CLASSES)
+            {"id": i, "name": n, "colour": col, "cells": int(counts[i])}
+            for i, (n, col) in enumerate(CLASSES)
         ],
         "roof_colours": ROOF_COLOURS,
         "elevation_range": [float(height.min()), float(height.max())],
@@ -522,7 +559,7 @@ def write_layers(out_dir, grid, r, height, name, postcode_info):
 
 
 def write_preview(path, r, height, scale=1):
-    pal = np.array([[int(c[i:i + 2], 16) for i in (1, 3, 5)] for _n, c, *_ in CLASSES], np.float32)
+    pal = np.array([[int(c[i:i + 2], 16) for i in (1, 3, 5)] for _n, c in CLASSES], np.float32)
     img = pal[r.cover]
     # Hillshade from the north-west.
     gy, gx = np.gradient(height.astype(np.float32) * 2.0, 10.0)
@@ -577,7 +614,7 @@ def main():
     meta = write_layers(out_dir, grid, r, height, name, postcode_info)
     write_preview(preview, r, height, scale=2 if grid.width > 2000 else 1)
     log(f"Elevation {meta['elevation_range'][0]:.1f} .. {meta['elevation_range'][1]:.1f} m, "
-        f"{int((r.bheight > 0).sum())} building cells")
+        f"{int((r.bheight > 0).sum())} building cells, {len(r.sites)} sites")
     log(f"Wrote {out_dir} and {preview} in {time.time() - t0:.0f}s")
 
 

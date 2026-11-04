@@ -1,7 +1,7 @@
 {
   "format": 1,
   "name": "brighton_worthing",
-  "generated": "2026-11-04T07:13:29Z",
+  "generated": "2026-11-04T07:54:46Z",
   "bbox": {
     "west": -0.43,
     "south": 50.795,
@@ -42,6 +42,21 @@
         "height_m",
         "roof_variant"
       ]
+    },
+    "sites": {
+      "file": "sites.json",
+      "type": "json",
+      "kinds": [
+        "airfield",
+        "car_park",
+        "charging_station",
+        "college",
+        "fuel_station",
+        "garage",
+        "hospital",
+        "recycling",
+        "station"
+      ]
     }
   },
   "classes": [
@@ -49,252 +64,126 @@
       "id": 0,
       "name": "sea",
       "colour": "#3f7f9e",
-      "resources": {
-        "biomass": 0,
-        "water": 1,
-        "metal": 0,
-        "energy": 1
-      },
       "cells": 637884
     },
     {
       "id": 1,
       "name": "beach",
       "colour": "#d9c99a",
-      "resources": {
-        "biomass": 0,
-        "water": 0,
-        "metal": 1,
-        "energy": 0
-      },
       "cells": 8134
     },
     {
       "id": 2,
       "name": "water",
       "colour": "#4f93ab",
-      "resources": {
-        "biomass": 0,
-        "water": 3,
-        "metal": 0,
-        "energy": 0
-      },
       "cells": 19551
     },
     {
       "id": 3,
       "name": "urban",
       "colour": "#b9b2a2",
-      "resources": {
-        "biomass": 0,
-        "water": 0,
-        "metal": 1,
-        "energy": 1
-      },
       "cells": 196169
     },
     {
       "id": 4,
       "name": "commercial",
       "colour": "#c4a99a",
-      "resources": {
-        "biomass": 0,
-        "water": 0,
-        "metal": 1,
-        "energy": 2
-      },
       "cells": 2775
     },
     {
       "id": 5,
       "name": "industrial",
       "colour": "#a39da3",
-      "resources": {
-        "biomass": 0,
-        "water": 0,
-        "metal": 3,
-        "energy": 1
-      },
       "cells": 11536
     },
     {
       "id": 6,
       "name": "park",
       "colour": "#7fb267",
-      "resources": {
-        "biomass": 2,
-        "water": 0,
-        "metal": 0,
-        "energy": 0
-      },
       "cells": 78791
     },
     {
       "id": 7,
       "name": "grass",
       "colour": "#9cbd6e",
-      "resources": {
-        "biomass": 1,
-        "water": 0,
-        "metal": 0,
-        "energy": 0
-      },
       "cells": 863681
     },
     {
       "id": 8,
       "name": "farmland",
       "colour": "#c9c27a",
-      "resources": {
-        "biomass": 3,
-        "water": 0,
-        "metal": 0,
-        "energy": 0
-      },
       "cells": 606822
     },
     {
       "id": 9,
       "name": "wood",
       "colour": "#4f8a4e",
-      "resources": {
-        "biomass": 4,
-        "water": 0,
-        "metal": 0,
-        "energy": 0
-      },
       "cells": 223737
     },
     {
       "id": 10,
       "name": "scrub",
       "colour": "#8a9f5c",
-      "resources": {
-        "biomass": 1,
-        "water": 0,
-        "metal": 0,
-        "energy": 0
-      },
       "cells": 39038
     },
     {
       "id": 11,
       "name": "wetland",
       "colour": "#7fa58f",
-      "resources": {
-        "biomass": 1,
-        "water": 2,
-        "metal": 0,
-        "energy": 0
-      },
       "cells": 1115
     },
     {
       "id": 12,
       "name": "bare",
       "colour": "#c7bfae",
-      "resources": {
-        "biomass": 0,
-        "water": 0,
-        "metal": 2,
-        "energy": 0
-      },
       "cells": 5641
     },
     {
       "id": 13,
       "name": "golf",
       "colour": "#8fc46f",
-      "resources": {
-        "biomass": 1,
-        "water": 0,
-        "metal": 0,
-        "energy": 0
-      },
       "cells": 38780
     },
     {
       "id": 14,
       "name": "path",
       "colour": "#d3c4a0",
-      "resources": {
-        "biomass": 0,
-        "water": 0,
-        "metal": 0,
-        "energy": 0
-      },
       "cells": 108391
     },
     {
       "id": 15,
       "name": "rail",
       "colour": "#7c6f68",
-      "resources": {
-        "biomass": 0,
-        "water": 0,
-        "metal": 2,
-        "energy": 1
-      },
       "cells": 5198
     },
     {
       "id": 16,
       "name": "road",
       "colour": "#e6e0d0",
-      "resources": {
-        "biomass": 0,
-        "water": 0,
-        "metal": 0,
-        "energy": 0
-      },
       "cells": 117895
     },
     {
       "id": 17,
       "name": "road_major",
       "colour": "#f0d48a",
-      "resources": {
-        "biomass": 0,
-        "water": 0,
-        "metal": 0,
-        "energy": 0
-      },
       "cells": 30799
     },
     {
       "id": 18,
       "name": "runway",
       "colour": "#8c8c8c",
-      "resources": {
-        "biomass": 0,
-        "water": 0,
-        "metal": 1,
-        "energy": 1
-      },
       "cells": 2822
     },
     {
       "id": 19,
       "name": "pier",
       "colour": "#9c7a5a",
-      "resources": {
-        "biomass": 0,
-        "water": 0,
-        "metal": 1,
-        "energy": 0
-      },
       "cells": 888
     },
     {
       "id": 20,
       "name": "building",
       "colour": "#a8a097",
-      "resources": {
-        "biomass": 0,
-        "water": 0,
-        "metal": 2,
-        "energy": 2
-      },
       "cells": 372137
     }
   ],

@@ -1,14 +1,16 @@
 # WorldGame
 
-An online multiplayer world game set on the real map. Players type in a postcode, claim a hex of land as their home, and send out AI bug/robot characters that gather resources from the real landscape.
+An online multiplayer world game set on the real map. It takes place in the near future, after an apocalyptic event. Players type in a postcode, claim a hex of land as their home, and send out 40 ft (12 m) AI-driven giants that scout and salvage resources from the real landscape.
 
-This first milestone is the **landscape generator**: real-world map data turned into a pixel-art 3D world in Godot. The prototype region runs from **Worthing to Brighton, between the sea and the South Downs**, centred on home postcode **BN15 8EU** (Lancing).
+Built so far:
+- the **landscape generator**: real-world map data turned into a pixel-art 3D world in Godot;
+- **resources and scouting**: fixed deposits that each player only sees once they've scouted a hex. The prototype region runs from **Worthing to Brighton, between the sea and the South Downs**, centred on home postcode **BN15 8EU** (Lancing).
 
 ![Default view: Lancing, Shoreham Airport, the River Adur and the South Downs](docs/landscape-default.png)
 
-| Brighton Palace Pier | Home hex (BN15 8EU) | South Downs looking south |
+| Brighton Palace Pier | A 12 m giant among Lancing houses | Scouted hexes with deposits |
 | --- | --- | --- |
-| ![](docs/landscape-brighton-pier.png) | ![](docs/landscape-home-bn15.png) | ![](docs/landscape-downs.png) |
+| ![](docs/landscape-brighton-pier.png) | ![](docs/giant-scale.png) | ![](docs/scouting.png) |
 
 ## How it works
 
@@ -27,7 +29,24 @@ postcode ──► tools/mapgen/generate.py ──► godot/data/regions/<name>/
    - **Terrain:** 256 × 256-cell chunks, displaced on the GPU from the height texture and coloured per cell from the land-cover palette, with banded lighting and a pixel hillshade. Height is exaggerated 2× so the Downs read clearly.
    - **Buildings:** one `MultiMesh` per chunk, with a box for each run of building cells. Each building gets its real height (from OpenStreetMap), a roof colour, and walls with windows.
    - **Pixel-art look:** the 3D view renders at ½ resolution (P cycles 1–4×) and is scaled up with nearest-neighbour filtering.
-   - **Hex claim grid:** pointy-top hexes of 250 m. Your postcode's hex is your **home** (gold, with a beacon). Click other hexes to claim or release them. Hovering shows the hex's land-cover mix and **resources** (biomass, water, metal, energy). Resources are derived from land cover; the values are a first sketch, in `CLASSES` in `generate.py`.
+   - **Hex grid:** pointy-top hexes of 250 m. Your postcode's hex is your **home** (gold, with a beacon and your first giant).
+3. **Resources and scouting** (`godot/scripts/deposit_generator.gd`, `world_state.gd`): see below.
+
+## Resources and scouting
+
+There are 15 raw resources, all real-world materials, so AI agents can reason about them without game-specific knowledge:
+
+| Group | Resources | Where they come from |
+| --- | --- | --- |
+| Land | timber, biomass, water, stone (chalk & flint), clay, sand | woods, grassland and farmland, rivers and wetland, high downland, floodplain, beaches |
+| Salvage | steel, copper, concrete, glass, plastics, electronics | buildings (scaled by volume), industrial and commercial land, railways, roads |
+| Special | fuel, power cells, rare tech | **real sites** from OpenStreetMap: fuel stations, EV chargers, car parks, garages, recycling centres, hospitals, colleges, railway stations, airfields |
+
+- **Deterministic:** deposits in a hex are generated from a secret world seed plus the hex coordinates and the real landscape, so the same hex always produces the same deposits. Nothing is stored until it's seen.
+- **Once seen, fixed:** scouting a hex freezes what was found, with a timestamp, in the player's save (`user://save_<region>.json`). Hovering shows "scouted 5 min ago". Later, others may have stripped it since.
+- **Fog of war:** the landscape is public, but resources are only visible in hexes you've scouted. Unscouted land is faded; hexes next to your scouted area are less faded and can be scouted next.
+- **Territory:** you start with your home hex plus its six neighbours scouted. You can claim scouted hexes that touch your own land.
+- **Server-ready:** in multiplayer the generator runs only on the server, so the seed never reaches players and the resource map can't be extracted from the game files.
 
 ## Run it
 
@@ -39,14 +58,18 @@ postcode ──► tools/mapgen/generate.py ──► godot/data/regions/<name>/
 | Left-drag, WASD / arrows | Pan |
 | Right-drag (or Shift + left-drag), Q / E | Rotate and tilt |
 | Mouse wheel, Z / X | Zoom |
-| Click | Claim / release the hex under the cursor |
-| Space / Home | Fly back to your home hex |
+| Click a faded hex next to your area | Scout it (reveals its deposits) |
+| Click a scouted hex | Claim it (if it touches your land) / release it |
+| Space / Home | Fly to your giant |
 | H | Toggle hex grid |
 | B | Toggle buildings |
 | P | Cycle pixel size |
+| F8 | New game (clears scouting and claims) |
+
+Tests (headless): `godot --headless --path godot --script res://tests/test_deposits.gd`
 
 Dev helpers, for screenshots or CI:
-`godot --path godot -- --view=x,z,yaw_deg,pitch_deg,distance --hover=px,py --screenshot=out.png`
+`godot --path godot -- --reset --scout-radius=3 --view=x,z,yaw_deg,pitch_deg,distance --giant-view=yaw,pitch,dist --hover=px,py --screenshot=out.png`
 
 ## Generate another region
 
@@ -82,4 +105,6 @@ The landscape is our own renderer, inspired by [UnoPixelMap / Pixel Atlas](https
 
 - **Privacy:** before going multiplayer, place a player's home at a random hex near their postcode, not on it.
 - **Server:** run the region generator server-side on demand when someone claims somewhere new, and move to a global hex index (H3) so regions stitch together.
-- **Gameplay:** resource nodes on the map, then the first bot that follows rules written in plain English.
+- **Gameplay:** move the giant to scout and salvage instead of clicking, then give it rules in plain English.
+- **Crafting:** about 20–25 items for the first version (raw → processed → components → giant parts and structures), using real-world logic (sand → glass, clay → brick, ore + charcoal → iron).
+- **Depletion and regrowth:** salvage runs out, while biomass regrows and slowly reclaims towns.

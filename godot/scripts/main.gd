@@ -1,11 +1,12 @@
 extends Node
 ## WorldGame landscape prototype: loads a generated region, builds the pixel-art
-## world inside a low-resolution SubViewport, and lets you explore and claim
-## hexes.
+## world inside a low-resolution SubViewport, and lets you scout hexes for
+## resources and claim territory around your home.
 
 const HEX_SIZE := 250.0
-const MAX_CLAIMS := 64
 const PIXEL_SIZES := [1, 2, 3, 4]
+const NO_HEX := Vector2i(1 << 20, 0)
+enum HexState { UNKNOWN, FRONTIER, SCOUTED, CLAIMED, HOME }
 
 @export var region_path := "res://data/regions/brighton_worthing"
 @export var pixel_size := 2
@@ -26,9 +27,16 @@ var loading_panel: PanelContainer
 var loading_label: Label
 var loading_bar: ProgressBar
 
-var home_axial := Vector2i(1 << 20, 0)
-var hover_axial := Vector2i(1 << 20, 0)
-var claimed: Array[Vector2i] = []
+var state: WorldState
+var deposits: DepositGenerator
+var markers: DepositMarkers
+var giant: Giant
+var hex_state_image: Image
+var hex_state_texture: ImageTexture
+var hex_origin := Vector2i.ZERO
+
+var home_axial := NO_HEX
+var hover_axial := NO_HEX
 var show_hex := true
 var show_buildings := true
 var _survey_cache := {}
@@ -36,7 +44,10 @@ var _drag_button := -1
 var _drag_moved := 0.0
 var _mouse := Vector2.ZERO
 var _pick_dirty := false
+var _mouse_seen := false
 var _ready_to_play := false
+var _toast := ""
+var _toast_until := 0.0
 
 
 func _ready() -> void:
@@ -61,14 +72,37 @@ func _ready() -> void:
 	_setup_home()
 	await terrain.build(region)
 
+	deposits = DepositGenerator.new(region, HEX_SIZE)
+	markers = DepositMarkers.new()
+	markers.name = "DepositMarkers"
+	world.add_child(markers)
+	_setup_hex_state()
+	state = WorldState.new(String(region.meta.name))
+	state.home = home_axial
+	state.has_home = home_axial != NO_HEX
+	if "--reset" in OS.get_cmdline_user_args():
+		state.reset()
+	if not state.load_save() or state.scouted.is_empty():
+		_start_new_game()
+
 	loading_panel.visible = false
 	_ready_to_play = true
-	_update_title()
-	_update_hex_uniforms()
+	_refresh_world()
 	await _run_command_line()
 
 
+## A new player has scouted their home hex and its six neighbours.
+func _start_new_game() -> void:
+	if not state.has_home:
+		return
+	_scout(home_axial, false)
+	for d in WorldState.NEIGHBOURS:
+		_scout(home_axial + d, false)
+	state.save()
+
+
 ## Dev helpers: `godot -- --view=x,z,yaw_deg,pitch_deg,distance --screenshot=out.png`
+## Also: --giant-view=yaw,pitch,dist  --scout-radius=N  --hover=px,py  --reset
 func _run_command_line() -> void:
 	var args := {}
 	for a in OS.get_cmdline_user_args():
@@ -81,9 +115,23 @@ func _run_command_line() -> void:
 		rig.pitch = deg_to_rad(v[3])
 		rig.distance = v[4]
 		rig.snap()
+	if args.has("giant-view") and giant:  # dev: yaw_deg,pitch_deg,distance around the giant
+		var g := String(args["giant-view"]).split_floats(",")
+		rig.set_focus(Vector2(giant.position.x, giant.position.z))
+		rig.yaw = deg_to_rad(g[0])
+		rig.pitch = deg_to_rad(g[1])
+		rig.distance = g[2]
+		rig.snap()
+	if args.has("scout-radius"):  # dev: reveal everything within N hexes of home
+		var n := int(args["scout-radius"])
+		for q in range(-n, n + 1):
+			for r in range(maxi(-n, -q - n), mini(n, -q + n) + 1):
+				_scout(home_axial + Vector2i(q, r), false)
+		_refresh_world()
 	if args.has("hover"):
 		var h := String(args.hover).split_floats(",")
 		_mouse = Vector2(h[0], h[1])
+		_mouse_seen = true
 		_update_hover()
 	if args.has("screenshot"):
 		for i in 10:
@@ -187,8 +235,8 @@ func _setup_home() -> void:
 	home_axial = Hex.world_to_axial(x, z, HEX_SIZE)
 	var beacon := MeshInstance3D.new()
 	var cyl := CylinderMesh.new()
-	cyl.top_radius = 5.0
-	cyl.bottom_radius = 5.0
+	cyl.top_radius = 2.0
+	cyl.bottom_radius = 2.0
 	cyl.height = 160.0
 	cyl.radial_segments = 6
 	beacon.mesh = cyl
@@ -196,9 +244,31 @@ func _setup_home() -> void:
 	mat.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
 	mat.albedo_color = Color("#ffd04a")
 	beacon.material_override = mat
-	beacon.position = Vector3(x, terrain.world_height(x, z) + 80.0, z)
+	beacon.position = Vector3(x, terrain.world_height(x, z) + 100.0, z)  # floats above the postcode
 	beacon.name = "HomeBeacon"
 	world.add_child(beacon)
+
+	# The player's first giant stands at the centre of the home hex.
+	var c := _open_ground_near(Hex.axial_to_world(home_axial, HEX_SIZE))
+	giant = Giant.new()
+	giant.name = "Giant"
+	giant.position = Vector3(c.x, terrain.world_height(c.x, c.y), c.y)
+	world.add_child(giant)
+
+
+## Nearest cell centre to `p` with no building or water, searching outwards.
+func _open_ground_near(p: Vector2) -> Vector2:
+	var blocked := [region.class_ids.sea, region.class_ids.water, region.class_ids.building]
+	var c0 := region.cell_at(p.x, p.y)
+	for radius in 30:
+		for dz in range(-radius, radius + 1):
+			for dx in range(-radius, radius + 1):
+				if maxi(absi(dx), absi(dz)) != radius:
+					continue
+				var c := Vector2i(clampi(c0.x + dx, 0, region.width - 1), clampi(c0.y + dz, 0, region.height - 1))
+				if region.building_height_at(c) == 0 and not blocked.has(region.class_at(c)):
+					return (Vector2(c) + Vector2(0.5, 0.5)) * region.cell_size
+	return p
 
 
 func _build_ui() -> void:
@@ -226,9 +296,10 @@ func _build_ui() -> void:
 		"Left-drag / WASD  pan",
 		"Right-drag / Q E  rotate & tilt",
 		"Wheel / Z X  zoom",
-		"Click  claim / release hex",
-		"Space  fly home    H  hex grid",
-		"B  buildings    P  pixel size",
+		"Click faded hex  scout it",
+		"Click scouted hex  claim / release",
+		"Space  fly to your giant    H  hex grid",
+		"B  buildings    P  pixel size    F8  new game",
 	])
 	help_label.add_theme_color_override("font_color", Color("#b8d0d4"))
 	help_panel.add_child(help_label)
@@ -277,7 +348,19 @@ func _update_title() -> void:
 	lines.append("%s · %.1f × %.1f km" % [nice_name, region.world_size().x / 1000.0, region.world_size().y / 1000.0])
 	if home:
 		lines.append("Home: %s" % home.postcode)
-	lines.append("Claimed hexes: %d" % (claimed.size() + (1 if home else 0)))
+	lines.append("Scouted %d hexes · own %d" % [state.scouted.size(), state.claimed.size() + (1 if state.has_home else 0)])
+	var totals := {}
+	for a in state.scouted:
+		for d in state.deposits(a):
+			totals[d.type] = totals.get(d.type, 0) + int(d.amount)
+	var parts := []
+	for t in ResourceTypes.ORDER:
+		if totals.has(t):
+			parts.append("%s %d" % [ResourceTypes.display_name(t), totals[t]])
+	if parts.size() > 0:
+		lines.append("Known deposits:")
+		for i in range(0, parts.size(), 3):
+			lines.append("  " + "   ".join(parts.slice(i, i + 3)))
 	title_label.text = "\n".join(lines)
 
 
@@ -298,11 +381,12 @@ func _unhandled_input(event: InputEvent) -> void:
 				_drag_moved = 0.0
 			elif mb.button_index == _drag_button:
 				if _drag_button == MOUSE_BUTTON_LEFT and _drag_moved < 6.0:
-					_toggle_claim()
+					_click_hex()
 				_drag_button = -1
 	elif event is InputEventMouseMotion:
 		var mm := event as InputEventMouseMotion
 		_mouse = mm.position
+		_mouse_seen = true
 		_pick_dirty = true
 		if _drag_button != -1:
 			_drag_moved += mm.relative.length()
@@ -323,10 +407,15 @@ func _unhandled_input(event: InputEvent) -> void:
 				pixel_size = PIXEL_SIZES[(PIXEL_SIZES.find(pixel_size) + 1) % PIXEL_SIZES.size()]
 				container.stretch_shrink = pixel_size
 			KEY_SPACE, KEY_HOME:
-				var home = region.meta.get("home")
-				if home:
-					rig.set_focus(Vector2(home.x, home.z))
-					rig.distance = 1600.0
+				if giant:
+					rig.set_focus(Vector2(giant.position.x, giant.position.z))
+					rig.distance = 240.0
+					rig.pitch = deg_to_rad(24.0)
+			KEY_F8:
+				state.reset()
+				_start_new_game()
+				_refresh_world()
+				_flash("New game: your home and its neighbours are scouted.")
 
 
 func _process(delta: float) -> void:
@@ -354,7 +443,11 @@ func _process(delta: float) -> void:
 		rig.zoom(1.0 - 1.5 * delta)
 	if Input.is_key_pressed(KEY_X):
 		rig.zoom(1.0 + 1.5 * delta)
-	if _pick_dirty or _drag_button != -1:
+	markers.set_view_distance(rig.distance)
+	if _toast != "" and Time.get_ticks_msec() / 1000.0 > _toast_until:
+		_toast = ""
+		_pick_dirty = true
+	if _mouse_seen and (_pick_dirty or _drag_button != -1):
 		_pick_dirty = false
 		_update_hover()
 
@@ -394,8 +487,8 @@ func _pick_ground(screen_pos: Vector2) -> Variant:
 func _update_hover() -> void:
 	var hit = _pick_ground(_mouse)
 	if hit == null or not region.contains(hit.x, hit.z):
-		info_label.text = "Beyond the generated region."
-		_set_hover(Vector2i(1 << 20, 0))
+		info_label.text = _with_toast(["Beyond the generated region."])
+		_set_hover(NO_HEX)
 		return
 	var p: Vector3 = hit
 	var cell := region.cell_at(p.x, p.z)
@@ -405,12 +498,6 @@ func _update_hover() -> void:
 	var axial := Hex.world_to_axial(p.x, p.z, HEX_SIZE)
 	_set_hover(axial)
 	var survey: Dictionary = _survey(axial)
-	var res: Dictionary = survey.resources
-	var owner := "unclaimed · click to claim"
-	if axial == home_axial:
-		owner = "HOME"
-	elif claimed.has(axial):
-		owner = "claimed · click to release"
 	var top_names := []
 	for t in survey.top:
 		top_names.append("%s %d%%" % [region.class_name_of(t[1]), round(100.0 * t[0] / maxf(1, survey.cells))])
@@ -418,11 +505,65 @@ func _update_hover() -> void:
 		"%.5f, %.5f   elev %.0f m" % [ll.y, ll.x, region.height_at(p.x, p.z)],
 		"Ground: %s%s" % [region.class_name_of(cls), ("  ·  building %d m" % bh) if bh > 0 else ""],
 		"",
-		"Hex %d,%d  (%s)" % [axial.x, axial.y, owner],
-		"Biomass %d   Water %d   Metal %d   Energy %d" % [res.biomass, res.water, res.metal, res.energy],
-		"Mostly: %s" % ", ".join(top_names),
+		"Hex %d,%d · %s" % [axial.x, axial.y, ", ".join(top_names)],
 	]
-	info_label.text = "\n".join(lines)
+	match _hex_state(axial):
+		HexState.UNKNOWN:
+			lines.append("Unscouted. Scout a neighbouring hex first.")
+		HexState.FRONTIER:
+			lines.append("Unscouted. Click to scout it.")
+		_:
+			var owner := "HOME" if axial == home_axial else ("yours · click to release" if state.claimed.has(axial) \
+				else ("click to claim" if _can_claim(axial) else "not next to your land"))
+			lines.append("Scouted %s · %s" % [_ago(float(state.scouted[axial].t)), owner])
+			lines.append_array(_deposit_lines(state.deposits(axial)))
+	info_label.text = _with_toast(lines)
+
+
+func _deposit_lines(list: Array) -> Array:
+	if list.is_empty():
+		return ["Nothing worth salvaging here."]
+	var totals := {}
+	var counts := {}
+	var sites := []
+	for d in list:
+		totals[d.type] = totals.get(d.type, 0) + int(d.amount)
+		counts[d.type] = counts.get(d.type, 0) + 1
+		if d.has("site") and d.site != "" and not sites.has(d.site):
+			sites.append(d.site)
+	var parts := []
+	for t in ResourceTypes.ORDER:
+		if totals.has(t):
+			parts.append("%s %d%s" % [ResourceTypes.display_name(t), totals[t], (" ×%d" % counts[t]) if counts[t] > 1 else ""])
+	var out := []
+	for i in range(0, parts.size(), 3):
+		out.append("   ".join(parts.slice(i, i + 3)))
+	if sites.size() > 0:
+		out.append("Sites: " + ", ".join(sites.slice(0, 3)))
+	return out
+
+
+func _ago(t: float) -> String:
+	var s := Time.get_unix_time_from_system() - t
+	if s < 60:
+		return "just now"
+	if s < 3600:
+		return "%d min ago" % int(s / 60)
+	if s < 86400:
+		return "%d h ago" % int(s / 3600)
+	return "%d days ago" % int(s / 86400)
+
+
+func _with_toast(lines: Array) -> String:
+	if _toast != "":
+		lines = [">> " + _toast, ""] + lines
+	return "\n".join(lines)
+
+
+func _flash(msg: String) -> void:
+	_toast = msg
+	_toast_until = Time.get_ticks_msec() / 1000.0 + 3.0
+	_pick_dirty = true
 
 
 func _survey(axial: Vector2i) -> Dictionary:
@@ -438,26 +579,96 @@ func _set_hover(axial: Vector2i) -> void:
 	terrain.terrain_material.set_shader_parameter("hover_hex", Vector2(axial))
 
 
-func _toggle_claim() -> void:
-	if hover_axial.x == 1 << 20 or hover_axial == home_axial:
+func _hex_state(a: Vector2i) -> int:
+	if state.has_home and a == home_axial:
+		return HexState.HOME
+	if state.claimed.has(a):
+		return HexState.CLAIMED
+	if state.is_scouted(a):
+		return HexState.SCOUTED
+	if state.is_frontier(a):
+		return HexState.FRONTIER
+	return HexState.UNKNOWN
+
+
+func _can_claim(a: Vector2i) -> bool:
+	return state.is_scouted(a) and not state.is_owned(a) and state.touches(a, state.is_owned)
+
+
+func _scout(a: Vector2i, save := true) -> void:
+	if _survey(a).cells == 0:
+		return  # outside the generated region
+	state.record_scout(a, deposits.generate(a) if not state.is_scouted(a) else [])
+	if save:
+		state.save()
+
+
+func _click_hex() -> void:
+	var a := hover_axial
+	if a == NO_HEX:
 		return
-	if claimed.has(hover_axial):
-		claimed.erase(hover_axial)
-	elif claimed.size() < MAX_CLAIMS:
-		claimed.append(hover_axial)
-	_update_hex_uniforms()
+	match _hex_state(a):
+		HexState.UNKNOWN:
+			_flash("Too far into the unknown. Scout a neighbouring hex first.")
+		HexState.FRONTIER:
+			_scout(a)
+			var n := state.deposits(a).size()
+			_flash("Scouted hex %d,%d: %d deposit%s found." % [a.x, a.y, n, "" if n == 1 else "s"])
+		HexState.CLAIMED:
+			state.claimed.erase(a)
+			state.save()
+			_flash("Released hex %d,%d." % [a.x, a.y])
+		HexState.SCOUTED:
+			if _can_claim(a):
+				state.claimed.append(a)
+				state.save()
+				_flash("Claimed hex %d,%d." % [a.x, a.y])
+			else:
+				_flash("You can only claim hexes next to your own land.")
+		HexState.HOME:
+			_flash("This is home.")
+	_refresh_world()
+
+
+# --- Hex state texture & markers ------------------------------------------
+func _setup_hex_state() -> void:
+	var size := region.world_size()
+	var q0 := int(floor(-size.y / 3.0 / HEX_SIZE)) - 2
+	var q1 := int(ceil(Hex.SQRT3 / 3.0 * size.x / HEX_SIZE)) + 2
+	var r1 := int(ceil(2.0 / 3.0 * size.y / HEX_SIZE)) + 2
+	hex_origin = Vector2i(q0, -2)
+	hex_state_image = Image.create(q1 - q0 + 1, r1 + 3, false, Image.FORMAT_R8)
+	hex_state_texture = ImageTexture.create_from_image(hex_state_image)
+	var m := terrain.terrain_material
+	m.set_shader_parameter("hex_state_tex", hex_state_texture)
+	m.set_shader_parameter("hex_origin", hex_origin)
+	m.set_shader_parameter("hex_dims", Vector2i(hex_state_image.get_width(), hex_state_image.get_height()))
+
+
+func _refresh_world() -> void:
+	hex_state_image.fill(Color(0, 0, 0))
+	var mark := func(a: Vector2i) -> void:
+		var t := a - hex_origin
+		if t.x >= 0 and t.y >= 0 and t.x < hex_state_image.get_width() and t.y < hex_state_image.get_height():
+			hex_state_image.set_pixel(t.x, t.y, Color8(_hex_state(a), 0, 0))
+	var items := []
+	for a in state.scouted:
+		mark.call(a)
+		for d in WorldState.NEIGHBOURS:
+			mark.call(a + d)
+		for d in state.deposits(a):
+			var x := float(d.x)
+			var z := float(d.z)
+			var size := 1.4 + log(1.0 + float(d.amount)) * 0.3
+			items.append([Vector3(x, terrain.world_height(x, z), z), ResourceTypes.colour(d.type), size])
+	hex_state_texture.update(hex_state_image)
+	markers.set_items(items)
+	var m := terrain.terrain_material
+	m.set_shader_parameter("hex_size", HEX_SIZE)
+	m.set_shader_parameter("show_hex", show_hex)
 	_update_title()
 	_pick_dirty = true
 
 
 func _update_hex_uniforms() -> void:
-	var m := terrain.terrain_material
-	m.set_shader_parameter("hex_size", HEX_SIZE)
-	m.set_shader_parameter("show_hex", show_hex)
-	m.set_shader_parameter("home_hex", Vector2(home_axial))
-	var arr := PackedVector2Array()
-	for a in claimed:
-		arr.append(Vector2(a))
-	arr.resize(MAX_CLAIMS)
-	m.set_shader_parameter("claimed", arr)
-	m.set_shader_parameter("claimed_count", claimed.size())
+	terrain.terrain_material.set_shader_parameter("show_hex", show_hex)
