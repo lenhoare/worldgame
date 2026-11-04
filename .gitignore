@@ -4,3 +4,9 @@ __pycache__/
 *.log
 dist/
 build/
+# Godot
+godot/.godot/
+*.import
+
+# Map generator download cache
+tools/mapgen/.cache/
