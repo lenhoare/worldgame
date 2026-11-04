@@ -24,14 +24,13 @@ uniform float light_bands = 5.0;
 uniform vec3 shade_dir = vec3(-0.45, 0.6, 0.65);  // pixel hillshade, from the south-west
 uniform float shade_strength = 2.2;
 
-uniform float hex_size = 250.0;
+// Global H3 hexes: local hex index per cell (RG8 = low/high byte).
+uniform sampler2D hex_tex : filter_nearest, repeat_disable;
 uniform bool show_hex = true;
-uniform vec2 hover_hex = vec2(100000.0);
-// Per-hex state for this player: 0 unknown, 1 frontier (scoutable), 2 scouted,
-// 3 claimed, 4 home. Texel (q, r) - hex_origin.
+uniform int hover_hex = -1;
+// Per-hex state for this player, texel (idx % 256, idx / 256):
+// 0 unknown, 1 frontier (scoutable), 2 scouted, 3 claimed, 4 home.
 uniform sampler2D hex_state_tex : filter_nearest, repeat_disable;
-uniform ivec2 hex_origin;
-uniform ivec2 hex_dims;
 uniform bool fog_of_war = true;
 uniform vec3 home_colour : source_color = vec3(1.0, 0.78, 0.25);
 uniform vec3 claim_colour : source_color = vec3(0.35, 0.85, 1.0);
@@ -50,16 +49,24 @@ float corner_height(vec2 c) {
 	return textureLod(height_tex, clamp(c, vec2(0.0), grid_size) / grid_size, 0.0).r;
 }
 
-vec2 hex_round(vec2 h) {
-	vec3 c = vec3(h.x, h.y, -h.x - h.y);
-	vec3 rc = floor(c + 0.5);
-	vec3 d = abs(rc - c);
-	if (d.x > d.y && d.x > d.z) {
-		rc.x = -rc.y - rc.z;
-	} else if (d.y > d.z) {
-		rc.y = -rc.x - rc.z;
+int hex_at(ivec2 c) {
+	c = clamp(c, ivec2(0), ivec2(grid_size) - 1);
+	vec2 v = texelFetch(hex_tex, c, 0).rg;
+	return int(v.r * 255.0 + 0.5) + 256 * int(v.g * 255.0 + 0.5);
+}
+
+// Distance in cells from point (cell + f) to the nearest border with another
+// hex, looking up to two cells away in each axis direction (capped at 2).
+float hex_edge(ivec2 cell, vec2 f, int id) {
+	float e = 2.0;
+	for (int k = 1; k <= 2; k++) {
+		float base = float(k - 1);
+		if (hex_at(cell - ivec2(k, 0)) != id) { e = min(e, base + f.x); }
+		if (hex_at(cell + ivec2(k, 0)) != id) { e = min(e, base + 1.0 - f.x); }
+		if (hex_at(cell - ivec2(0, k)) != id) { e = min(e, base + f.y); }
+		if (hex_at(cell + ivec2(0, k)) != id) { e = min(e, base + 1.0 - f.y); }
 	}
-	return rc.xy;
+	return e;
 }
 
 void vertex() {
@@ -115,20 +122,10 @@ void fragment() {
 		col *= floor(shade * 10.0 + 0.5) / 10.0;
 	}
 
-	// Hex claim grid.
-	float q = (0.57735027 * world_pos.x - world_pos.z / 3.0) / hex_size;
-	float r = (0.66666667 * world_pos.z) / hex_size;
-	vec2 ax = hex_round(vec2(q, r));
-	vec2 centre = vec2(hex_size * 1.7320508 * (ax.x + ax.y * 0.5), hex_size * 1.5 * ax.y);
-	vec2 d = abs(world_pos.xz - centre);
-	float to_edge = hex_size * 0.8660254 - max(d.x, 0.5 * d.x + 0.8660254 * d.y);
-	float line_w = cell_size * 0.8;
-
-	ivec2 t = ivec2(ax) - hex_origin;
-	int state = 0;
-	if (t.x >= 0 && t.y >= 0 && t.x < hex_dims.x && t.y < hex_dims.y) {
-		state = int(texelFetch(hex_state_tex, t, 0).r * 255.0 + 0.5);
-	}
+	// Hex grid (global H3 hexes; borders follow the pixel grid).
+	int hid = hex_at(cell);
+	float to_edge = hex_edge(cell, fract(cf), hid);
+	int state = int(texelFetch(hex_state_tex, ivec2(hid % 256, hid / 256), 0).r * 255.0 + 0.5);
 	if (fog_of_war && state < 2) {
 		// Unscouted: the land is visible, but faded and cold.
 		float luma = dot(col, vec3(0.3, 0.55, 0.15));
@@ -136,14 +133,14 @@ void fragment() {
 		col = state == 1 ? mix(col, fogged, 0.5) * 0.9 : mix(col, fogged, 0.75) * 0.7;
 	}
 	if (state == 4) {
-		col = mix(col, home_colour, to_edge < line_w * 2.0 ? 0.9 : 0.16);
+		col = mix(col, home_colour, to_edge < 1.6 ? 0.9 : 0.16);
 	} else if (state == 3) {
-		col = mix(col, claim_colour, to_edge < line_w * 2.0 ? 0.85 : 0.14);
-	} else if (show_hex && to_edge < line_w) {
+		col = mix(col, claim_colour, to_edge < 1.6 ? 0.85 : 0.14);
+	} else if (show_hex && to_edge < 0.4) {
 		col *= (cls == SEA) ? 0.92 : 0.8;
 	}
-	if (all(equal(ax, hover_hex))) {
-		col = mix(col, vec3(1.0), to_edge < line_w * 1.5 ? 0.7 : 0.1);
+	if (hid == hover_hex) {
+		col = mix(col, vec3(1.0), to_edge < 1.2 ? 0.7 : 0.1);
 	}
 
 	ALBEDO = col;

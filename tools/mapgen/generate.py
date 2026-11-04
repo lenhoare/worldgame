@@ -1,23 +1,33 @@
 #!/usr/bin/env python3
-"""WorldGame region generator.
+"""WorldGame region generator. Works anywhere on Earth.
 
-Turns a postcode (or a lon/lat bounding box) into compact grid layers that the
-Godot landscape loads:
+Turns a place (address, postcode or place name, any country) or a lon/lat
+bounding box into compact grid layers that the Godot landscape loads:
 
     height.bin.gz     float16 terrain height in metres (row 0 = north edge)
     cover.bin.gz      uint8 land-cover class per cell (see CLASSES)
     buildings.bin.gz  uint8 pairs: building height in metres, roof variant
-    meta.json         grid geometry, classes, palette, resources, attribution
+    geology.bin.gz    uint8 triples: bedrock map unit, soil clay %, soil sand %
+    hex.bin.gz        uint16 local index of the global H3 hex per cell
+    hexes.json        H3 id, centre, bounds and neighbours of each hex
+    sites.json        real points of interest that become special deposits
+    meta.json         grid geometry, classes, palette, geology units, attribution
 
 Data sources (all open, attribution required, see meta.json):
   * OpenFreeMap vector tiles (OpenMapTiles schema, (c) OpenStreetMap contributors)
   * Mapzen/AWS Terrain Tiles (Terrarium encoding)
-  * postcodes.io (UK postcode lookup, OS/ONS open data)
+  * Macrostrat bedrock geology, SoilGrids 2.0 soil texture
+  * Nominatim (OpenStreetMap geocoder) and postcodes.io (UK postcodes)
+  * H3 global hex grid
 
-Example (the Brighton - Worthing prototype region):
+Examples:
 
-    python3 tools/mapgen/generate.py --postcode "BN15 8EU" \
-        --bbox -0.43,50.795,-0.085,50.92 --name brighton_worthing
+    # The Brighton - Worthing prototype region
+    python3 tools/mapgen/generate.py --place "BN15 8EU" \
+        --bbox=-0.43,50.795,-0.085,50.92 --name brighton_worthing
+
+    # Anywhere else
+    python3 tools/mapgen/generate.py --place "Montmartre, Paris" --radius-km 3
 """
 
 import argparse
@@ -37,6 +47,9 @@ import numpy as np
 from PIL import Image, ImageDraw
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import geocode  # noqa: E402
+import geology  # noqa: E402
+import hexgrid  # noqa: E402
 import mvt  # noqa: E402
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
@@ -48,7 +61,6 @@ ELEVATION_ZOOM = 12
 EARTH_CIRCUMFERENCE = 40075016.686
 OPENFREEMAP_TILEJSON = "https://tiles.openfreemap.org/planet"
 TERRARIUM_URL = "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png"
-POSTCODE_URL = "https://api.postcodes.io/postcodes/{}"
 
 # ---------------------------------------------------------------------------
 # Land-cover classes. Index = value stored in cover.bin. Colours are the
@@ -193,55 +205,79 @@ def http_get(url, cache_path=None, retries=4):
     return data
 
 
-def lookup_postcode(postcode):
-    pc = postcode.replace(" ", "").upper()
-    data = http_get(POSTCODE_URL.format(urllib.parse.quote(pc)))
-    if data is None:
-        sys.exit(f"Postcode {postcode!r} not found (postcodes.io covers the UK).")
-    result = json.loads(data)["result"]
-    return result["postcode"], result["longitude"], result["latitude"]
-
-
 # ---------------------------------------------------------------------------
 # Grid
 # ---------------------------------------------------------------------------
 class Grid:
-    """Regular grid of square cells laid over Web Mercator at VECTOR_ZOOM.
+    """Regular grid of square cells laid over Web Mercator.
 
-    One "unit" is one zoom-14 tile. Inside a region of a few tens of km the
-    Mercator scale is treated as constant (error < 0.5 %), so cells are
-    `cell` metres on the ground and Godot can use plain metres.
+    One "unit" is one zoom-14 tile. Cells are a fixed fraction of a tile
+    (`cells_per_tile`), chosen per 5-degree latitude band, and the grid origin
+    snaps to that lattice. So two overlapping regions sample the world on the
+    same cells and see identical data, which keeps deposits globally consistent.
+    Inside a region the Mercator scale is treated as constant (error < 0.5 %),
+    so cells are ~`target_cell` metres and Godot can use plain metres.
     """
 
-    def __init__(self, west, south, east, north, cell):
-        self.west, self.south, self.east, self.north = west, south, east, north
-        self.cell = cell
-        self.x0, self.y0 = lonlat_to_tile(west, north, VECTOR_ZOOM)
-        x1, y1 = lonlat_to_tile(east, south, VECTOR_ZOOM)
+    def __init__(self, west, south, east, north, target_cell):
         lat_c = (north + south) / 2.0
-        self.metres_per_unit = EARTH_CIRCUMFERENCE / 2 ** VECTOR_ZOOM * math.cos(math.radians(lat_c))
-        self.cells_per_unit = self.metres_per_unit / cell
-        self.width = int(round((x1 - self.x0) * self.cells_per_unit))
-        self.height = int(round((y1 - self.y0) * self.cells_per_unit))
+        band = math.copysign(math.floor(abs(lat_c) / 5.0) * 5.0 + 2.5, lat_c)
+        tile_m = EARTH_CIRCUMFERENCE / 2 ** VECTOR_ZOOM
+        self.cells_per_tile = max(1, int(round(tile_m * math.cos(math.radians(band)) / target_cell)))
+        self.cells_per_unit = self.cells_per_tile
+        self.metres_per_unit = tile_m * math.cos(math.radians(lat_c))
+        self.cell = self.metres_per_unit / self.cells_per_tile
+        k = self.cells_per_tile
+        x0, y0 = lonlat_to_tile(west, north, VECTOR_ZOOM)
+        x1, y1 = lonlat_to_tile(east, south, VECTOR_ZOOM)
+        # Global integer cell index of the grid origin: exact arithmetic, so
+        # overlapping regions rasterize identically.
+        self.ox = int(math.floor(x0 * k))
+        self.oy = int(math.floor(y0 * k))
+        self.x0 = self.ox / k
+        self.y0 = self.oy / k
+        self.width = int(math.ceil((x1 - self.x0) * k))
+        self.height = int(math.ceil((y1 - self.y0) * k))
+        self.west, self.north = tile_to_lonlat(self.x0, self.y0, VECTOR_ZOOM)
+        self.east, self.south = tile_to_lonlat(self.x0 + self.width / k, self.y0 + self.height / k, VECTOR_ZOOM)
         self.tx_range = range(int(math.floor(self.x0)), int(math.floor(x1)) + 1)
         self.ty_range = range(int(math.floor(self.y0)), int(math.floor(y1)) + 1)
 
     def to_cell(self, ux, uy):
         """Global tile units -> fractional cell coordinates."""
-        return (ux - self.x0) * self.cells_per_unit, (uy - self.y0) * self.cells_per_unit
+        return ux * self.cells_per_unit - self.ox, uy * self.cells_per_unit - self.oy
 
     def lonlat_to_cell(self, lon, lat):
         return self.to_cell(*lonlat_to_tile(lon, lat, VECTOR_ZOOM))
 
-    def tile_rect(self, tx, ty):
-        """Cells whose centres fall inside tile (tx, ty): (c0, r0, c1, r1), exclusive end."""
-        a, b = self.to_cell(tx, ty)
-        c, d = self.to_cell(tx + 1, ty + 1)
+    def cell_lonlats(self):
+        """Longitude per column and latitude per row of cell centres."""
+        n = 2 ** VECTOR_ZOOM
+        ux = self.x0 + (np.arange(self.width) + 0.5) / self.cells_per_unit
+        uy = self.y0 + (np.arange(self.height) + 0.5) / self.cells_per_unit
+        lons = ux / n * 360.0 - 180.0
+        lats = np.degrees(np.arctan(np.sinh(np.pi * (1 - 2 * uy / n))))
+        return lons, lats
+
+    def tile_rect(self, tx, ty, zoom=VECTOR_ZOOM):
+        """Cells whose centres fall inside tile (tx, ty) at `zoom`: (c0, r0, c1, r1), exclusive end."""
+        s = 2 ** (VECTOR_ZOOM - zoom)
+        a, b = self.to_cell(tx * s, ty * s)
+        c, d = self.to_cell((tx + 1) * s, (ty + 1) * s)
         c0 = max(0, math.ceil(a - 0.5))
         r0 = max(0, math.ceil(b - 0.5))
         c1 = min(self.width, math.ceil(c - 0.5))
         r1 = min(self.height, math.ceil(d - 0.5))
         return c0, r0, c1, r1
+
+    def tiles(self, zoom):
+        """(tx, ty) of all tiles at `zoom` that cover the grid."""
+        s = 2 ** (zoom - VECTOR_ZOOM)
+        x1 = self.x0 + self.width / self.cells_per_unit
+        y1 = self.y0 + self.height / self.cells_per_unit
+        return [(tx, ty)
+                for ty in range(int(math.floor(self.y0 * s)), int(math.floor(y1 * s)) + 1)
+                for tx in range(int(math.floor(self.x0 * s)), int(math.floor(x1 * s)) + 1)]
 
 
 class Rasterizer:
@@ -266,15 +302,16 @@ class Rasterizer:
             g = self.grid.cell
             self.sites.append({"kind": kind, "x": round(cx * g, 1), "z": round(cy * g, 1), "name": name or ""})
 
-    def set_tile(self, tx, ty, extent):
-        self.clip = self.grid.tile_rect(tx, ty)
+    def set_tile(self, tx, ty, extent, zoom=VECTOR_ZOOM):
+        self.clip = self.grid.tile_rect(tx, ty, zoom)
         self.tx, self.ty, self.extent = tx, ty, extent
+        self.scale = 2 ** (VECTOR_ZOOM - zoom)  # zoom-14 units per tile at `zoom`
 
     def _to_cells(self, part):
         g = self.grid
-        k = g.cells_per_unit / self.extent
-        ox = (self.tx - g.x0) * g.cells_per_unit
-        oy = (self.ty - g.y0) * g.cells_per_unit
+        k = g.cells_per_unit * self.scale / self.extent
+        ox = self.tx * self.scale * g.cells_per_unit - g.ox  # exact integers
+        oy = self.ty * self.scale * g.cells_per_unit - g.oy
         # -0.5: PIL treats integer coordinates as pixel centres.
         return [(ox + x * k - 0.5, oy + y * k - 0.5) for x, y in part]
 
@@ -308,12 +345,13 @@ class Rasterizer:
                 d.polygon([(x - x0, y - y0) for x, y in h], fill=0)
         return win, np.array(img, dtype=bool)
 
-    def fill(self, feature, cls, min_area=0.5):
+    def fill(self, feature, cls, min_area=0.5, target=None):
+        layer = self.cover if target is None else target
         for rings in mvt.polygons(feature.parts):
             m = self.polygon_mask(rings, min_area)
             if m:
                 (x0, y0, x1, y1), mask = m
-                self.cover[y0:y1, x0:x1][mask] = cls
+                layer[y0:y1, x0:x1][mask] = cls
 
     def line(self, feature, cls, width):
         for part in feature.parts:
@@ -495,7 +533,7 @@ def shape_terrain(height, cover):
     return h
 
 
-def write_layers(out_dir, grid, r, height, name, postcode_info):
+def write_layers(out_dir, grid, r, height, name, place, geo, hexes_info):
     os.makedirs(out_dir, exist_ok=True)
 
     def wgz(fname, arr):
@@ -507,29 +545,39 @@ def write_layers(out_dir, grid, r, height, name, postcode_info):
     wgz("height.bin.gz", height.astype("<f2"))
     wgz("cover.bin.gz", r.cover)
     wgz("buildings.bin.gz", np.stack([r.bheight, r.broof], axis=-1))
+    units, clay, sand, unit_layer = geo
+    wgz("geology.bin.gz", np.stack([unit_layer, clay, sand], axis=-1))
+    hex_layer, hexes, h3_res = hexes_info
+    wgz("hex.bin.gz", hex_layer.astype("<u2"))
+    with open(os.path.join(out_dir, "hexes.json"), "w") as f:
+        json.dump({"resolution": h3_res, "hexes": hexes}, f, separators=(",", ":"))
     with open(os.path.join(out_dir, "sites.json"), "w") as f:
         json.dump(sorted(r.sites, key=lambda s: (s["kind"], s["z"], s["x"])), f, indent=0)
 
     home = None
-    if postcode_info:
-        pc, lon, lat = postcode_info
-        cx, cy = grid.lonlat_to_cell(lon, lat)
-        home = {"postcode": pc, "lon": lon, "lat": lat, "x": cx * grid.cell, "z": cy * grid.cell}
+    if place:
+        cx, cy = grid.lonlat_to_cell(place["lon"], place["lat"])
+        home = {"label": place["label"], "query": place["query"], "lon": place["lon"], "lat": place["lat"],
+                "x": cx * grid.cell, "z": cy * grid.cell,
+                "hex": hexgrid.h3.latlng_to_cell(place["lat"], place["lon"], h3_res)}
 
     counts = np.bincount(r.cover.ravel(), minlength=len(CLASSES))
     meta = {
-        "format": 1,
+        "format": 2,
         "name": name,
         "generated": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
         "bbox": {"west": grid.west, "south": grid.south, "east": grid.east, "north": grid.north},
         "width": grid.width,
         "height": grid.height,
         "cell_size": grid.cell,
+        "cells_per_tile": grid.cells_per_tile,
         "projection": {
             "type": "web_mercator_local",
             "zoom": VECTOR_ZOOM,
             "origin_tile_x": grid.x0,
             "origin_tile_y": grid.y0,
+            "origin_cell_x": grid.ox,
+            "origin_cell_y": grid.oy,
             "metres_per_tile": grid.metres_per_unit,
         },
         "home": home,
@@ -540,6 +588,14 @@ def write_layers(out_dir, grid, r, height, name, postcode_info):
                           "channels": ["height_m", "roof_variant"]},
             "sites": {"file": "sites.json", "type": "json",
                       "kinds": sorted(set(POI_SITES.values()) | {"airfield"})},
+            "geology": {"file": "geology.bin.gz", "type": "uint8x3",
+                        "channels": ["bedrock_unit", "clay_pct", "sand_pct"]},
+            "hex": {"file": "hex.bin.gz", "type": "uint16", "table": "hexes.json"},
+        },
+        "hex_grid": {"type": "h3", "resolution": h3_res, "count": len(hexes)},
+        "geology": {
+            "rocks": [{"id": i, "name": n, "colour": c} for i, (n, c) in enumerate(geology.ROCKS)],
+            "units": units,
         },
         "classes": [
             {"id": i, "name": n, "colour": col, "cells": int(counts[i])}
@@ -550,7 +606,11 @@ def write_layers(out_dir, grid, r, height, name, postcode_info):
         "attribution": [
             "Map data (c) OpenStreetMap contributors (ODbL), via OpenMapTiles / OpenFreeMap",
             "Elevation: Mapzen Terrain Tiles (SRTM and other sources), hosted on AWS Open Data",
-            "Postcode lookup: postcodes.io (contains OS and ONS data, (c) Crown copyright and database right)",
+            "Bedrock geology: Macrostrat (CC-BY 4.0) and its source maps, e.g. BGS, USGS, GLiM",
+            "Soil texture: SoilGrids 2.0, ISRIC - World Soil Information (CC-BY 4.0)",
+            "Geocoding: Nominatim / OpenStreetMap (ODbL); UK postcodes: postcodes.io "
+            "(contains OS and ONS data, (c) Crown copyright and database right)",
+            "Hex grid: H3 by Uber (Apache 2.0)",
         ],
     }
     with open(os.path.join(out_dir, "meta.json"), "w") as f:
@@ -574,45 +634,76 @@ def write_preview(path, r, height, scale=1):
     out.save(path, optimize=True)
 
 
+def write_geology_preview(path, unit_layer, units, clay):
+    rock_ids = {n: i for i, (n, _c) in enumerate(geology.ROCKS)}
+    pal = np.array([[int(c[i:i + 2], 16) for i in (1, 3, 5)] for _n, c in geology.ROCKS], np.float32)
+    unit_rock = np.array([rock_ids[u["rock"]] for u in units], np.uint8)
+    img = pal[unit_rock[unit_layer]]
+    img *= (0.8 + 0.4 * (clay[..., None] / 60.0))  # darker = less clay
+    out = Image.fromarray(np.clip(img, 0, 255).astype(np.uint8))
+    if out.width > 1200:
+        out = out.resize((out.width // 2, out.height // 2), Image.NEAREST)
+    out.save(path, optimize=True)
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--postcode", help="UK postcode for the player's home (also centres the region)")
+    ap.add_argument("--place", help="address, postcode or place name anywhere: the player's home "
+                                    "(also centres the region)")
+    ap.add_argument("--postcode", help="alias for --place")
     ap.add_argument("--bbox", help="west,south,east,north in degrees (overrides --radius-km)")
-    ap.add_argument("--radius-km", type=float, default=4.0, help="half-size of the square region around the postcode")
-    ap.add_argument("--cell", type=float, default=10.0, help="cell size in metres (default 10)")
+    ap.add_argument("--radius-km", type=float, default=4.0, help="half-size of the square region around the place")
+    ap.add_argument("--cell", type=float, default=10.0, help="target cell size in metres (default 10)")
+    ap.add_argument("--h3-res", type=int, default=hexgrid.DEFAULT_RESOLUTION,
+                    help="H3 hex resolution (default 9, ~350 m hexes)")
     ap.add_argument("--name", default=None, help="region name (folder under godot/data/regions)")
     ap.add_argument("--out", default=None, help="output folder (default godot/data/regions/<name>)")
     ap.add_argument("--preview", default=None, help="write a PNG preview here (default docs/<name>-preview.png)")
     args = ap.parse_args()
 
-    postcode_info = lookup_postcode(args.postcode) if args.postcode else None
-    if postcode_info:
-        log(f"Postcode {postcode_info[0]}: {postcode_info[2]:.5f}, {postcode_info[1]:.5f}")
+    query = args.place or args.postcode
+    place = None
+    if query:
+        place = geocode.geocode(query, http_get, CACHE)
+        if place is None:
+            sys.exit(f"Could not find {query!r}.")
+        place["query"] = query
+        log(f"Place {query!r}: {place['label']} ({place['lat']:.5f}, {place['lon']:.5f}, {place['source']})")
 
     if args.bbox:
         west, south, east, north = (float(v) for v in args.bbox.split(","))
-    elif postcode_info:
-        _pc, lon, lat = postcode_info
+    elif place:
+        lon, lat = place["lon"], place["lat"]
         dlat = args.radius_km / 111.32
         dlon = args.radius_km / (111.32 * math.cos(math.radians(lat)))
         west, south, east, north = lon - dlon, lat - dlat, lon + dlon, lat + dlat
     else:
-        ap.error("give --postcode and/or --bbox")
+        ap.error("give --place and/or --bbox")
 
-    name = args.name or (postcode_info[0].replace(" ", "").lower() if postcode_info else "region")
+    if args.name:
+        name = args.name
+    elif query:
+        name = "".join(ch if ch.isalnum() else "_" for ch in query.lower()).strip("_")[:40]
+    else:
+        name = "region"
     out_dir = args.out or os.path.join(ROOT, "godot", "data", "regions", name)
     preview = args.preview or os.path.join(ROOT, "docs", f"{name}-preview.png")
 
     grid = Grid(west, south, east, north, args.cell)
-    log(f"Region {name}: {grid.width} x {grid.height} cells of {args.cell:g} m "
-        f"({grid.width * args.cell / 1000:.1f} x {grid.height * args.cell / 1000:.1f} km)")
+    log(f"Region {name}: {grid.width} x {grid.height} cells of {grid.cell:.2f} m "
+        f"({grid.width * grid.cell / 1000:.1f} x {grid.height * grid.cell / 1000:.1f} km)")
 
     t0 = time.time()
     tiles = fetch_vector_tiles(grid, vector_tile_url())
     r = rasterize(grid, tiles)
     height = shape_terrain(fetch_elevation(grid), r.cover)
-    meta = write_layers(out_dir, grid, r, height, name, postcode_info)
+    unit_layer, units = geology.bedrock(grid, Rasterizer, http_get, CACHE, log)
+    clay, sand = geology.soil(grid, http_get, CACHE, log)
+    hex_layer, hexes = hexgrid.build(grid, args.h3_res, log)
+    meta = write_layers(out_dir, grid, r, height, name, place,
+                        (units, clay, sand, unit_layer), (hex_layer, hexes, args.h3_res))
     write_preview(preview, r, height, scale=2 if grid.width > 2000 else 1)
+    write_geology_preview(preview.replace("-preview.png", "-geology.png"), unit_layer, units, clay)
     log(f"Elevation {meta['elevation_range'][0]:.1f} .. {meta['elevation_range'][1]:.1f} m, "
         f"{int((r.bheight > 0).sum())} building cells, {len(r.sites)} sites")
     log(f"Wrote {out_dir} and {preview} in {time.time() - t0:.0f}s")

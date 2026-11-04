@@ -1,29 +1,34 @@
 {
-  "format": 1,
+  "format": 2,
   "name": "brighton_worthing",
-  "generated": "2026-11-04T07:54:46Z",
+  "generated": "2026-11-04T08:29:08Z",
   "bbox": {
-    "west": -0.43,
-    "south": 50.795,
-    "east": -0.085,
-    "north": 50.92
+    "west": -0.430015205536904,
+    "south": 50.794936783840065,
+    "east": -0.08494127516777894,
+    "north": 50.9200483770006
   },
-  "width": 2424,
-  "height": 1391,
-  "cell_size": 10.0,
+  "width": 2340,
+  "height": 1344,
+  "cell_size": 10.362624812515426,
+  "cells_per_tile": 149,
   "projection": {
     "type": "web_mercator_local",
     "zoom": 14,
-    "origin_tile_x": 8172.430222222222,
-    "origin_tile_y": 5490.775304585547,
+    "origin_tile_x": 8172.4295302013425,
+    "origin_tile_y": 5490.771812080537,
+    "origin_cell_x": 1217692,
+    "origin_cell_y": 818125,
     "metres_per_tile": 1544.0310970647984
   },
   "home": {
-    "postcode": "BN15 8EU",
+    "label": "BN15 8EU",
+    "query": "BN15 8EU",
     "lon": -0.316607,
     "lat": 50.821567,
-    "x": 7968.190836712089,
-    "z": 10960.639268762689
+    "x": 7969.259338469409,
+    "z": 10966.031805104602,
+    "hex": "89194a710c3ffff"
   },
   "layers": {
     "height": {
@@ -57,134 +62,302 @@
         "recycling",
         "station"
       ]
+    },
+    "geology": {
+      "file": "geology.bin.gz",
+      "type": "uint8x3",
+      "channels": [
+        "bedrock_unit",
+        "clay_pct",
+        "sand_pct"
+      ]
+    },
+    "hex": {
+      "file": "hex.bin.gz",
+      "type": "uint16",
+      "table": "hexes.json"
     }
+  },
+  "hex_grid": {
+    "type": "h3",
+    "resolution": 9,
+    "count": 3689
+  },
+  "geology": {
+    "rocks": [
+      {
+        "id": 0,
+        "name": "unknown",
+        "colour": "#9a9a9a"
+      },
+      {
+        "id": 1,
+        "name": "carbonate",
+        "colour": "#e9e4cf"
+      },
+      {
+        "id": 2,
+        "name": "sandstone",
+        "colour": "#d9b77a"
+      },
+      {
+        "id": 3,
+        "name": "mudstone",
+        "colour": "#a8806a"
+      },
+      {
+        "id": 4,
+        "name": "sediment",
+        "colour": "#cdbb8f"
+      },
+      {
+        "id": 5,
+        "name": "igneous",
+        "colour": "#8c6f78"
+      },
+      {
+        "id": 6,
+        "name": "metamorphic",
+        "colour": "#7d8796"
+      }
+    ],
+    "units": [
+      {
+        "name": "",
+        "lith": "",
+        "rock": "unknown",
+        "age": ""
+      },
+      {
+        "name": "Lower Greensand Group",
+        "lith": "sandstone and mudstone",
+        "rock": "sandstone",
+        "age": "Aptian - Albian"
+      },
+      {
+        "name": "Bracklesham Group And Barton Group (Undifferentiated)",
+        "lith": "sand, silt and clay",
+        "rock": "sediment",
+        "age": "Eocene"
+      },
+      {
+        "name": "Solent Group",
+        "lith": "clay, silt and sand",
+        "rock": "sediment",
+        "age": "Palaeogene"
+      },
+      {
+        "name": "Lambeth Group",
+        "lith": "clay, silt, sand and gravel",
+        "rock": "sediment",
+        "age": "Paleocene"
+      },
+      {
+        "name": "Grey Chalk Subgroup",
+        "lith": "chalk",
+        "rock": "carbonate",
+        "age": "Cenomanian"
+      },
+      {
+        "name": "Wealden Group",
+        "lith": "mudstone, siltstone and sandstone",
+        "rock": "mudstone",
+        "age": "Ryazanian - Barremian"
+      },
+      {
+        "name": "Thames Group",
+        "lith": "clay, silt, sand and gravel",
+        "rock": "sediment",
+        "age": "Eocene"
+      },
+      {
+        "name": "Wealden Group",
+        "lith": "sandstone and siltstone, interbedded",
+        "rock": "sandstone",
+        "age": "Ryazanian - Barremian"
+      },
+      {
+        "name": "White Chalk Subgroup",
+        "lith": "chalk",
+        "rock": "carbonate",
+        "age": "Cenomanian - Maastrichtian"
+      },
+      {
+        "name": "Thanet Sand Formation",
+        "lith": "sand, silt and clay",
+        "rock": "sediment",
+        "age": "Thanetian"
+      },
+      {
+        "name": "Gault Formation And Upper Greensand Formation (Undifferentiated)",
+        "lith": "mudstone, sandstone and limestone",
+        "rock": "mudstone",
+        "age": "Albian - Cenomanian"
+      },
+      {
+        "name": "West Walton Formation, Ampthill Clay Formation And Kimmeridge Clay Formation (Undifferentiated)",
+        "lith": "mudstone, siltstone and sandstone",
+        "rock": "mudstone",
+        "age": "Oxfordian - Kimmeridgian"
+      },
+      {
+        "name": "Eocene claystone",
+        "lith": "claystone",
+        "rock": "mudstone",
+        "age": "Eocene"
+      },
+      {
+        "name": "Palaeocene sandstone",
+        "lith": "Major:{sandstone}, Minor{claystone,conglomerate}",
+        "rock": "sandstone",
+        "age": "Palaeocene"
+      },
+      {
+        "name": "Late Cretaceous limestone",
+        "lith": "limestone",
+        "rock": "carbonate",
+        "age": "Late Cretaceous"
+      },
+      {
+        "name": "Clastic sediment, Quaternary",
+        "lith": "siliciclastic",
+        "rock": "sandstone",
+        "age": "Quaternary"
+      },
+      {
+        "name": "Chalk, Cenomanian",
+        "lith": "chalk",
+        "rock": "carbonate",
+        "age": "Cenomanian"
+      }
+    ]
   },
   "classes": [
     {
       "id": 0,
       "name": "sea",
       "colour": "#3f7f9e",
-      "cells": 637884
+      "cells": 596805
     },
     {
       "id": 1,
       "name": "beach",
       "colour": "#d9c99a",
-      "cells": 8134
+      "cells": 7548
     },
     {
       "id": 2,
       "name": "water",
       "colour": "#4f93ab",
-      "cells": 19551
+      "cells": 18346
     },
     {
       "id": 3,
       "name": "urban",
       "colour": "#b9b2a2",
-      "cells": 196169
+      "cells": 175962
     },
     {
       "id": 4,
       "name": "commercial",
       "colour": "#c4a99a",
-      "cells": 2775
+      "cells": 2466
     },
     {
       "id": 5,
       "name": "industrial",
       "colour": "#a39da3",
-      "cells": 11536
+      "cells": 10428
     },
     {
       "id": 6,
       "name": "park",
       "colour": "#7fb267",
-      "cells": 78791
+      "cells": 72978
     },
     {
       "id": 7,
       "name": "grass",
       "colour": "#9cbd6e",
-      "cells": 863681
+      "cells": 801928
     },
     {
       "id": 8,
       "name": "farmland",
       "colour": "#c9c27a",
-      "cells": 606822
+      "cells": 564750
     },
     {
       "id": 9,
       "name": "wood",
       "colour": "#4f8a4e",
-      "cells": 223737
+      "cells": 208061
     },
     {
       "id": 10,
       "name": "scrub",
       "colour": "#8a9f5c",
-      "cells": 39038
+      "cells": 35972
     },
     {
       "id": 11,
       "name": "wetland",
       "colour": "#7fa58f",
-      "cells": 1115
+      "cells": 1034
     },
     {
       "id": 12,
       "name": "bare",
       "colour": "#c7bfae",
-      "cells": 5641
+      "cells": 5279
     },
     {
       "id": 13,
       "name": "golf",
       "colour": "#8fc46f",
-      "cells": 38780
+      "cells": 36122
     },
     {
       "id": 14,
       "name": "path",
       "colour": "#d3c4a0",
-      "cells": 108391
+      "cells": 103701
     },
     {
       "id": 15,
       "name": "rail",
       "colour": "#7c6f68",
-      "cells": 5198
+      "cells": 4978
     },
     {
       "id": 16,
       "name": "road",
       "colour": "#e6e0d0",
-      "cells": 117895
+      "cells": 111556
     },
     {
       "id": 17,
       "name": "road_major",
       "colour": "#f0d48a",
-      "cells": 30799
+      "cells": 29455
     },
     {
       "id": 18,
       "name": "runway",
       "colour": "#8c8c8c",
-      "cells": 2822
+      "cells": 2687
     },
     {
       "id": 19,
       "name": "pier",
       "colour": "#9c7a5a",
-      "cells": 888
+      "cells": 871
     },
     {
       "id": 20,
       "name": "building",
       "colour": "#a8a097",
-      "cells": 372137
+      "cells": 354033
     }
   ],
   "roof_colours": [
@@ -199,11 +372,14 @@
   ],
   "elevation_range": [
     0.0,
-    243.53021240234375
+    243.52706909179688
   ],
   "attribution": [
     "Map data (c) OpenStreetMap contributors (ODbL), via OpenMapTiles / OpenFreeMap",
     "Elevation: Mapzen Terrain Tiles (SRTM and other sources), hosted on AWS Open Data",
-    "Postcode lookup: postcodes.io (contains OS and ONS data, (c) Crown copyright and database right)"
+    "Bedrock geology: Macrostrat (CC-BY 4.0) and its source maps, e.g. BGS, USGS, GLiM",
+    "Soil texture: SoilGrids 2.0, ISRIC - World Soil Information (CC-BY 4.0)",
+    "Geocoding: Nominatim / OpenStreetMap (ODbL); UK postcodes: postcodes.io (contains OS and ONS data, (c) Crown copyright and database right)",
+    "Hex grid: H3 by Uber (Apache 2.0)"
   ]
 }

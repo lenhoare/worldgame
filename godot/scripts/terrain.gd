@@ -69,6 +69,7 @@ func _make_materials() -> void:
 	terrain_material.set_shader_parameter("height_tex", ImageTexture.create_from_image(region.height_image))
 	terrain_material.set_shader_parameter("cover_tex", ImageTexture.create_from_image(region.cover_image))
 	terrain_material.set_shader_parameter("palette_tex", ImageTexture.create_from_image(palette))
+	terrain_material.set_shader_parameter("hex_tex", ImageTexture.create_from_image(region.hex_image))
 	terrain_material.set_shader_parameter("grid_size", Vector2(region.width, region.height))
 	terrain_material.set_shader_parameter("cell_size", region.cell_size)
 	terrain_material.set_shader_parameter("height_scale", height_scale)
