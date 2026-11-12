@@ -10,3 +10,7 @@ godot/.godot/
 
 # Map generator download cache
 tools/mapgen/.cache/
+
+# Python
+.pytest_cache/
+*.egg-info/

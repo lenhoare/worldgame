@@ -128,18 +128,20 @@ LANDCOVER_CLASS = {
     "wetland": "wetland", "sand": "beach", "rock": "bare", "ice": "bare",
 }
 
-# Line features: (class, width in cells). Drawn in this order, later wins.
+# Line features: (class, width in metres). Drawn in this order, later wins.
+# Widths become whole cells (at least 1), so they scale with --cell.
 ROAD_STYLE = {
-    "path": ("path", 1), "track": ("path", 1), "service": ("road", 1),
-    "minor": ("road", 1), "tertiary": ("road", 1), "secondary": ("road", 2),
-    "primary": ("road_major", 2), "trunk": ("road_major", 2),
-    "motorway": ("road_major", 3),
-    "rail": ("rail", 1), "transit": ("rail", 1),
-    "pier": ("pier", 1),
+    "path": ("path", 2.5), "track": ("path", 3), "service": ("road", 4),
+    "minor": ("road", 6), "tertiary": ("road", 8), "secondary": ("road", 16),
+    "primary": ("road_major", 18), "trunk": ("road_major", 20),
+    "motorway": ("road_major", 30),
+    "rail": ("rail", 5), "transit": ("rail", 5),
+    "pier": ("pier", 6),
 }
 ROAD_ORDER = ["path", "track", "service", "minor", "rail", "transit",
               "tertiary", "secondary", "primary", "trunk", "motorway", "pier"]
-WATERWAY_WIDTH = {"river": 2, "canal": 2, "stream": 1}
+WATERWAY_WIDTH = {"river": 16, "canal": 14, "stream": 3}  # metres
+AEROWAY_WIDTH = {"runway": 40, "taxiway": 18}  # metres
 
 # Points of interest that become special deposits in the game: (class, subclass) -> site kind.
 # subclass None matches any subclass.
@@ -353,7 +355,8 @@ class Rasterizer:
                 (x0, y0, x1, y1), mask = m
                 layer[y0:y1, x0:x1][mask] = cls
 
-    def line(self, feature, cls, width):
+    def line(self, feature, cls, width_m):
+        width = max(1, int(round(width_m / self.grid.cell)))
         for part in feature.parts:
             if len(part) < 2:
                 continue
@@ -441,7 +444,7 @@ def rasterize(grid, tiles):
                 r.fill(f, C["runway"])
         for f in feats("aeroway", mvt.LINESTRING):
             if f.tags.get("class") in ("runway", "taxiway"):
-                r.line(f, C["runway"], 4 if f.tags["class"] == "runway" else 2)
+                r.line(f, C["runway"], AEROWAY_WIDTH[f.tags["class"]])
         for f in feats("water", mvt.POLYGON):
             if f.tags.get("brunnel") == "tunnel":
                 continue

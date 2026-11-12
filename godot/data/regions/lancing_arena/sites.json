@@ -1,0 +1,566 @@
+[
+{
+"kind": "car_park",
+"x": 1329.7,
+"z": 10.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 1337.6,
+"z": 20.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 1323.3,
+"z": 21.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 1421.7,
+"z": 83.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 1466.6,
+"z": 87.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 1385.5,
+"z": 102.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 1420.2,
+"z": 130.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 1353.1,
+"z": 145.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 1588.8,
+"z": 407.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 1548.5,
+"z": 448.1,
+"name": "Car Park 2"
+},
+{
+"kind": "car_park",
+"x": 1628.1,
+"z": 453.0,
+"name": "Car Park 3"
+},
+{
+"kind": "car_park",
+"x": 737.8,
+"z": 466.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 1497.6,
+"z": 481.6,
+"name": "Car Park 1"
+},
+{
+"kind": "car_park",
+"x": 830.3,
+"z": 541.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 824.6,
+"z": 579.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 894.4,
+"z": 580.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 1026.8,
+"z": 599.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 929.1,
+"z": 778.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 931.3,
+"z": 779.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 657.1,
+"z": 811.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 709.5,
+"z": 844.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 765.0,
+"z": 868.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 2350.8,
+"z": 882.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 877.0,
+"z": 882.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 876.3,
+"z": 885.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 716.3,
+"z": 893.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 709.2,
+"z": 895.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 741.2,
+"z": 1025.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 791.8,
+"z": 1067.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 1338.7,
+"z": 1071.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 663.9,
+"z": 1078.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 1512.3,
+"z": 1093.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 734.4,
+"z": 1095.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 566.2,
+"z": 1147.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 754.8,
+"z": 1182.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 781.6,
+"z": 1206.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 743.5,
+"z": 1218.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 795.2,
+"z": 1263.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 722.7,
+"z": 1284.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 366.3,
+"z": 1289.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 362.5,
+"z": 1314.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 456.4,
+"z": 1317.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 906.8,
+"z": 1370.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 1056.6,
+"z": 1383.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 1698.2,
+"z": 1390.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 1073.2,
+"z": 1403.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 668.1,
+"z": 1421.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 838.6,
+"z": 1450.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 860.4,
+"z": 1451.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 385.9,
+"z": 1453.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 406.3,
+"z": 1453.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 790.3,
+"z": 1454.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 874.0,
+"z": 1458.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 417.2,
+"z": 1466.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 1015.8,
+"z": 1482.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 1094.7,
+"z": 1508.8,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 1033.2,
+"z": 1519.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 1043.8,
+"z": 1521.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 1092.4,
+"z": 1543.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 686.9,
+"z": 1556.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 638.6,
+"z": 1566.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 1017.7,
+"z": 1570.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 1124.9,
+"z": 1570.3,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 1078.5,
+"z": 1573.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 1755.2,
+"z": 1575.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 1057.0,
+"z": 1591.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 620.1,
+"z": 1592.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 1067.9,
+"z": 1605.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 1003.0,
+"z": 1640.5,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 955.1,
+"z": 1647.2,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 1209.0,
+"z": 1660.4,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 599.8,
+"z": 1667.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 655.6,
+"z": 1669.9,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 1048.3,
+"z": 1685.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 1167.9,
+"z": 1690.6,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 780.1,
+"z": 1729.1,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 430.8,
+"z": 1837.0,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 441.3,
+"z": 1848.7,
+"name": ""
+},
+{
+"kind": "car_park",
+"x": 122.2,
+"z": 1993.2,
+"name": ""
+},
+{
+"kind": "garage",
+"x": 645.8,
+"z": 482.8,
+"name": "Crabtree Lane Garage"
+},
+{
+"kind": "garage",
+"x": 785.4,
+"z": 859.6,
+"name": "Culver Cars"
+},
+{
+"kind": "garage",
+"x": 755.2,
+"z": 1261.7,
+"name": "Circle Garage"
+},
+{
+"kind": "garage",
+"x": 73.2,
+"z": 1285.5,
+"name": "Lancing Commercial Ltd"
+},
+{
+"kind": "garage",
+"x": 34.3,
+"z": 1315.7,
+"name": "Paul's Motors"
+},
+{
+"kind": "garage",
+"x": 23.8,
+"z": 1360.2,
+"name": "DMH Motors"
+},
+{
+"kind": "garage",
+"x": 961.9,
+"z": 1374.9,
+"name": "Steve's Autos"
+},
+{
+"kind": "garage",
+"x": 318.0,
+"z": 1428.1,
+"name": "Towbex LTD"
+},
+{
+"kind": "garage",
+"x": 915.9,
+"z": 1453.0,
+"name": "Empire Autos"
+},
+{
+"kind": "garage",
+"x": 153.5,
+"z": 1843.4,
+"name": "Alverstone Autos"
+},
+{
+"kind": "hospital",
+"x": 766.9,
+"z": 983.7,
+"name": "Your Choice Medical"
+},
+{
+"kind": "recycling",
+"x": 797.1,
+"z": 1837.7,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 691.8,
+"z": 1844.5,
+"name": ""
+},
+{
+"kind": "recycling",
+"x": 751.0,
+"z": 1846.0,
+"name": ""
+},
+{
+"kind": "station",
+"x": 738.6,
+"z": 1067.8,
+"name": "Lancing railway station"
+}
+]
