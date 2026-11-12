@@ -101,8 +101,11 @@ def observe(w, g):
         d = max(abs(it.pos[0] - g.x), abs(it.pos[2] - g.z))
         cands.append((d, it.id, it))
     cands.sort(key=lambda c: c[:2])
+    shown = {}
     for d, _id, it in cands:
-        if len(near) < 30:
+        # List the nearest few of each kind; summarise the rest so cars don't drown everything.
+        if len(near) < 30 and shown.get(it.name, 0) < 4:
+            shown[it.name] = shown.get(it.name, 0) + 1
             b = it.brief()
             b["at"] = pos3(w, it.pos)
             b["dist"] = d

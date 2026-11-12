@@ -14,6 +14,9 @@ from worldgame.items import affordances
 from worldgame.observe import inspect, observe, survey
 from worldgame.sim import add_giant, power_tick, step
 from worldgame.world import World
+import worldgame.sim as _sim
+
+_sim.STRICT = True
 
 ID = M.ID
 GROUND = 10          # top ground layer in the test world

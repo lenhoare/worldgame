@@ -23,6 +23,7 @@ VERBS = ("move_to", "break", "pick_up", "drop", "place", "give", "make", "join",
          "whisper", "radio", "write", "hit", "push", "repair", "wait", "label")
 FAST = {M.ID["asphalt"], M.ID["paving"]}
 SLOW = {M.ID[n] for n in ("sand", "farm_soil", "rubble", "gravel", "ballast", "clay")}
+WEAK = {v.id for v in M.VOXELS if "roof" in v.tags or "interior" in v.tags}
 REACTIONS = [({"lime", "sand"}, True, "mortar")]     # (substances, needs water, product)
 
 
@@ -221,12 +222,12 @@ class Giant:
             t = a["target"]
             g = next((g for g in w.giants.values() if g.name == t or str(g.id) == str(t)), None)
             if g is not None:
-                gx, gz = g.x, g.z
+                gx, gz, a["_gk"] = g.x, g.z, g.k
             else:
                 it = w.items.get(int(t)) if str(t).isdigit() else None
                 if it is None or it.pos is None:
                     return f"can't find '{t}' to walk to"
-                gx, gz = it.pos[0], it.pos[2]
+                gx, gz, a["_gk"] = it.pos[0], it.pos[2], it.pos[1]
             near = max(near, 1)
         else:
             gx, gz = int(a["x"]), int(a["z"])
@@ -238,10 +239,11 @@ class Giant:
     def _walk(self, a):
         w = self.w
         gx, gz = a["_goal"]
-        if max(abs(self.x - gx), abs(self.z - gz)) <= a["_near"]:
+        gk = a.get("_gk")
+        if max(abs(self.x - gx), abs(self.z - gz)) <= a["_near"] and (gk is None or abs(self.k - gk) <= 2):
             return True
         if a["_path"] is None:
-            path, complete = find_path(w, self.pos, (gx, gz), a["_near"], self)
+            path, complete = find_path(w, self.pos, (gx, gz), a["_near"], self, goal_k=gk)
             if not path:
                 self._fail(a, f"no walkable route towards ({gx}, {gz}) from here; something blocks the way "
                               f"(deep water, a sheer drop, or walls more than 3 voxels high)")
@@ -266,6 +268,14 @@ class Giant:
             a["_budget"] -= cost
             self.x, self.k, self.z = nx, lv, nz
             a["_i"] += 1
+            under = w.mat(nx, lv - 1, nz)
+            if "roof" in under.tags or "interior" in under.tags:      # too light to carry a giant
+                w.set(nx, lv - 1, nz, M.AIR)
+                w.add_bulk("rubble", under.mass(w.voxel_m3) * 0.6, (nx, lv - 1, nz))
+                self._fall()
+                self.report(f"The {under.name} gave way under your weight at {fmt(w, self.pos)}.", ok=False)
+                a["_path"] = None
+                return False
             self.energy -= 0.15 * heavy
             self.stats["walked"] += 1
             if self.energy <= 0:
@@ -617,7 +627,10 @@ class Giant:
             w.put(new, pos or self.pos)
         self.stats["made"] += 1
         can = affordances(new)
-        return (f"Made a {new.name} ({kg(need)}, #{new.id}) by {a['_method']}ing." +
+        how = {"knap": "knapping", "snap": "snapping", "cut": "cutting", "carve": "carving", "forge": "forging",
+               "cast": "casting", "mould": "moulding", "twist": "twisting"}[a["_method"]]
+        where = "in your hands" if new.holder == self.id else f"on the ground at {fmt(w, new.pos)}"
+        return (f"Made a {new.name} ({kg(need)}, #{new.id}) by {how}; it is {where}." +
                 (f" It can: {can}." if can else ""))
 
     def begin_join(self, a):
@@ -1276,6 +1289,8 @@ def step_cost(w, x, k, z, nx, nk, nz):
     c = 0.5 if ground in FAST else (1.0 if ground in SLOW else 0.7)
     if w.t["liquid"][w.vox[nx, nz, nk]]:
         c = 2.0
+    if ground in WEAK:
+        c += 12.0                                    # it will break underfoot: avoid if possible
     d = nk - k
     if d > 0:
         c += 0.5 if d == 1 else 2.0 * d
@@ -1284,7 +1299,7 @@ def step_cost(w, x, k, z, nx, nk, nz):
     return c
 
 
-def find_path(w, start, goal, near=0, me=None, max_nodes=60000):
+def find_path(w, start, goal, near=0, me=None, max_nodes=60000, goal_k=None):
     """A* over standable voxels. Returns (path, complete): if the goal can't be
     reached the path leads to the closest point found."""
     sx, sk, sz = start
@@ -1304,7 +1319,7 @@ def find_path(w, start, goal, near=0, me=None, max_nodes=60000):
         if g > cost.get(key, 1e18):
             continue
         n += 1
-        if max(abs(x - gx), abs(z - gz)) <= near:
+        if max(abs(x - gx), abs(z - gz)) <= near and (goal_k is None or abs(k - goal_k) <= 2):
             found = key
             break
         for dx, dz in ((1, 0), (-1, 0), (0, 1), (0, -1)):

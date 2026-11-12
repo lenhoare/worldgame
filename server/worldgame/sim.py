@@ -7,6 +7,7 @@ from .worldgen import spawn_point
 
 POWER_DT = 5
 POWER_SCALE = 30.0       # electricity runs 30x faster than wall-clock physics, to suit short games
+STRICT = False           # tests set this so bugs surface instead of being swallowed
 COLOURS = ["#c9a227", "#3f8fd2", "#d2553f", "#4fb06a", "#a05fc9", "#e08a2e", "#3fb7b0", "#c94f8a"]
 
 
@@ -23,7 +24,13 @@ def step(w, n=1):
     for _ in range(n):
         w.tick += 1
         for g in list(w.giants.values()):
-            g.tick()
+            try:
+                g.tick()
+            except Exception as e:                 # one giant's bug must not stop the world
+                g.cur, g.queue, g.doing = None, [], "idle"
+                g.report(f"internal error, action abandoned: {e!r}", ok=False)
+                if STRICT:
+                    raise
         if w.changes:
             P.process_changes(w)
         if w.support_queue:
