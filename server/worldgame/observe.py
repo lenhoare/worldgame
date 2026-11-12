@@ -201,6 +201,11 @@ def inspect(w, g, q):
             d["wired_to"] = [f"#{i} {w.items[i].name}" for i in wired if i in w.items]
         if "powered" in it.props:
             d["powered"] = it.props["powered"]
+        if it.props.get("stored"):
+            d["inside"] = [dict(w.items[i].brief()) for i in it.props["stored"] if i in w.items][:30]
+        if it.props.get("trigger") in w.items:
+            t = w.items[it.props["trigger"]]
+            d["runs_only_while_active"] = f"#{t.id} {t.name}"
         return d
     if "giant" in q:
         o = next((o for o in w.giants.values() if o.name == q["giant"]), None)
@@ -334,6 +339,8 @@ THE WORLD IS PHYSICAL, NOT A LIST OF RECIPES
   what it touches. Hot enough fires need the right fuel, an enclosure, and forced air.
 - Water floods any opening that reaches it at or below its level.
 - Fuel, gas and big batteries explode in fire. Electricity flows through wired components.
+- A device wired to a trigger (switch, timer, pressure plate, sensor, radio trigger) runs only while
+  that trigger is active. Things can be stored in containers and carried in them.
 - What an object can do comes from its shape and substance. Shapes you can make: {', '.join(FORMS)}.
   Parts can be joined into tools and machines. Try things: failures tell you what was missing.
 
@@ -341,12 +348,13 @@ ACTIONS  Send a list; they run in order, each taking game time. A failure cancel
 {', '.join(VERBS)}
 Each action is {{"do": verb, ...}}. Common parameters:
   move_to {{x, z}} or {{target: item id or giant name}}       break {{x, y, z}} or {{item}}
-  pick_up {{item, kg?}}   drop {{item, kg?, x?, y?, z?}}       place {{material, x, y, z}}
+  pick_up {{item, kg?}}   drop {{item, kg?, x?, y?, z?}} or {{item, into: container}}   place {{material, x, y, z}}
+  throw {{item, x, z}}
   give {{item, to}}       make {{form, from: item, kg?}}       join {{items: [ids], with?: item}}
   ignite {{x, y, z}} or {{item}}   extinguish {{x, y, z}}      fill {{container, x, y, z}} or {{container, from}}
   pour {{container, x?, y?, z?}} or {{container, into}}        mix {{items: [ids]}}
   consume {{item}}        charge {{from: item}} or {{to: giant, kwh}}
-  connect {{a, b}}        disconnect {{a, b}}                  switch {{item, on}}
+  connect {{a, b}}        disconnect {{a, b}}                  switch {{item, on, seconds?}}
   fan {{x, y, z, seconds}}   say {{text}}   whisper {{to, text}}   radio {{text}}   write {{text, x, y, z}} or {{text, item}}
   hit {{target}}   push {{target}}   repair {{target?}}   wait {{seconds}}   label {{item, text}}
 Speech carries about {HEAR} voxels. Other giants hear and see what you do nearby.

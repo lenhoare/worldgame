@@ -450,3 +450,121 @@ def test_push_off_an_edge_and_hit():
     step(w, 2)
     assert b.x == 22 and b.k < a.k
     assert b.integrity < 96
+
+
+def test_save_and_load_round_trip(tmp_path):
+    from worldgame import persist
+    w = flat()
+    house(w, 10, 10)
+    g = giant(w, 20, 20)
+    flint = w.add_bulk("flint", 600, (20, GROUND + 1, 21))
+    run(w, g, [{"do": "pick_up", "item": flint.id}, {"do": "make", "form": "blade", "from": flint.id}])
+    P.ignite_voxel(w, (11, GROUND + 1, 11), force=True)
+    w.signs[(10, GROUND + 1, 10)] = "keep out"
+    g.notes.append("remember the flint")
+    g.queue = [{"do": "move_to", "x": 30, "z": 30}]
+    path = str(tmp_path / "game")
+    persist.save(w, path)
+    w2 = persist.load(path)
+    g2 = w2.giants[g.id]
+    assert np.array_equal(w.vox, w2.vox) and w2.tick == w.tick
+    assert g2.token == g.token and g2.notes == g.notes and [it.name for it in g2.items()] == [it.name for it in g.items()]
+    assert w2.burning == w.burning and w2.signs == w.signs
+    step(w, 200)
+    step(w2, 200)                                   # same state + same random stream -> same future
+    assert (g2.x, g2.z) == (g.x, g.z) == (30, 30)
+    assert np.array_equal(w.vox, w2.vox)
+
+
+# --- throwing, storage, triggers ------------------------------------------------------
+def test_thrown_fuel_then_a_torch_starts_a_fire():
+    w = flat(surface="paving")
+    house(w, 30, 18, n=4)
+    g = giant(w, 20, 20)
+    can = P.spawn(w, "fuel_can", (20, GROUND + 1, 21))
+    can.props["contents"] = {"fuel": 15}
+    torch = w.add_bulk("wood", 150, (19, GROUND + 1, 18))   # well away from the fuel
+    P.ignite_item(w, torch)
+    out = run(w, g, [{"do": "pick_up", "item": can.id}, {"do": "throw", "item": can.id, "x": 31, "z": 20},
+                     {"do": "pick_up", "item": torch.id}, {"do": "throw", "item": torch.id, "x": 31, "z": 20}])
+    assert any("spilled" in t for t in out)
+    assert any(p[0] in (30, 31, 32) for p in w.soaked)
+    step(w, 40)
+    assert w.burning or w.stats["burnt"] > 0
+
+
+def test_heavy_things_fall_short_and_hurt():
+    w = flat()
+    a, b = giant(w, 20, 20, "Ada"), giant(w, 24, 20, "Bo")
+    rock = w.add_bulk("rock", 5000, (20, GROUND + 1, 21))
+    out = run(w, a, [{"do": "pick_up", "item": rock.id}, {"do": "throw", "item": rock.id, "x": 24, "z": 20}])
+    assert b.integrity < 100
+    rock2 = w.add_bulk("rock", 18000, (a.x, GROUND + 1, a.z + 1))
+    out = run(w, a, [{"do": "pick_up", "item": rock2.id}, {"do": "throw", "item": rock2.id, "x": 39, "z": 20}])
+    assert any("as far as you can throw" in t for t in out)
+
+
+def test_store_things_in_a_container_and_carry_it():
+    w = flat()
+    g = giant(w, 20, 20)
+    skip = P.spawn(w, "skip", (20, GROUND + 1, 21))
+    bricks = w.add_bulk("brick", 6000, (21, GROUND + 1, 20))
+    pack = P.spawn(w, "ev_pack", (21, GROUND + 1, 21))
+    run(w, g, [{"do": "pick_up", "item": bricks.id}, {"do": "drop", "item": bricks.id, "into": skip.id},
+               {"do": "pick_up", "item": pack.id}, {"do": "drop", "item": pack.id, "into": skip.id},
+               {"do": "pick_up", "item": skip.id}, {"do": "move_to", "x": 30, "z": 30}])
+    assert g.load() == pytest.approx(900 + 6000 + 400)
+    assert inspect(w, g, {"item": skip.id})["inside"][0]["name"] == "brick"
+    run(w, g, [{"do": "pick_up", "item": pack.id}])
+    assert pack.holder == g.id and pack.inside is None and skip.props["stored"] == [bricks.id]
+    run(w, g, [{"do": "break", "item": skip.id}])           # breaking the container spills what is left
+    assert bricks.pos is not None and bricks.inside is None
+
+
+def _wire(w, g, pairs):
+    drum = P.spawn(w, "cable_drum", (g.x, g.k, g.z))
+    run(w, g, [{"do": "pick_up", "item": drum.id}] + [{"do": "connect", "a": a.id, "b": b.id} for a, b in pairs], 600)
+
+
+def test_pressure_plate_trap_sets_off_gas():
+    w = flat(X=80)
+    owner, victim = giant(w, 20, 20, "Ada"), giant(w, 60, 20, "Bo")
+    plate = P.spawn(w, "pressure_plate", (30, GROUND + 1, 20))
+    ign = P.spawn(w, "igniter", (31, GROUND + 1, 20))
+    gas = P.spawn(w, "gas_cylinder", (31, GROUND + 1, 20))
+    pack = P.spawn(w, "battery_pack", (29, GROUND + 1, 21))
+    _wire(w, owner, [(pack, plate), (plate, ign)])
+    assert ign.props["trigger"] == plate.id
+    step(w, 30)
+    assert gas.id in w.items                                 # armed but quiet
+    run(w, victim, [{"do": "move_to", "x": 30, "z": 20}], 200)
+    step(w, 12)
+    assert gas.id not in w.items and victim.integrity < 100
+
+
+def test_timer_and_radio_trigger():
+    w = flat()
+    g = giant(w, 20, 20)
+    timer = P.spawn(w, "timer", (22, GROUND + 1, 20))
+    siren = P.spawn(w, "siren", (23, GROUND + 1, 20))
+    rx = P.spawn(w, "radio_trigger", (22, GROUND + 1, 22))
+    ign = P.spawn(w, "igniter", (23, GROUND + 1, 22))
+    pack = P.spawn(w, "battery_pack", (21, GROUND + 1, 21))
+    radio = P.spawn(w, "radio_set", (20, GROUND + 1, 21))
+    logs = w.add_bulk("wood", 500, (23, GROUND + 1, 22))
+    _wire(w, g, [(pack, timer), (timer, siren), (pack, rx), (rx, ign)])
+    run(w, g, [{"do": "switch", "item": timer.id, "on": True, "seconds": 40},
+               {"do": "write", "item": rx.id, "text": "thunder"}, {"do": "switch", "item": rx.id, "on": True},
+               {"do": "pick_up", "item": radio.id}], 200)
+    start = w.tick
+    g.inbox = []
+    step(w, 20)
+    assert not any(e["type"] == "siren" for e in g.inbox) and not logs.props.get("burning")
+    step(w, 40)
+    assert any(e["type"] == "siren" for e in g.inbox)
+    run(w, g, [{"do": "radio", "text": "all quiet"}])
+    step(w, 10)
+    assert not logs.props.get("burning")
+    run(w, g, [{"do": "radio", "text": "THUNDER now"}])
+    step(w, 10)
+    assert logs.props.get("burning") or logs.id not in w.items

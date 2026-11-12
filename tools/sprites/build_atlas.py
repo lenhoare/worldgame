@@ -39,6 +39,8 @@ SPRITES = {
     "fuel_can": "hazard barrel", "fuel_tank": "barrel", "tank": "rain barrel", "skip": "dumpster",
     "shipping_container": "shipping container", "gas_cylinder": "propane tank", "blowtorch": "welding torch",
     "rail": "rail segment", "sleeper": "plank stack", "tarpaulin": "tarp", "rope_coil": "coil of rope",
+    "igniter": "spark plug", "timer": "kitchen timer", "pressure_plate": "pressure plate",
+    "switch": "toggle switch", "siren": "fire alarm bell", "radio_trigger": "remote detonator",
     # loose substances
     "brick": "brick pile", "rubble": "rubble pile", "concrete": "concrete slab", "steel": "ingot pile",
     "copper": "copper ore", "aluminium": "metal sheet", "lead": "ingot", "glass": "glass marble",

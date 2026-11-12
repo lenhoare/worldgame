@@ -343,7 +343,11 @@ def _spread(w, pos, dt):
     for dx, dk, dz in N6:
         n = (x + dx, k + dk, z + dz)
         v = w.mat(*n)
-        if v.flammability <= 0 or n in w.burning:
+        if n in w.burning:
+            continue
+        if v.flammability <= 0:
+            if n in w.soaked and v.id != AIR and w.rng.random() < 0.5 * dt:
+                w.burning[n] = 30.0                       # a pool of spilled fuel catches
             continue
         rate = v.flammability * (0.4 + 0.6 * w.dryness)
         if dk == 1:
@@ -408,7 +412,15 @@ def fire_tick(w):
         vid = w.get(*pos)
         v = M.VOXELS[vid]
         if v.flammability <= 0:
+            # Spilled fuel burns on anything, for a while, without consuming what it lies on.
+            if pos in w.soaked and w.burning[pos] > 0 and not w.t["liquid"][vid]:
+                _spread(w, pos, dt)
+                for dx, dk, dz in ((0, 0, 0), (0, 1, 0)) + SIDES:
+                    heat_items_at(w, (x + dx, k + dk, z + dz), 900, dt)
+                w.burning[pos] -= dt
+                continue
             w.burning.pop(pos, None)
+            w.soaked.discard(pos)
             continue
         wet = any(liquid[w.get(x + dx, k + dk, z + dz)] for dx, dk, dz in N6)
         rained = w.raining and w.exposed(*pos) and w.rng.random() < 0.06
@@ -474,7 +486,7 @@ def fire_tick(w):
             for g in w.giants.values():
                 if (g.x, g.k, g.z) == pos:
                     g.hurt(0.4 * dt, "fire")
-        it.mass -= (30.0 if blown else 15.0) * dt
+        it.mass -= (2.0 + 0.005 * it.mass) * (2.0 if blown else 1.0) * dt   # big fires burn faster
         it.props["temp"] = 600
         if it.mass <= 0:
             ash = None

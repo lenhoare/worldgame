@@ -161,20 +161,35 @@ class World:
             it.pos = None
 
     def remove(self, it):
+        where = it.pos or (self.giants[it.holder].pos if it.holder in self.giants else None)
+        for sid in list(it.props.get("stored", ())):      # whatever was inside spills out
+            s = self.items.get(sid)
+            if s is not None:
+                s.inside = None
+                if where is not None:
+                    self.put(s, where)
+        it.props.pop("stored", None)
         self.lift(it)
         if it.holder is not None:
             g = self.giants.get(it.holder)
             if g and it.id in g.carrying:
                 g.carrying.remove(it.id)
         if it.inside is not None:
-            c = self.items.get(it.inside)
-            if c and it.id in c.props.get("stored", []):
-                c.props["stored"].remove(it.id)
+            self.unstore(it)
         self.burning_items.discard(it.id)
         self.items.pop(it.id, None)
         self.rev += 1
         self.removed_items.append((self.rev, it.id))
         self.links = [l for l in self.links if l[0] != it.id and l[1] != it.id]
+
+    def unstore(self, it):
+        """Take an item out of the container it is stored in."""
+        c = self.items.get(it.inside)
+        it.inside = None
+        if c is not None and it.id in c.props.get("stored", []):
+            c.props["stored"].remove(it.id)
+            c.props["stored_kg"] = max(0.0, c.props.get("stored_kg", 0.0) - it.total_mass)
+            self.mark(c)
 
     def settle(self, it):
         """Let an item fall until it rests on something solid (or floats)."""

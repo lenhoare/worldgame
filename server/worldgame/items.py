@@ -47,8 +47,24 @@ KINDS = {
                    kw=5.0, parts=[("steel", 90), ("copper", 25)]),
     "heater": dict(mass=400, mat="steel", desc="an electric furnace element; reaches 1600 C when powered",
                    comp="sink", kw=80.0, parts=[("steel", 300), ("copper", 80)]),
-    "sensor": dict(mass=15, mat="electronics", desc="a motion sensor; reports giants that come near when powered",
-                   comp="sink", kw=0.1, parts=[("electronics", 12)]),
+    "sensor": dict(mass=15, mat="electronics", desc="a motion sensor; when powered it reports giants that come "
+                                                   "near to whoever set it down, and acts as a trigger",
+                   comp="sink", kw=0.1, trigger=True, parts=[("electronics", 12)]),
+    # Triggers: wire one to a device and the device only runs while the trigger is active.
+    "switch": dict(mass=10, mat="steel", desc="a heavy switch; wire a device through it to turn it on and off",
+                   comp="trigger", parts=[("steel", 8), ("copper", 2)]),
+    "timer": dict(mass=8, mat="electronics", desc="a timer; once switched on it activates after its delay "
+                                                  "(set 'seconds' when you switch it on)",
+                  comp="trigger", parts=[("electronics", 6), ("copper", 1)]),
+    "pressure_plate": dict(mass=120, mat="steel", desc="a pressure plate; active while a giant stands on it",
+                           comp="trigger", parts=[("steel", 110), ("copper", 5)]),
+    "radio_trigger": dict(mass=6, mat="electronics", desc="a radio receiver; activates when a radio message "
+                                                          "contains the code word written on it",
+                          comp="trigger", parts=[("electronics", 5)]),
+    "igniter": dict(mass=12, mat="steel", desc="an electric igniter; lights whatever it sits on when it gets power",
+                    comp="sink", kw=0.5, parts=[("steel", 8), ("copper", 3)]),
+    "siren": dict(mass=25, mat="steel", desc="a siren; heard far away while powered", comp="sink", kw=0.5,
+                  parts=[("steel", 18), ("copper", 5)]),
     "computer": dict(mass=20, mat="electronics", desc="a computer (rare tech)",
                      parts=[("electronics", 14), ("aluminium", 4), ("copper", 1)]),
     "medical_scanner": dict(mass=2000, mat="steel", desc="a hospital scanner (rare tech, full of copper and magnets)",
@@ -78,14 +94,17 @@ LOOT = {
              (.5, "glass", 20, 60), (.04, "battery_12v", 1, 1), (.03, "rope_coil", 1, 1)],
     "shop": [(.9, "plastic", 200, 600), (.7, "steel", 100, 300), (.6, "glass", 50, 150),
              (.5, "electronics", 10, 60), (.5, "fabric", 50, 300), (.5, "copper", 10, 30),
-             (.03, "fuel_can", 1, 1), (.02, "battery_pack", 1, 1), (.03, "computer", 1, 2)],
+             (.03, "fuel_can", 1, 1), (.02, "battery_pack", 1, 1), (.03, "computer", 1, 2),
+             (.02, "timer", 1, 1), (.02, "siren", 1, 1), (.015, "radio_trigger", 1, 1), (.01, "radio_set", 1, 1)],
     "industrial": [(.9, "steel", 500, 2500), (.6, "copper", 20, 100), (.5, "aluminium", 50, 300),
                    (.5, "plastic", 50, 300), (.4, "electronics", 10, 50), (.08, "motor", 1, 1),
                    (.05, "cable_drum", 1, 1), (.03, "pump", 1, 1), (.015, "generator", 1, 1),
                    (.03, "tank", 1, 1), (.02, "battery_pack", 1, 1), (.03, "floodlight", 1, 2),
                    (.04, "rope_coil", 1, 1), (.05, "tarpaulin", 1, 2), (.03, "blowtorch", 1, 1),
                    (.04, "gas_cylinder", 1, 2), (.02, "blower", 1, 1), (.01, "heater", 1, 1),
-                   (.02, "sensor", 1, 2), (.01, "radio_set", 1, 1)],
+                   (.02, "sensor", 1, 2), (.01, "radio_set", 1, 1), (.03, "switch", 1, 2), (.02, "timer", 1, 1),
+                   (.015, "pressure_plate", 1, 1), (.015, "igniter", 1, 2), (.015, "siren", 1, 1),
+                   (.01, "radio_trigger", 1, 1)],
     "medical": [(.8, "plastic", 100, 400), (.7, "steel", 100, 400), (.8, "electronics", 30, 120),
                 (.5, "copper", 10, 60), (.6, "fabric", 50, 200), (.2, "computer", 1, 2),
                 (.03, "medical_scanner", 1, 1), (.08, "battery_pack", 1, 1),
@@ -95,7 +114,7 @@ LOOT = {
                (.35, "fuel_can", 1, 2), (.1, "blowtorch", 1, 1), (.15, "gas_cylinder", 1, 1),
                (.4, "battery_12v", 1, 2), (.03, "cable_drum", 1, 1), (.05, "rope_coil", 1, 1),
                (.05, "tarpaulin", 1, 1), (.03, "motor", 1, 1), (.04, "fuel_tank", 1, 1),
-               (.02, "charger", 1, 1)],
+               (.02, "charger", 1, 1), (.05, "switch", 1, 1), (.04, "igniter", 1, 2), (.02, "timer", 1, 1)],
     "roof": [(.06, "solar_array", 1, 1)],
     "roof_big": [(.12, "solar_array", 1, 2)],
 }
@@ -190,7 +209,7 @@ class Item:
 
     @property
     def total_mass(self):
-        m = self.mass
+        m = self.mass + self.props.get("stored_kg", 0.0)
         for kg in self.props.get("contents", {}).values():
             m += kg
         return m
@@ -214,6 +233,8 @@ class Item:
             d["charge_kwh"] = round(p.get("charge", 0), 1)
         if p.get("contents"):
             d["holds"] = {k: round(v) for k, v in p["contents"].items()}
+        if p.get("stored"):
+            d["items_inside"] = len(p["stored"])
         if p.get("burning"):
             d["burning"] = True
         if p.get("temp", 15) > 80:
@@ -301,7 +322,10 @@ def affordances(it):
         a["stored_kwh"] = round(p.get("charge", 0), 1)
     if k.get("comp"):
         a["electrical"] = k["comp"]
-        a["kw"] = k.get("kw", 0)
+        if k.get("kw"):
+            a["kw"] = k["kw"]
+    if k.get("comp") == "trigger" or k.get("trigger"):
+        a["triggers_devices_wired_to_it"] = True
     if k.get("explosive"):
         a["explodes"] = True
     if sub.has("c") and form in ("rod", "beam", "plate", "wire"):

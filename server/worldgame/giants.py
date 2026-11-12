@@ -20,7 +20,7 @@ CARRY_KG = 20000.0
 HEAR = 100           # voxels a spoken voice carries
 VERBS = ("move_to", "break", "pick_up", "drop", "place", "give", "make", "join", "ignite", "extinguish",
          "fill", "pour", "mix", "consume", "charge", "connect", "disconnect", "switch", "fan", "say",
-         "whisper", "radio", "write", "hit", "push", "repair", "wait", "label")
+         "whisper", "radio", "write", "hit", "push", "repair", "wait", "label", "throw")
 FAST = {M.ID["asphalt"], M.ID["paving"]}
 SLOW = {M.ID[n] for n in ("sand", "farm_soil", "rubble", "gravel", "ballast", "clay")}
 WEAK = {v.id for v in M.VOXELS if "roof" in v.tags or "interior" in v.tags}
@@ -106,6 +106,9 @@ class Giant:
     def reach_item(self, it):
         if it.holder == self.id:
             return True
+        if it.inside is not None:                        # stored in a container we can reach
+            c = self.w.items.get(it.inside)
+            return c is not None and self.reach_item(c)
         return it.pos is not None and self.reach(*it.pos)
 
     def find(self, ref):
@@ -408,6 +411,9 @@ class Giant:
         if it.bulk and want < it.mass - 0.5:
             part = w.new_item("bulk", it.mat, want, **{k: v for k, v in it.props.items() if k in ("temp", "burning")})
             it.mass -= want
+            box = w.items.get(it.inside) if it.inside is not None else None
+            if box is not None:
+                box.props["stored_kg"] = max(0.0, box.props.get("stored_kg", 0.0) - want)
             w.mark(it)
             it = part
             if it.props.get("burning"):
@@ -416,6 +422,8 @@ class Giant:
             return self._fail(a, f"{it.name} is too heavy")
         else:
             w.lift(it)
+        if it.inside is not None:
+            w.unstore(it)
         it.holder = self.id
         w.links = [l for l in w.links if l[0] != it.id and l[1] != it.id]
         for o in self.items():                       # carried piles of one substance merge
@@ -435,6 +443,26 @@ class Giant:
             return err
         if it.holder != self.id:
             return f"you are not carrying {it.name}"
+        if "into" in a:
+            c, err = self.find(a["into"])
+            if err:
+                return err
+            cap = c.props.get("cap_l", 0)
+            if c is it or cap <= 0 or c.inside is not None:
+                return f"{c.name} can't have things stored in it"
+            used = sum(c.props.get("contents", {}).values())
+            for sid in c.props.get("stored", ()):
+                s = self.w.items.get(sid)
+                if s:
+                    used += s.total_mass / max(0.2, s.sub.density)
+            want = min(float(a.get("kg", it.mass)), it.mass) if it.bulk else it.total_mass
+            if used + want / max(0.2, it.sub.density) > cap:
+                return (f"{c.name} holds {cap:.0f} litres and has {max(0, cap - used):.0f} free; "
+                        f"that load needs {want / max(0.2, it.sub.density):.0f}")
+            if c.holder == self.id:
+                pass                                      # moving it between our own hands and our container
+            a["_into"] = c.id
+            return None
         p = self.xyz(a) if "x" in a else self.pos
         if p is None or not self.reach(*p):
             return "the drop point is out of reach"
@@ -455,6 +483,18 @@ class Giant:
             it = w.new_item("bulk", it.mat, want)
         else:
             self.carrying.remove(it.id)
+        if "_into" in a:
+            c = w.items.get(a["_into"])
+            if c is None or not self.reach_item(c):
+                self.carrying.append(it.id) if it.id not in self.carrying else None
+                it.holder = self.id
+                return self._fail(a, "the container is gone")
+            it.holder, it.inside = None, c.id
+            c.props.setdefault("stored", []).append(it.id)
+            c.props["stored_kg"] = c.props.get("stored_kg", 0.0) + it.total_mass
+            w.mark(it)
+            w.mark(c)
+            return f"Stored {it.name} {kg(it.total_mass)} in {c.name} (#{c.id})."
         if KINDS.get(it.kind, {}).get("comp"):
             it.props["owner"] = self.id          # whoever sets a device down is told what it senses
         w.put(it, a["_p"])
@@ -1046,7 +1086,17 @@ class Giant:
         w.mark(wire)
         w.links.append((ia, ib, m))
         w.rev += 1
-        return f"Wired {w.items[ia].name} (#{ia}) to {w.items[ib].name} (#{ib}) with {m:.0f} m of cable."
+        note = ""
+        for t, d in ((w.items[ia], w.items[ib]), (w.items[ib], w.items[ia])):
+            tk, dk = KINDS.get(t.kind, {}), KINDS.get(d.kind, {})
+            if (tk.get("comp") == "trigger" or tk.get("trigger")) and dk.get("comp") == "sink" \
+                    and not dk.get("trigger"):
+                d.props["trigger"] = t.id
+                d.props["on"] = True
+                w.mark(d)
+                note = f" The {d.name} will now run only while the {t.name} is active."
+                break
+        return (f"Wired {w.items[ia].name} (#{ia}) to {w.items[ib].name} (#{ib}) with {m:.0f} m of cable." + note)
 
     def begin_disconnect(self, a):
         w = self.w
@@ -1064,6 +1114,10 @@ class Giant:
         before = len(w.links)
         cut = [l for l in w.links if {l[0], l[1]} == {ia, ib}]
         w.links = [l for l in w.links if {l[0], l[1]} != {ia, ib}]
+        for x, y in ((ia, ib), (ib, ia)):
+            d = w.items.get(x)
+            if d is not None and d.props.get("trigger") == y:
+                d.props.pop("trigger", None)
         if len(w.links) == before:
             return self._fail(a, "there is no cable between those")
         w.new_item("wire", "copper", max(1.0, cut[0][2]), self.pos, wire_m=cut[0][2])
@@ -1074,8 +1128,9 @@ class Giant:
         it, err = self.find(a.get("item"))
         if err:
             return err
-        if "on" not in it.props:
+        if "on" not in it.props and KINDS.get(it.kind, {}).get("comp") not in ("trigger", "sink"):
             return f"{it.name} has no switch"
+        it.props.setdefault("on", False)
         return None
 
     def end_switch(self, a):
@@ -1083,8 +1138,15 @@ class Giant:
         if err:
             return self._fail(a, err)
         it.props["on"] = bool(a.get("on", not it.props["on"]))
+        if it.kind == "timer":
+            it.props["seconds"] = max(5, min(3600, int(a.get("seconds", it.props.get("seconds", 60)))))
+            it.props["armed_at"] = self.w.tick
+        if it.kind == "radio_trigger":
+            it.props.pop("fired", None)
+        it.props.pop("fired_once", None)
         self.w.mark(it)
-        return f"Switched {it.name} {'on' if it.props['on'] else 'off'}."
+        extra = f" It will activate in {it.props['seconds']} s." if it.kind == "timer" and it.props["on"] else ""
+        return f"Switched {it.name} {'on' if it.props['on'] else 'off'}.{extra}"
 
     def begin_fan(self, a):
         p = self.xyz(a)
@@ -1138,6 +1200,10 @@ class Giant:
         to = [g.id for g in self.w.giants.values() if g is not self
               and any(it.kind == "radio_set" for it in g.items())]
         self.w.emit("radio", f'[radio] {self.name}: "{text}"', to=to, data={"from": self.name, "say": text})
+        for it in self.w.items.values():
+            code = str(it.props.get("text", "")).strip().lower()
+            if it.kind == "radio_trigger" and it.props.get("on") and code and code in text.lower():
+                it.props["fired"] = True
         return f"Transmitted to {len(to)} listener{'s' if len(to) != 1 else ''}."
 
     def begin_write(self, a):
@@ -1248,6 +1314,63 @@ class Giant:
             g.inbox.append({"t": self.w.tick, "type": "repaired",
                             "text": f"{self.name} repaired you (+{pts:.0f}); integrity {g.integrity:.0f}%."})
         return f"Repaired {'yourself' if g is self else g.name} by {pts:.0f} points; integrity {g.integrity:.0f}%."
+
+    def begin_throw(self, a):
+        it, err = self.find(a.get("item"))
+        if err:
+            return err
+        if it.holder != self.id:
+            return f"pick {it.name} up before throwing it"
+        w = self.w
+        tx, tz = int(a["x"]), int(a["z"])
+        m = it.total_mass
+        rng = 40 if m <= 200 else max(3, int(40 * (200.0 / m) ** 0.5))
+        d = max(abs(tx - self.x), abs(tz - self.z))
+        if d > rng:                                       # falls short along the same line
+            f = rng / d
+            tx, tz = self.x + int(round((tx - self.x) * f)), self.z + int(round((tz - self.z) * f))
+            a["_short"] = rng
+        tx, tz = min(max(tx, 0), w.X - 1), min(max(tz, 0), w.Z - 1)
+        a["_t"], a["_e"], a["_to"] = 3, 0.3, (tx, tz)
+        return None
+
+    def end_throw(self, a):
+        w = self.w
+        it, err = self.find(a.get("item"))
+        if err or it.holder != self.id:
+            return self._fail(a, err or "you no longer hold it")
+        tx, tz = a["_to"]
+        self.carrying.remove(it.id)
+        pos = (tx, w.surface(tx, tz) + 1, tz)
+        name, m = it.name, it.total_mass
+        w.put(it, pos)
+        pos = it.pos
+        out = [f"Threw {name} to {fmt(w, pos)}" + (f" (as far as you can throw it: {a['_short']} voxels)"
+                                                   if "_short" in a else "") + "."]
+        for g in w.giants.values():
+            if g is not self and g.x == tx and g.z == tz and g.status != "destroyed":
+                g.hurt(min(45.0, 3.0 + m / 150.0), f"a {name} thrown by {self.name}")
+                out.append(f"It hit {g.name}.")
+        spilled = it.props.get("contents")
+        if spilled:                                       # liquid slops out on impact
+            x, k, z = pos
+            for liquid, amt in list(spilled.items()):
+                for dx in (-1, 0, 1):
+                    for dz in (-1, 0, 1):
+                        for dk in (-1, 0):
+                            q = (x + dx, k + dk, z + dz)
+                            if liquid == "fuel":
+                                w.soaked.add(q)
+                            elif liquid == "water" and amt >= 100:
+                                w.burning.pop(q, None)
+                out.append(f"{amt:.0f} L of {liquid} spilled.")
+            it.props["contents"] = {}
+        if it.sub.has("b") and not it.bulk and m > 20:
+            w.add_bulk(it.mat, it.mass, pos)
+            w.remove(it)
+            out.append("It shattered.")
+        w.emit("thrown", f"{self.name} threw a {name}.", pos, radius=40)
+        return " ".join(out)
 
     def begin_wait(self, a):
         a["_t"] = min(600, max(1, int(a.get("seconds", 10))))

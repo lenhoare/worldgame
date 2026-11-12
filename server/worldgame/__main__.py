@@ -20,14 +20,29 @@ def main():
     ap.add_argument("--host", default="127.0.0.1", help="use 0.0.0.0 to let other machines connect")
     ap.add_argument("--speed", type=float, default=1.0, help="game seconds per real second (0 = paused)")
     ap.add_argument("--max-giants", type=int, default=8)
+    ap.add_argument("--save", default="", help="path (no extension) to save the game to; also used by --load")
+    ap.add_argument("--load", action="store_true", help="resume from --save instead of building a new world")
+    ap.add_argument("--autosave", type=int, default=600, help="game seconds between automatic saves (with --save)")
+    ap.add_argument("--admin-key", default=None, help="key for /admin endpoints (default: random, printed at start; "
+                                                     "'' leaves them open)")
     ap.add_argument("--giants", default="", help="comma-separated names to create at start (tokens are printed)")
     args = ap.parse_args()
 
     t = time.time()
-    w = build_world(args.region, args.seed)
-    print(f"World '{w.meta.get('name')}' built in {time.time() - t:.1f}s: {w.X} x {w.Z} x {w.Y} voxels of "
+    if args.load:
+        from . import persist
+        w = persist.load(args.save)
+        print(f"Resumed '{w.meta.get('name')}' at tick {w.tick} with {len(w.giants)} giants")
+        for g in w.giants.values():
+            print(f"  giant {g.name}: token {g.token}", flush=True)
+    else:
+        w = build_world(args.region, args.seed)
+    print(f"World '{w.meta.get('name')}' ready in {time.time() - t:.1f}s: {w.X} x {w.Z} x {w.Y} voxels of "
           f"{w.cell:.2f} m, {len(w.items)} items, {len(w.sites)} landmarks", flush=True)
-    game = Game(w, args.speed, args.max_giants)
+    import secrets
+    key = secrets.token_hex(6) if args.admin_key is None else args.admin_key
+    game = Game(w, args.speed, args.max_giants, key, args.save, args.autosave if args.save else 0)
+    print(f"Admin key: {key or '(none: admin endpoints are open)'}", flush=True)
     for name in [n.strip() for n in args.giants.split(",") if n.strip()]:
         g = add_giant(w, name, args.max_giants)
         print(f"  giant {g.name}: token {g.token} at ({g.x}, {g.k - w.sea}, {g.z})", flush=True)

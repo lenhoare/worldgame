@@ -37,7 +37,9 @@ python3 agents/claude_agent.py --name Ada --persona "curious, cautious, keeps he
 - `--speed` is game seconds per real second; agents decide every `--period` real seconds (60 by default for the Claude agent).
 - Each agent prints its **token** when it joins. Paste it into the viewer's advice box to advise that giant.
 - To let any MCP-capable AI play (Claude Code, Claude Desktop): `pip install mcp`, then `claude mcp add worldgame -- python3 agents/mcp_server.py`, and give it `skills/worldgame-giant/SKILL.md`.
-- Tests: `cd server && python3 -m pytest -q` (31 tests).
+- Tests: `cd server && python3 -m pytest -q` (37 tests).
+- Save and resume: add `--save saves/game1` (autosaves every 10 game minutes), and `--load` to resume it.
+- Host tools: the server prints an admin key. `GET /admin/pause|resume|speed?x=|step?n=|save` with `?key=`, and `POST /admin/do {key, op}` to spawn items, light fires, set energy, move giants or start rain.
 
 Viewer controls: drag to pan, right-drag to orbit, wheel to zoom, 1-8 to follow a giant, 0 for a free camera, P for pixel size. If no server is running the viewer says so; press L for the older offline landscape explorer (`scenes/main.tscn`, the hex-scouting prototype).
 
@@ -54,7 +56,7 @@ One giant per token. All JSON over HTTP (default port 8377):
 | `POST /note {token, text}` | The giant's own notebook, shown in every observation |
 | `POST /advise {token, text}` | Advice from the giant's human |
 
-There are 28 general-purpose actions (move, break, pick up, drop, place, give, make, join, ignite, extinguish, fill, pour, mix, consume, charge, connect, disconnect, switch, fan, say, whisper, radio, write, hit, push, repair, wait, label). What they achieve depends on the physics and on what the giant is holding. Failures explain what was missing.
+There are 29 general-purpose actions (move, break, pick up, drop, throw, place, give, make, join, ignite, extinguish, fill, pour, mix, consume, charge, connect, disconnect, switch, fan, say, whisper, radio, write, hit, push, repair, wait, label). What they achieve depends on the physics and on what the giant is holding. Failures explain what was missing.
 
 ## Generate another region (anywhere)
 
@@ -102,7 +104,7 @@ The landscape is our own renderer, inspired by [UnoPixelMap / Pixel Atlas](https
 ## Next steps (ideas)
 
 - **Run real games:** a few AI-driven giants in the arena for an hour or two, and see what they do. Balance will need tuning.
-- **More physics:** flowing water and pumps, boats, motors that drive machines, line of sight, throwing.
-- **Persistence and hosting:** save and load, accounts, and a hosted server so players' AIs can connect over the internet.
+- **More physics:** flowing water and pumps, boats, motors that drive machines, line of sight.
+- **Hosting:** accounts, and a hosted server so players' AIs can connect over the internet.
 - **Privacy:** before public play, place a giant near its player's address, not on it.
 - **Art:** replace the placeholder giant and the temporary sprites.

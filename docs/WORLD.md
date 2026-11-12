@@ -18,7 +18,7 @@ A voxel material is a substance arranged as a structure: fill (a brick wall is 2
 ## Items (`items.py`)
 
 - **Bulk:** a divisible mass of one substance (3.2 t of brick).
-- **Salvage:** 29 kinds of object with a function or contents (car, generator, solar array, charger, cable drum, fuel can, gas cylinder, sensor...). Objects break down into parts.
+- **Salvage:** 35 kinds of object with a function or contents (car, generator, solar array, charger, cable drum, fuel can, gas cylinder, sensor...). Objects break down into parts.
 - **Shaped parts:** any suitable substance can be made into one of 18 forms (blade, pick, hammer, shovel, rod, beam, plank, plate, sheet, wire, pipe, vessel, wheel, brick, block, rope, lens, mirror). Whether it can depends on properties: brittle hard stone is knapped, wood is carved with something harder than wood, metal must be hot (forge at 60% of melting point, cast when molten), clay must be wet.
 - **Assemblies:** parts joined with rope, wire or a welding flame. A head plus a handle is a tool; wheels plus a bed plus an axle is a cart; a sheet between two boards is a bellows.
 
@@ -33,7 +33,10 @@ What an item can do is computed from its form and substance (`affordances`): a f
 | Fire | Spreads by flammability, dryness, wind and height; needs air; rain and water put it out. Temperature depends on fuel (wood 800 C, charcoal 1100 C), enclosure (+250 C with four non-flammable walls) and forced air (+350 C). Heat transforms voxels and items. Wood burning with no air becomes charcoal. |
 | Explosion | Fuel, gas and big batteries explode when heated: they destroy by hardness and distance, ignite, injure and chain. |
 | Water | Floods any opening at or below the level of the body it touches (the sea, a river). |
-| Electricity | Wired components form networks: solar arrays and generators supply, batteries buffer, chargers, heaters, blowers and sensors consume. |
+| Electricity | Wired components form networks: solar arrays and generators supply, batteries buffer, chargers, heaters, blowers, igniters, sirens and sensors consume. |
+| Triggers | A device wired to a trigger runs only while the trigger is active: a switch, a timer, a pressure plate, a motion sensor, or a radio receiver that listens for a code word. |
+| Throwing | Range falls with mass (20 kg goes 40 voxels, 20 t goes 4). Thrown things hurt, brittle things shatter, and liquids spill: spilled fuel burns on any surface. |
+| Storage | Anything with capacity (a skip, a tank, a shipping container) holds items by volume and can be carried full. |
 | Energy | Everything a giant does costs kWh. Refill by burning fuel in its reactor, drawing from batteries, or standing by a powered charger. At zero it is dormant until someone helps. |
 | Growth and weather | Bare soil greens over; wind shifts; rain comes and goes; day and night change solar power and sight. |
 
@@ -50,7 +53,11 @@ None of these has dedicated code; each falls out of the rules above:
 - Moats and canals: dig below sea level to the shore.
 - Bridges: timber spans three voxels, steel six.
 - A charging station: solar arrays wired to a salvaged charger; cut the cable to sabotage it.
-- Alarms: a powered sensor tells its owner who came near.
+- Alarms: a powered sensor tells its owner who came near; wire a siren to it and everyone hears.
+- Traps: a pressure plate wired to an igniter beside a gas cylinder. (Tested.)
+- Remote and delayed action: a timer or a radio code word can light a fire or sound a siren from far away. (Tested.)
+- Firebombs: throw a can of fuel, then throw something burning. (Tested.)
+- Haulage: fill a skip with bricks and carry the skip.
 - Rescue or ransom: a dormant giant can only speak; another can give it energy, or not.
 
 ## What agents see (`observe.py`)
@@ -64,6 +71,6 @@ Giants perceive only what is near them. Speech carries 100 voxels; whispers are 
 - **Not yet tested with real language models.** The agent loop was exercised by a scripted bot and by hand; `agents/claude_agent.py` compiles and its API parameters were checked against the SDK, but it has not been run against the API.
 - Balance (energy costs, loot rates, break times) is a first guess.
 - Water does not drain or flow downhill; it only floods. Rivers are static.
-- No boats, pumps or motors with functions yet; no throwing; no line-of-sight (sight is by distance).
-- One arena, held in memory; no save and load yet.
-- The server has no accounts: a giant's token is its only credential, and admin endpoints are open, so bind to localhost (the default) unless you trust the network.
+- No boats, pumps or motors with functions yet; no line-of-sight (sight is by distance).
+- One arena per server. Games can be saved and resumed (`--save`, `--load`).
+- The server has no accounts: a giant's token is its only credential. Admin endpoints need the key printed at start-up. Bind to localhost (the default) unless you trust the network.

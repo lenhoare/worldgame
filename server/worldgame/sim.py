@@ -87,6 +87,12 @@ def power_tick(w):
             k = KINDS[it.kind]
             if k["comp"] != "sink" or it.props.get("on") is False:
                 continue
+            if "trigger" in it.props and not trigger_active(w, it.props["trigger"]):
+                if it.props.get("powered"):
+                    it.props["powered"] = False
+                    it.props.pop("fired_once", None)
+                    w.mark(it)
+                continue
             if it.kind == "charger":
                 g = _giant_beside(w, it)
                 if g is None:
@@ -154,6 +160,43 @@ def power_tick(w):
                     w.blow[(x + dx, k + dk, z + dz)] = w.tick + POWER_DT + 2
             elif it.kind == "sensor":
                 _sense(w, it)
+            elif it.kind == "igniter" and not it.props.get("fired_once"):
+                it.props["fired_once"] = True              # one spark each time it is switched on
+                x, k, z = it.pos
+                for q in ((x, k - 1, z), (x, k, z)):
+                    if not P.ignite_voxel(w, q, force=True) and q in w.soaked:
+                        w.burning[q] = 30
+                for oid in list(w.items_at.get(it.pos, ())):
+                    o = w.items.get(oid)
+                    if o is not None and o is not it:
+                        P.heat_item(w, o, 900, POWER_DT)
+                w.emit("fire", "An igniter sparked.", it.pos, radius=40)
+            elif it.kind == "siren" and w.tick - it.props.get("last_wail", -999) >= 30:
+                it.props["last_wail"] = w.tick
+                w.emit("siren", f"A siren is wailing at ({it.pos[0]}, {it.pos[1] - w.sea}, {it.pos[2]}).",
+                       it.pos, radius=250)
+
+
+def trigger_active(w, tid):
+    """Is this trigger letting power through?"""
+    t = w.items.get(tid)
+    if t is None or t.pos is None:
+        return False
+    p = t.props
+    if t.kind == "switch":
+        return bool(p.get("on"))
+    if t.kind == "timer":
+        return bool(p.get("on")) and w.tick >= p.get("armed_at", 0) + p.get("seconds", 60)
+    if t.kind == "radio_trigger":
+        return bool(p.get("on")) and bool(p.get("fired"))
+    x, k, z = t.pos
+    if t.kind == "pressure_plate":
+        return any(g.x == x and g.z == z and abs(g.k - k) <= 1 and g.status != "destroyed"
+                   for g in w.giants.values())
+    if t.kind == "sensor":
+        return any(g.id != p.get("owner") and g.status != "destroyed"
+                   and max(abs(g.x - x), abs(g.z - z)) <= 15 for g in w.giants.values())
+    return False
 
 
 def _giant_beside(w, it):

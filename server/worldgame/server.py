@@ -10,7 +10,9 @@ Humans (advice only):
   POST /advise   {token, text}               -> shown to the giant in its next observation
 Viewer:
   GET  /view/meta, /view/state?since=rev, /view/chunks?since=rev (gzip binary)
-Admin (local use): GET /admin/pause, /admin/resume, /admin/speed?x=, /admin/step?n=, /admin/save
+Admin (need ?key= unless the server runs with an empty admin key):
+  GET  /admin/pause, /admin/resume, /admin/speed?x=, /admin/step?n=, /admin/save
+  POST /admin/do {key, op: spawn|ignite|energy|integrity|teleport|rain, ...}
 """
 
 import json
@@ -28,7 +30,7 @@ from .world import CHUNK
 
 
 class Game:
-    def __init__(self, world, speed=1.0, max_giants=8):
+    def __init__(self, world, speed=1.0, max_giants=8, admin_key="", save_path="", autosave=0):
         self.w = world
         self.lock = threading.RLock()
         self.speed = speed
@@ -36,6 +38,9 @@ class Game:
         self.max_giants = max_giants
         self.mesh = MeshCache(world)
         self.started = time.time()
+        self.admin_key = admin_key          # "" = admin endpoints open (local testing only)
+        self.save_path = save_path
+        self.autosave = autosave            # game ticks between automatic saves (0 = never)
 
     # --- simulation thread ---------------------------------------------------
     def run(self):
@@ -48,11 +53,55 @@ class Game:
             nxt += 1.0 / self.speed
             with self.lock:
                 step(self.w)
+                if self.autosave and self.save_path and self.w.tick % self.autosave == 0:
+                    self.save()
             delay = nxt - time.time()
             if delay > 0:
                 time.sleep(delay)
             elif delay < -2:
                 nxt = time.time()           # fell behind: don't try to catch up
+
+    def save(self):
+        from . import persist
+        with self.lock:
+            persist.save(self.w, self.save_path)
+        return self.save_path
+
+    def admin(self, body):
+        """Host tools: spawn items, light fires, set energy, move giants, change the weather."""
+        from . import physics as P
+        w = self.w
+        op = body.get("op")
+        with self.lock:
+            if op == "spawn":
+                x, z = int(body["x"]), int(body["z"])
+                pos = (x, w.surface(x, z) + 1, z)
+                if body.get("kind") in M.SUBSTANCES:
+                    it = w.add_bulk(body["kind"], float(body.get("kg", 1000)), pos)
+                else:
+                    it = P.spawn(w, body["kind"], pos)
+                return 200, {"item": it.id, "at": O.pos3(w, it.pos)}
+            if op == "ignite":
+                p = (int(body["x"]), int(body["y"]) + w.sea, int(body["z"]))
+                return 200, {"lit": P.ignite_voxel(w, p, force=True)}
+            g = next((g for g in w.giants.values() if g.name == body.get("giant")), None)
+            if op in ("energy", "teleport", "integrity") and g is None:
+                return 404, {"error": "no such giant"}
+            if op == "energy":
+                g.energy = float(body["value"])
+                return 200, {"energy": g.energy}
+            if op == "integrity":
+                g.integrity = float(body["value"])
+                return 200, {"integrity": g.integrity}
+            if op == "teleport":
+                g.x, g.z = int(body["x"]), int(body["z"])
+                g.k = w.surface(g.x, g.z) + 1
+                g.cur, g.queue = None, []
+                return 200, {"at": O.pos3(w, g.pos)}
+            if op == "rain":
+                w.raining = int(body.get("ticks", 600))
+                return 200, {"raining": w.raining}
+        return 400, {"error": "op must be one of: spawn, ignite, energy, integrity, teleport, rain"}
 
     def giant(self, token):
         for g in self.w.giants.values():
@@ -257,6 +306,12 @@ def make_handler(game):
                     return self._send(200, None, game.view_heights(), "application/octet-stream")
                 if u.path == "/rules":
                     return self._send(200, {"rules": O.RULES})
+                if u.path.startswith("/admin/") and game.admin_key and q.get("key") != game.admin_key:
+                    return self._send(403, {"error": "admin key required (?key=...)"})
+                if u.path == "/admin/save":
+                    if not game.save_path:
+                        return self._send(400, {"error": "start the server with --save PATH"})
+                    return self._send(200, {"saved": game.save()})
                 if u.path == "/admin/pause":
                     game.paused = True
                     return self._send(200, {"paused": True})
@@ -290,6 +345,10 @@ def make_handler(game):
             except Exception:
                 return self._send(400, {"error": "invalid JSON"})
             try:
+                if u.path == "/admin/do":
+                    if game.admin_key and body.get("key") != game.admin_key:
+                        return self._send(403, {"error": "admin key required"})
+                    return self._send(*game.admin(body))
                 route = {"/join": game.join, "/act": game.act, "/query": game.query, "/note": game.note,
                          "/advise": game.advise}.get(u.path)
                 if route is None:
