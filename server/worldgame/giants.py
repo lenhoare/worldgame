@@ -175,6 +175,9 @@ class Giant:
                     try:
                         msg = getattr(self, "end_" + a["do"])(a)
                     except Exception as e:           # a bug must never kill the world
+                        from . import sim
+                        if sim.STRICT:
+                            raise
                         msg = None
                         self._fail(a, f"internal error: {e!r}")
                     if msg:
@@ -198,7 +201,10 @@ class Giant:
         a["_t"], a["_e"] = 1, 0.0
         try:
             return getattr(self, "begin_" + verb)(a)
-        except Exception as e:
+        except (KeyError, TypeError, ValueError, AttributeError) as e:   # malformed parameters from the agent
+            from . import sim
+            if sim.STRICT and isinstance(e, AttributeError):
+                raise
             return f"bad parameters ({e!r})"
 
     def _fall(self):

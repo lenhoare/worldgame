@@ -417,7 +417,8 @@ def fire_tick(w):
                 _spread(w, pos, dt)
                 for dx, dk, dz in ((0, 0, 0), (0, 1, 0)) + SIDES:
                     heat_items_at(w, (x + dx, k + dk, z + dz), 900, dt)
-                w.burning[pos] -= dt
+                if pos in w.burning:                       # an explosion may have blown the fire out
+                    w.burning[pos] -= dt
                 continue
             w.burning.pop(pos, None)
             w.soaked.discard(pos)
@@ -441,6 +442,8 @@ def fire_tick(w):
         for g in w.giants.values():
             if g.x == x and g.z == z and 0 <= g.k - k <= 1:
                 g.hurt(0.6 * dt, "fire")
+        if pos not in w.burning or w.get(*pos) != vid:     # blown out or destroyed by what it set off
+            continue
         w.burning[pos] -= dt
         if w.burning.get(pos, 1) <= 0:
             w.burning.pop(pos, None)
