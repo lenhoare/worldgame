@@ -393,6 +393,9 @@ def test_observation_and_queries_are_readable():
     assert len(obs["map"]["surface"]) == 25 and obs["map"]["surface"][12][12] == "@"
     assert "B" in "".join(obs["map"]["surface"]) or "^" in "".join(obs["map"]["surface"])
     assert obs["items_nearby"][0]["name"] == "flint"
+    reach = obs["within_reach"]["voxels"]
+    assert {"x": 22, "z": 18, "y": [y(GROUND + 1), y(GROUND + 2)], "material": "brick_wall"} in reach
+    assert {"x": 22, "z": 18, "y": y(GROUND + 3), "material": "roof_tile"} in reach
     col = inspect(w, g, {"x": 22, "z": 18, "y": y(GROUND + 1)})
     assert col["voxel"]["material"] == "brick_wall" and "breaks_into" in col["voxel"]
     s = survey(w, g, {"r": 10})

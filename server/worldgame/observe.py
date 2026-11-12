@@ -86,9 +86,37 @@ def local_map(w, g):
         "surface": rows,
         "height": relief,
         "height_note": "top of solid ground or structure relative to the ground under you: "
-                       "0 level, 1-9 higher, a-i lower (a = 1 down)",
+                       "0 level, 1-9 higher, a-i lower (a = 1 down). The y of a column's top voxel is "
+                       "your y - 1 + that number",
         "legend": legend,
     }
+
+
+def in_reach(w, g):
+    """Exact coordinates of what stands above ground level within the giant's reach."""
+    out = []
+    for z in range(g.z - REACH, g.z + REACH + 1):
+        for x in range(g.x - REACH, g.x + REACH + 1):
+            if not (0 <= x < w.X and 0 <= z < w.Z):
+                continue
+            col = w.vox[x, z]
+            k = g.k
+            top = min(w.Y - 1, g.k + REACH_UP)
+            while k <= top:
+                vid = int(col[k])
+                if vid == M.AIR:
+                    k += 1
+                    continue
+                j = k
+                while j + 1 <= top and int(col[j + 1]) == vid:
+                    j += 1
+                e = {"x": x, "z": z, "y": k - w.sea if j == k else [k - w.sea, j - w.sea],
+                     "material": M.VOXELS[vid].name}
+                if any((x, kk, z) in w.burning for kk in range(k, j + 1)):
+                    e["burning"] = True
+                out.append(e)
+                k = j + 1
+    return out[:60]
 
 
 def observe(w, g):
@@ -157,6 +185,11 @@ def observe(w, g):
             "load": f"{kg(load)} of {kg(CARRY_KG + g.haul())}",
             "doing": g.doing,
             "queued": [a.get("do") for a in g.queue][:12],
+        },
+        "within_reach": {
+            "note": f"voxels at or above your feet that you can touch now (reach {REACH} sideways, {REACH_UP} up, "
+                    f"{REACH_DOWN} down); the ground itself is at y {g.k - 1 - w.sea} and below",
+            "voxels": in_reach(w, g),
         },
         "map": local_map(w, g),
         "items_nearby": near,
