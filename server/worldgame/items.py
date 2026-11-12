@@ -39,7 +39,9 @@ KINDS = {
                        parts=[("aluminium", 25), ("glass", 8), ("electronics", 4)]),
     "radio_set": dict(mass=30, mat="electronics", desc="a two-way radio; reaches the whole region when powered",
                       comp="sink", kw=0.5, parts=[("electronics", 20), ("copper", 6)]),
-    "motor": dict(mass=300, mat="steel", desc="an electric motor", comp="sink", kw=50.0,
+    "motor": dict(mass=300, mat="steel", desc="an electric motor; set under a doorway it lifts the wall above it "
+                                              "(up to 3 voxels) while powered, and lowers it again when not",
+                  comp="sink", kw=50.0,
                   parts=[("steel", 180), ("copper", 110)]),
     "pump": dict(mass=200, mat="steel", desc="an electric pump", comp="sink", kw=15.0,
                  parts=[("steel", 150), ("copper", 40)]),

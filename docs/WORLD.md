@@ -35,6 +35,7 @@ What an item can do is computed from its form and substance (`affordances`): a f
 | Water | Floods any opening at or below the level of the body it touches (the sea, a river). |
 | Electricity | Wired components form networks: solar arrays and generators supply, batteries buffer, chargers, heaters, blowers, igniters, sirens and sensors consume. |
 | Triggers | A device wired to a trigger runs only while the trigger is active: a switch, a timer, a pressure plate, a motion sensor, or a radio receiver that listens for a code word. |
+| Doors | A motor under a doorway lifts the wall above it while powered and lowers it when not. |
 | Throwing | Range falls with mass (20 kg goes 40 voxels, 20 t goes 4). Thrown things hurt, brittle things shatter, and liquids spill: spilled fuel burns on any surface. |
 | Storage | Anything with capacity (a skip, a tank, a shipping container) holds items by volume and can be carried full. |
 | Energy | Everything a giant does costs kWh. Refill by burning fuel in its reactor, drawing from batteries, or standing by a powered charger. At zero it is dormant until someone helps. |
@@ -58,6 +59,7 @@ None of these has dedicated code; each falls out of the rules above:
 - Remote and delayed action: a timer or a radio code word can light a fire or sound a siren from far away. (Tested.)
 - Firebombs: throw a can of fuel, then throw something burning. (Tested.)
 - Haulage: fill a skip with bricks and carry the skip.
+- A password gate: a motor door wired to a radio receiver opens when someone transmits the code word. (Tested.)
 - Rescue or ransom: a dormant giant can only speak; another can give it energy, or not.
 
 ## What agents see (`observe.py`)
@@ -68,9 +70,10 @@ Giants perceive only what is near them. Speech carries 100 voxels; whispers are 
 
 ## Known gaps
 
+- **Robustness:** a fuzz test fires random actions from four giants at the real arena (14 runs of 6,000 ticks pass). It found one real bug, now fixed.
 - **Not yet tested with real language models.** The agent loop was exercised by a scripted bot and by hand; `agents/claude_agent.py` compiles and its API parameters were checked against the SDK, but it has not been run against the API.
 - Balance (energy costs, loot rates, break times) is a first guess.
 - Water does not drain or flow downhill; it only floods. Rivers are static.
-- No boats, pumps or motors with functions yet; no line-of-sight (sight is by distance).
+- No boats or pumps yet; motors only drive doors; no line-of-sight (sight is by distance).
 - One arena per server. Games can be saved and resumed (`--save`, `--load`).
 - The server has no accounts: a giant's token is its only credential. Admin endpoints need the key printed at start-up. Bind to localhost (the default) unless you trust the network.

@@ -568,3 +568,33 @@ def test_timer_and_radio_trigger():
     run(w, g, [{"do": "radio", "text": "THUNDER now"}])
     step(w, 10)
     assert logs.props.get("burning") or logs.id not in w.items
+
+
+def test_motor_door_opens_for_a_radio_password():
+    from worldgame.giants import find_path
+    w = flat()
+    for z in range(0, 40):                                   # a steel wall right across the map
+        for k in range(1, 5):
+            w.vox[30, z, GROUND + k] = ID["steel_plate"]
+    w.vox[30, 20, GROUND + 1] = M.AIR                         # a doorway with the door hanging in it
+    w.rebuild_top()
+    g = giant(w, 20, 20)
+    motor = P.spawn(w, "motor", (30, GROUND + 1, 20))
+    rx = P.spawn(w, "radio_trigger", (28, GROUND + 1, 21))
+    pack = P.spawn(w, "battery_pack", (28, GROUND + 1, 19))
+    radio = P.spawn(w, "radio_set", (20, GROUND + 1, 21))
+    _wire(w, g, [(pack, rx), (rx, motor)])
+    run(w, g, [{"do": "pick_up", "item": radio.id}, {"do": "move_to", "target": rx.id},
+               {"do": "write", "item": rx.id, "text": "open sesame"}, {"do": "switch", "item": rx.id, "on": True},
+               {"do": "move_to", "x": 25, "z": 20}], 300)
+    assert rx.props.get("text") == "open sesame" and rx.props["on"]
+    step(w, 10)
+    assert not find_path(w, g.pos, (35, 20), 0, g)[1]         # shut: no way through
+    run(w, g, [{"do": "radio", "text": "Open Sesame"}])
+    step(w, 10)
+    assert w.get(30, GROUND + 2, 20) == M.AIR and w.stats["collapsed"] == 0
+    run(w, g, [{"do": "move_to", "x": 35, "z": 20}], 300)
+    assert g.x == 35
+    run(w, g, [{"do": "switch", "item": rx.id, "on": False}], 50) if g.reach_item(rx) else rx.props.update(on=False)
+    step(w, 10)
+    assert w.get(30, GROUND + 2, 20) == ID["steel_plate"]     # and it closes again

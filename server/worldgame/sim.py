@@ -85,13 +85,19 @@ def power_tick(w):
         sinks = []
         for it in net:
             k = KINDS[it.kind]
-            if k["comp"] != "sink" or it.props.get("on") is False:
+            if k["comp"] != "sink":
+                continue
+            if it.props.get("on") is False:
+                if it.kind == "motor":
+                    _door(w, it, False)
                 continue
             if "trigger" in it.props and not trigger_active(w, it.props["trigger"]):
                 if it.props.get("powered"):
                     it.props["powered"] = False
                     it.props.pop("fired_once", None)
                     w.mark(it)
+                if it.kind == "motor":
+                    _door(w, it, False)
                 continue
             if it.kind == "charger":
                 g = _giant_beside(w, it)
@@ -148,6 +154,8 @@ def power_tick(w):
             if it.props.get("powered") != powered:
                 it.props["powered"] = powered
                 w.mark(it)
+            if it.kind == "motor":
+                _door(w, it, powered)
             if not powered:
                 continue
             if it.kind == "charger" and g is not None:
@@ -175,6 +183,34 @@ def power_tick(w):
                 it.props["last_wail"] = w.tick
                 w.emit("siren", f"A siren is wailing at ({it.pos[0]}, {it.pos[1] - w.sea}, {it.pos[2]}).",
                        it.pos, radius=250)
+
+
+def _door(w, motor, opened):
+    """A motor lifts the built voxels above it while powered and lowers them when not."""
+    x, k, z = motor.pos
+    held = motor.props.get("lifted")
+    if opened and not held:
+        lifted = []
+        for kk in range(k + 1, min(w.Y, k + 4)):
+            v = w.mat(x, kk, z)
+            if v.kind != "solid" or v.natural:
+                if lifted:
+                    break
+                continue
+            lifted.append([kk, v.id])
+        if lifted:
+            motor.props["lifted"] = lifted
+            for kk, _vid in lifted:
+                w.set(x, kk, z, 0)
+            w.emit("door", "A door ground open.", motor.pos, radius=30)
+    elif not opened and held:
+        if any(g.x == x and g.z == z and g.status != "destroyed" for g in w.giants.values()):
+            return                                         # someone is standing in the doorway
+        if all(w.get(x, kk, z) == 0 for kk, _vid in held):
+            for kk, vid in held:
+                w.set(x, kk, z, vid)
+            motor.props.pop("lifted")
+            w.emit("door", "A door ground shut.", motor.pos, radius=30)
 
 
 def trigger_active(w, tid):

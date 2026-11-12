@@ -37,7 +37,7 @@ python3 agents/claude_agent.py --name Ada --persona "curious, cautious, keeps he
 - `--speed` is game seconds per real second; agents decide every `--period` real seconds (60 by default for the Claude agent).
 - Each agent prints its **token** when it joins. Paste it into the viewer's advice box to advise that giant.
 - To let any MCP-capable AI play (Claude Code, Claude Desktop): `pip install mcp`, then `claude mcp add worldgame -- python3 agents/mcp_server.py`, and give it `skills/worldgame-giant/SKILL.md`.
-- Tests: `cd server && python3 -m pytest -q` (37 tests).
+- Tests: `cd server && python3 -m pytest -q` (39 tests, including a fuzz test of the action interface).
 - Save and resume: add `--save saves/game1` (autosaves every 10 game minutes), and `--load` to resume it.
 - Host tools: the server prints an admin key. `GET /admin/pause|resume|speed?x=|step?n=|save` with `?key=`, and `POST /admin/do {key, op}` to spawn items, light fires, set energy, move giants or start rain.
 
