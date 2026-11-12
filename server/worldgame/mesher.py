@@ -28,7 +28,8 @@ def _palette():
     global _LINEAR
     if _LINEAR is None:
         t = M.numpy_tables()["colour"].astype(np.float32) / 255.0
-        _LINEAR = np.concatenate([t ** 2.2, (np.arange(len(M.VOXELS), dtype=np.float32) / 255.0)[:, None]], axis=1)
+        # Godot converts instance colours from sRGB itself, so send them as they are.
+        _LINEAR = np.concatenate([t, (np.arange(len(M.VOXELS), dtype=np.float32) / 255.0)[:, None]], axis=1)
     return _LINEAR
 
 

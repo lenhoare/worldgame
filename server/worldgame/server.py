@@ -155,7 +155,7 @@ class Game:
             items = []
             for it in w.items.values():
                 if it.rev > since:
-                    e = {"id": it.id, "kind": it.kind, "name": it.name, "mat": it.mat, "kg": round(it.total_mass)}
+                    e = {"id": it.id, "s": sprite_key(it), "name": it.name, "kg": round(it.total_mass)}
                     if it.pos is not None:
                         e["p"] = list(it.pos)
                     if it.props.get("burning"):
@@ -191,9 +191,29 @@ class Game:
                 "chunks": len(cxs), "stats": w.stats,
             }
 
+    def view_heights(self):
+        """Top solid layer of every column (uint8, x-major), gzip: for the camera and picking."""
+        import gzip
+        import numpy as np
+        with self.lock:
+            return gzip.compress(np.clip(self.w.top, 0, 255).astype(np.uint8).tobytes(), compresslevel=3)
+
     def view_chunks(self, since):
         with self.lock:
             return self.mesh.since(since)
+
+
+def sprite_key(it):
+    """Which sprite the viewer should draw for an item."""
+    if it.bulk:
+        return it.mat
+    if it.kind == "assembly":
+        role = it.props.get("role")
+        if role == "tool":
+            head = next((p[0] for p in it.props.get("parts", []) if p[0] in ("blade", "pick", "hammer", "shovel")), "")
+            return {"blade": "axe", "pick": "pickaxe", "hammer": "hammer_tool", "shovel": "shovel"}.get(head, "axe")
+        return role or "bundle"
+    return it.kind
 
 
 def make_handler(game):
@@ -233,6 +253,8 @@ def make_handler(game):
                 if u.path == "/view/chunks":
                     return self._send(200, None, game.view_chunks(int(q.get("since", 0))),
                                       "application/octet-stream")
+                if u.path == "/view/heights":
+                    return self._send(200, None, game.view_heights(), "application/octet-stream")
                 if u.path == "/rules":
                     return self._send(200, {"rules": O.RULES})
                 if u.path == "/admin/pause":

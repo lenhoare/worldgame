@@ -1,0 +1,450 @@
+{
+ "cell": 16,
+ "columns": 16,
+ "rows": 6,
+ "index": {
+  "default": 0,
+  "fire": 1,
+  "car": 2,
+  "tyre": 3,
+  "battery_12v": 4,
+  "ev_pack": 5,
+  "battery_pack": 6,
+  "solar_array": 7,
+  "generator": 8,
+  "charger": 9,
+  "floodlight": 10,
+  "radio_set": 11,
+  "motor": 12,
+  "pump": 13,
+  "blower": 14,
+  "heater": 15,
+  "sensor": 16,
+  "computer": 17,
+  "medical_scanner": 18,
+  "cable_drum": 19,
+  "fuel_can": 20,
+  "fuel_tank": 21,
+  "tank": 22,
+  "skip": 23,
+  "shipping_container": 24,
+  "gas_cylinder": 25,
+  "blowtorch": 26,
+  "rail": 27,
+  "sleeper": 28,
+  "tarpaulin": 29,
+  "rope_coil": 30,
+  "brick": 31,
+  "rubble": 32,
+  "concrete": 33,
+  "steel": 34,
+  "copper": 35,
+  "aluminium": 36,
+  "lead": 37,
+  "glass": 38,
+  "plastic": 39,
+  "rubber": 40,
+  "electronics": 41,
+  "wood": 42,
+  "charcoal": 43,
+  "ash": 44,
+  "flint": 45,
+  "chalk": 46,
+  "soil": 47,
+  "clay": 48,
+  "sand": 49,
+  "gravel": 50,
+  "tile": 51,
+  "ceramic": 52,
+  "lime": 53,
+  "mortar": 54,
+  "biomass": 55,
+  "fibre": 56,
+  "fabric": 57,
+  "rock": 58,
+  "sandstone": 59,
+  "mudstone": 60,
+  "basalt": 61,
+  "slate": 62,
+  "asphalt": 63,
+  "salt": 64,
+  "blade": 65,
+  "pick": 66,
+  "hammer": 67,
+  "shovel": 68,
+  "rod": 69,
+  "beam": 70,
+  "plank": 71,
+  "plate": 72,
+  "sheet": 73,
+  "wire": 74,
+  "pipe": 75,
+  "vessel": 76,
+  "wheel": 77,
+  "block": 78,
+  "rope": 79,
+  "lens": 80,
+  "mirror": 81,
+  "axe": 82,
+  "pickaxe": 83,
+  "hammer_tool": 84,
+  "cart": 85,
+  "bellows": 86,
+  "bundle": 87
+ },
+ "source": {
+  "default": {
+   "subject": "crate",
+   "row": 163525
+  },
+  "fire": {
+   "subject": "flame",
+   "row": 374088
+  },
+  "car": {
+   "subject": "car",
+   "row": 231913
+  },
+  "tyre": {
+   "subject": "old tire",
+   "row": 676536
+  },
+  "battery_12v": {
+   "subject": "car battery",
+   "row": 140201
+  },
+  "ev_pack": {
+   "subject": "battery pack",
+   "row": 136042
+  },
+  "battery_pack": {
+   "subject": "battery",
+   "row": 218971
+  },
+  "solar_array": {
+   "subject": "solar panel",
+   "row": 26590
+  },
+  "generator": {
+   "subject": "electric generator",
+   "row": 308211
+  },
+  "charger": {
+   "subject": "fuel pump",
+   "row": 956815
+  },
+  "floodlight": {
+   "subject": "street lamp",
+   "row": 128388
+  },
+  "radio_set": {
+   "subject": "radio",
+   "row": 199653
+  },
+  "motor": {
+   "subject": "electric motor",
+   "row": 69756
+  },
+  "pump": {
+   "subject": "water pump",
+   "row": 421447
+  },
+  "blower": {
+   "subject": "electric fan",
+   "row": 308209
+  },
+  "heater": {
+   "subject": "space heater",
+   "row": 584469
+  },
+  "sensor": {
+   "subject": "digital camera",
+   "row": 263758
+  },
+  "computer": {
+   "subject": "desktop computer",
+   "row": 9066
+  },
+  "medical_scanner": {
+   "subject": "handheld scanner",
+   "row": 556541
+  },
+  "cable_drum": {
+   "subject": "wire spool",
+   "row": 149095
+  },
+  "fuel_can": {
+   "subject": "hazard barrel",
+   "row": 240411
+  },
+  "fuel_tank": {
+   "subject": "barrel",
+   "row": 1364
+  },
+  "tank": {
+   "subject": "rain barrel",
+   "row": 414139
+  },
+  "skip": {
+   "subject": "dumpster",
+   "row": 515709
+  },
+  "shipping_container": {
+   "subject": "shipping container",
+   "row": 658674
+  },
+  "gas_cylinder": {
+   "subject": "propane tank",
+   "row": 163103
+  },
+  "blowtorch": {
+   "subject": "welding torch",
+   "row": 143520
+  },
+  "rail": {
+   "subject": "rail segment",
+   "row": 566420
+  },
+  "sleeper": {
+   "subject": "plank stack",
+   "row": 572195
+  },
+  "tarpaulin": {
+   "subject": "tarp",
+   "row": 884890
+  },
+  "rope_coil": {
+   "subject": "coil of rope",
+   "row": 549427
+  },
+  "brick": {
+   "subject": "brick pile",
+   "row": 683912
+  },
+  "rubble": {
+   "subject": "rubble pile",
+   "row": 600742
+  },
+  "concrete": {
+   "subject": "concrete slab",
+   "row": 653746
+  },
+  "steel": {
+   "subject": "ingot pile",
+   "row": 468122
+  },
+  "copper": {
+   "subject": "copper ore",
+   "row": 545770
+  },
+  "aluminium": {
+   "subject": "metal sheet",
+   "row": 463132
+  },
+  "lead": {
+   "subject": "ingot",
+   "row": 709630
+  },
+  "glass": {
+   "subject": "glass marble",
+   "row": 428119
+  },
+  "plastic": {
+   "subject": "food storage container",
+   "row": 151611
+  },
+  "rubber": {
+   "subject": "rubber ball",
+   "row": 198997
+  },
+  "electronics": {
+   "subject": "circuit board",
+   "row": 2579
+  },
+  "wood": {
+   "subject": "wooden log",
+   "row": 136100
+  },
+  "charcoal": {
+   "subject": "charcoal lump",
+   "row": 541095
+  },
+  "ash": {
+   "subject": "ash pile",
+   "row": 908079
+  },
+  "flint": {
+   "subject": "flint nodule",
+   "row": 532723
+  },
+  "chalk": {
+   "subject": "piece of chalk",
+   "row": 200898
+  },
+  "soil": {
+   "subject": "dirt pile",
+   "row": 691784
+  },
+  "clay": {
+   "subject": "lump of clay",
+   "row": 254982
+  },
+  "sand": {
+   "subject": "sand pile",
+   "row": 774384
+  },
+  "gravel": {
+   "subject": "gravel pile",
+   "row": 430487
+  },
+  "tile": {
+   "subject": "roof tile",
+   "row": 337122
+  },
+  "ceramic": {
+   "subject": "stock pot",
+   "row": 232665
+  },
+  "lime": {
+   "subject": "mortar and pestle",
+   "row": 196559
+  },
+  "mortar": {
+   "subject": "tar bucket",
+   "row": 505690
+  },
+  "biomass": {
+   "subject": "pile of leaves",
+   "row": 407765
+  },
+  "fibre": {
+   "subject": "straw bundle",
+   "row": 613206
+  },
+  "fabric": {
+   "subject": "fabric bolt",
+   "row": 40447
+  },
+  "rock": {
+   "subject": "rock pile",
+   "row": 270368
+  },
+  "sandstone": {
+   "subject": "cut stone",
+   "row": 702931
+  },
+  "mudstone": {
+   "subject": "rock",
+   "row": 137876
+  },
+  "basalt": {
+   "subject": "jagged rock",
+   "row": 311662
+  },
+  "slate": {
+   "subject": "pointed rock",
+   "row": 33325
+  },
+  "asphalt": {
+   "subject": "rubble chunk",
+   "row": 557726
+  },
+  "salt": {
+   "subject": "sand pile",
+   "row": 774384
+  },
+  "blade": {
+   "subject": "blade blank",
+   "row": 483642
+  },
+  "pick": {
+   "subject": "pickaxe head",
+   "row": 775121
+  },
+  "hammer": {
+   "subject": "hammer head",
+   "row": 670403
+  },
+  "shovel": {
+   "subject": "shovel",
+   "row": 49783
+  },
+  "rod": {
+   "subject": "stick",
+   "row": 669724
+  },
+  "beam": {
+   "subject": "support beam",
+   "row": 205359
+  },
+  "plank": {
+   "subject": "plank",
+   "row": 729319
+  },
+  "plate": {
+   "subject": "metal sheet",
+   "row": 463132
+  },
+  "sheet": {
+   "subject": "tarp",
+   "row": 884890
+  },
+  "wire": {
+   "subject": "wire coil",
+   "row": 724863
+  },
+  "pipe": {
+   "subject": "pipe",
+   "row": 21789
+  },
+  "vessel": {
+   "subject": "bucket",
+   "row": 19353
+  },
+  "wheel": {
+   "subject": "wagon wheel",
+   "row": 697739
+  },
+  "block": {
+   "subject": "stone block",
+   "row": 54919
+  },
+  "rope": {
+   "subject": "coil of rope",
+   "row": 549427
+  },
+  "lens": {
+   "subject": "camera lens",
+   "row": 230837
+  },
+  "mirror": {
+   "subject": "mirror",
+   "row": 140177
+  },
+  "axe": {
+   "subject": "axe",
+   "row": 279864
+  },
+  "pickaxe": {
+   "subject": "pickaxe",
+   "row": 286242
+  },
+  "hammer_tool": {
+   "subject": "hammer",
+   "row": 116744
+  },
+  "cart": {
+   "subject": "mine cart",
+   "row": 404010
+  },
+  "bellows": {
+   "subject": "bellows",
+   "row": 180493
+  },
+  "bundle": {
+   "subject": "rod bundle",
+   "row": 812392
+  }
+ },
+ "credit": "Pixel Art Atlas 1.4M by Angais, CC0 1.0, https://huggingface.co/datasets/Angais/pixel-art-atlas-1.4m"
+}

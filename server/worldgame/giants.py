@@ -508,8 +508,11 @@ class Giant:
     def begin_place(self, a):
         w = self.w
         p = self.xyz(a)
-        if p is None or not self.reach(*p):
-            return "give x, y, z of an empty voxel within reach"
+        if p is None:
+            return "give x, y, z of the empty voxel to fill"
+        if not self.reach(*p):
+            return (f"{fmt(w, p)} is out of reach from {fmt(w, self.pos)} "
+                    f"(reach: {REACH} sideways, {REACH_UP} up, {REACH_DOWN} down)")
         if w.t["solid"][w.get(*p)]:
             return f"{fmt(w, p)} is already solid ({w.mat(*p).name})"
         if any(g.x == p[0] and g.z == p[2] and 0 <= p[1] - g.k < 4 for g in w.giants.values()

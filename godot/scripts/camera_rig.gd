@@ -2,7 +2,7 @@ class_name CameraRig
 extends Node3D
 ## Orbit / RTS camera around a focus point on the ground, with smoothing.
 
-const MIN_DISTANCE := 120.0
+const MIN_DISTANCE := 40.0
 const MAX_DISTANCE := 26000.0
 const MIN_PITCH := deg_to_rad(12.0)
 const MAX_PITCH := deg_to_rad(88.0)

@@ -8,6 +8,8 @@ const DARK := Color("#3a3f44")
 const RUST := Color("#8a4b2a")
 const GLOW := Color("#5ff0ff")
 
+var paint_colour := PAINT   ## set before adding to the tree to tint this giant
+
 var _head: Node3D
 var _body: Node3D
 var _visor: StandardMaterial3D
@@ -16,7 +18,7 @@ var _t := 0.0
 
 
 func _ready() -> void:
-	var paint := _mat(PAINT)
+	var paint := _mat(paint_colour)
 	var dark := _mat(DARK)
 	var rust := _mat(RUST)
 	_visor = _glow_mat()

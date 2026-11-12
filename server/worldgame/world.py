@@ -16,7 +16,7 @@ from .items import KINDS, Item
 
 CHUNK = 32
 DAY_TICKS = 7200          # one game day = 2 hours of one-second ticks
-START_CLOCK = 0.30        # world starts at ~07:00
+START_CLOCK = 0.36        # world starts mid-morning
 
 
 class World:
