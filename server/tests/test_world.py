@@ -408,3 +408,45 @@ def test_same_seed_same_world():
     assert np.array_equal(a.vox, b.vox)
     assert [(i.kind, i.pos, round(i.mass)) for i in a.items.values()] == \
            [(i.kind, i.pos, round(i.mass)) for i in b.items.values()]
+
+
+def test_sensor_alarm_reaches_its_owner():
+    w = flat(X=120)
+    owner, intruder = giant(w, 20, 20, "Ada"), giant(w, 100, 20, "Bo")
+    sensor = P.spawn(w, "sensor", (22, GROUND + 1, 20))
+    pack = P.spawn(w, "battery_pack", (23, GROUND + 1, 20))
+    drum = P.spawn(w, "cable_drum", (20, GROUND + 1, 21))
+    run(w, owner, [{"do": "pick_up", "item": drum.id}, {"do": "pick_up", "item": sensor.id},
+                   {"do": "drop", "item": sensor.id, "x": 22, "y": y(GROUND + 1), "z": 20},
+                   {"do": "connect", "a": sensor.id, "b": pack.id},
+                   {"do": "move_to", "x": 60, "z": 20}], 300)
+    owner.inbox = []
+    run(w, intruder, [{"do": "move_to", "x": 26, "z": 20}], 300)
+    step(w, 10)
+    assert any(e["type"] == "alarm" and "Bo" in e["text"] for e in owner.inbox)
+
+
+def test_radio_reaches_only_radio_holders():
+    w = flat(X=300)
+    a, b, c = giant(w, 20, 20, "Ada"), giant(w, 280, 20, "Bo"), giant(w, 150, 20, "Cy")
+    for g in (a, b):
+        r = P.spawn(w, "radio_set", (g.x, GROUND + 1, g.z + 1))
+        run(w, g, [{"do": "pick_up", "item": r.id}])
+    for g in (a, b, c):
+        g.inbox = []
+    run(w, a, [{"do": "radio", "text": "meet at the station"}])
+    assert any("meet at the station" in e["text"] for e in b.inbox)
+    assert not any("meet at the station" in e["text"] for e in c.inbox)
+
+
+def test_push_off_an_edge_and_hit():
+    w = flat()
+    for k in range(GROUND - 4, GROUND + 1):
+        for z in range(18, 23):
+            w.vox[22, z, k] = M.AIR
+    w.rebuild_top()
+    a, b = giant(w, 20, 20, "Ada"), giant(w, 21, 20, "Bo")
+    run(w, a, [{"do": "hit", "target": "Bo"}, {"do": "push", "target": "Bo"}])
+    step(w, 2)
+    assert b.x == 22 and b.k < a.k
+    assert b.integrity < 96
